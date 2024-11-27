@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaTimes, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTimes, FaEnvelope, FaFacebook, FaYoutube } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -13,7 +13,7 @@ const Footer = () => {
         {/* Right Section: Social Icons */}
         <div className="flex items-center gap-2 mt-2 md:mt-0">
           <a
-            href="https://github.com"
+            href="https://github.com/moniruzzaman2428"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-teal-400 transition"
@@ -21,7 +21,7 @@ const Footer = () => {
             <FaGithub size={15} />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/md-moniruzzaman-tonoy-7bb52b285/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-teal-400 transition"
@@ -29,16 +29,25 @@ const Footer = () => {
             <FaLinkedin size={15} />
           </a>
           <a
-            href="#"
+            href="https://x.com/moniruzzaman_24"
+            target="_blank"
             className="text-white hover:text-teal-400 transition"
           >
             <FaTimes size={15} />
           </a>
           <a
-            href="mailto:example@example.com"
+            href="https://www.facebook.com/moniruzzaman.kendua"
+            target="_blank"
             className="text-white hover:text-teal-400 transition"
           >
-            <FaEnvelope size={15} />
+            <FaFacebook size={15} />
+          </a>
+          <a
+            href="https://www.youtube.com/@moniruzzamam2428"
+            target="_blank"
+            className="text-white hover:text-teal-400 transition"
+          >
+            <FaYoutube size={15} />
           </a>
         </div>
       </div>

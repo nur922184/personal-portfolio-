@@ -6,24 +6,32 @@ import About from "../MainLayout/About";
 import Blog from "../MainLayout/Blog";
 import Work from "../MainLayout/Work";
 import Home from "../MainLayout/Home";
+import BlogDetails from "../MainLayout/LayoutComponent/BlogDetails";
+
 
 
 const Router = createBrowserRouter([
     {
         path: "/",
         element: <MainHomeLayout></MainHomeLayout>,
-        children:[
+        children: [
             {
                 path: "/",
                 element: <Home></Home>,
             },
             {
                 path: "/about",
-                element:<About></About> ,
+                element: <About></About>,
             },
             {
                 path: "/blog",
                 element: <Blog></Blog>,
+                children: [
+                    {
+                        path: "/blog/details/:id",
+                        element: <BlogDetails></BlogDetails>,
+                    },
+                ]
             },
             {
                 path: "/work",

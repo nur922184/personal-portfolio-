@@ -1,30 +1,35 @@
 import React from 'react';
 // import { FaCode, FaUsers, FaRocket } from 'react-icons/fa';
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaFacebook, FaYoutube, FaTimes } from "react-icons/fa";
+import { NavLink } from 'react-router-dom';
+import { Link } from 'react-scroll';
 
 const Home = () => {
     return (
         <div>
             {/* Hero Section */}
-            <section id="home" className="bg-gradient-to-r from-teal-500 to-blue-600 text-center py-20">
+            <section id="home" className="bg-gradient-to-r from-black via-gray-900 to-green-900  py-20">
                 <div className="container mx-auto md:mt-14">
-                    <h2 className="text-4xl md:text-6xl font-bold mb-4">Hi, Md Moniruzzaman</h2>
+                    <h4 className="text-4xl md:text-6xl font-bold text-left mb-4">Hi, I am</h4>
+                    <h2 className="text-4xl md:text-6xl font-bold text-left mb-4">Md Moniruzzaman</h2>
                     <p className="text-lg md:text-xl mb-8">
                         A Passionate Frontend Developer & UI/UX Enthusiast
                     </p>
                     <div className="flex justify-center gap-6">
-                        <a
-                            href="#projects"
+                        <NavLink
+                            to={'work'}
                             className="bg-black text-teal-400 px-6 py-3 rounded-lg shadow-md hover:bg-teal-400 hover:text-black transition"
                         >
                             View My Work
-                        </a>
-                        <a
-                            href="#contact"
-                            className="border border-teal-400 px-6 py-3 rounded-lg shadow-md hover:bg-teal-400 hover:text-black transition"
+                        </NavLink>
+                        <Link
+                            to="contact"
+                            smooth={true}
+                            duration={500}
+                            className="border cursor-pointer border-teal-400 px-6 py-3 rounded-lg shadow-md hover:bg-teal-400 hover:text-black transition"
                         >
                             Get In Touch
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -54,7 +59,7 @@ const Home = () => {
                     </p>
                     <div className="flex justify-center gap-6">
                         <a
-                            href="https://github.com"
+                            href="https://github.com/moniruzzaman2428"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-white hover:text-teal-400 transition"
@@ -62,7 +67,7 @@ const Home = () => {
                             <FaGithub size={30} />
                         </a>
                         <a
-                            href="https://linkedin.com"
+                            href="https://www.linkedin.com/in/md-moniruzzaman-tonoy-7bb52b285/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-white hover:text-teal-400 transition"
@@ -70,10 +75,32 @@ const Home = () => {
                             <FaLinkedin size={30} />
                         </a>
                         <a
-                            href="mailto:example@example.com"
+                            href="https://x.com/moniruzzaman_24"
+                            target="_blank"
+                            className="text-white hover:text-teal-400 transition"
+                        >
+                            <FaTimes size={30} />
+                        </a>
+                        <a
+                            href="https://www.facebook.com/moniruzzaman.kendua"
+                            target="_blank"
+                            className="text-white hover:text-teal-400 transition"
+                        >
+                            <FaFacebook size={30} />
+                        </a>
+                        <a
+                            href="mailto:moniruzzaman2428@gmail.com"
+                            target="_blank"
                             className="text-white hover:text-teal-400 transition"
                         >
                             <FaEnvelope size={30} />
+                        </a>
+                        <a
+                            href="https://www.youtube.com/@moniruzzamam2428"
+                            target="_blank"
+                            className="text-white hover:text-teal-400 transition"
+                        >
+                            <FaYoutube size={30} />
                         </a>
                     </div>
                 </div>
