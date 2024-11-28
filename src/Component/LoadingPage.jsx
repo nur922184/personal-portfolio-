@@ -1,5 +1,4 @@
 import React from "react";
-import img from '../assets/loding.gif'
 
 const LoadingPage = () => {
   return (

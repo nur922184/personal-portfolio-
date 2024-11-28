@@ -19,11 +19,11 @@ const ThankYou = () => {
           <input
             type="email"
             placeholder="Email"
-            className="px-4 py-2 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-green-900 "
+            className="px-4 py-1 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-green-900 w-72 "
           />
           <button
             type="submit"
-            className="px-6 py-2 bg-white text-black font-medium rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-red-500"
+            className="px-6 py-2 btn btn-sm w-26 bg-white text-black font-medium rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-red-500"
           >
             Sign up
           </button>

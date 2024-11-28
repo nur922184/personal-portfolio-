@@ -18,7 +18,7 @@ const Works = () => {
       description:
         "A web app to manage cricket player availability and selections for matches.",
       liveDemo: "https://example.com/cricket-app",
-      sourceCode: "https://github.com/username/cricket-app",
+      sourceCode: "https://magical-gumption-061d0e.netlify.app/",
       image: "https://i.ibb.co.com/bHP8G53/Screenshot-2024-11-28-091404.png",
     },
     {

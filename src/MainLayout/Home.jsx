@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, } from 'react';
 // import { FaCode, FaUsers, FaRocket } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-scroll';
@@ -7,11 +7,14 @@ import ThankYou from '../Component/ThankYou';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import banner from '../assets/fgsdgdfgsgsdfg.gif'
+import Animation from '../Component/Animation';
+import Swiper from '../Swiper/Swiper';
 
 const Home = () => {
     useEffect(() => {
         AOS.init({ duration: 1000 }); // AOS initialization
     }, []);
+
     return (
         <div>
             {/* Hero Section */}
@@ -22,8 +25,8 @@ const Home = () => {
                 className="bg-gradient-to-r bg-center from-black via-gray-900 to-green-900 p-5  py-20">
                 <div className=' flex justify-around' data-aos="fade-down">
                     <div className="container md:w-[50%] mx-auto md:mt-14">
-                        <h4 className="text-4xl md:text-6xl font-bold text-left md:-ml-20 text-white  mb-4">Hi, I am</h4>
-                        <h2 className="text-4xl md:text-6xl font-bold text-left text-teal-400 tracking-wide mb-4">Md Moniruzzaman</h2>
+                        <h4 className="text-3xl md:text-4xl font-bold text-left md:-ml-20 text-white mb-4">Hi, I am</h4>
+                       <div className='text-xl'> <Animation></Animation></div>
                         <p className="text-lg md:text-xl md:ml-20 text-white mb-8">
                             A Passionate Frontend Developer & UI/UX Enthusiast
                         </p>
@@ -59,6 +62,10 @@ const Home = () => {
                         code and a seamless user experience.
                     </p>
                 </div>
+            </section>
+
+            <section>
+                <Swiper></Swiper>
             </section>
 
             {/* Projects Section */}

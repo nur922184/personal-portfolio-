@@ -7,6 +7,7 @@ import { SiMongodb, SiPrisma, SiTailwindcss, } from 'react-icons/si';
 import Contact from '../../Component/Contact';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { TypeAnimation } from 'react-type-animation';
 
 const AboutHead = () => {
 
@@ -128,18 +129,26 @@ const AboutHead = () => {
       </div>
       {/* About Section */}
       <section id="introduction" className="py-16">
-        <div className="container mx-auto text-center">
+        <div className="container mx-auto w-[70%]">
           <h3 className="text-3xl font-bold mb-8">About Me</h3>
-          <p className='text-lg leading-relaxed max-w-3xl mx-auto'>
-            I am a computer specialist. I am now working as computer operator in open IT institute. I studied from Kendua Joyhori Spri Government High School. Now I am working on a special course "Web Design".
-          </p>
-          <p className="text-lg leading-relaxed max-w-3xl mx-auto">
-            I'm a self-driven Frontend Developer with a strong passion for
+          <TypeAnimation
+        splitter={(str) => str.split(/(?= )/)} // 'Lorem ipsum dolor' -> ['Lorem', ' ipsum', ' dolor']
+        sequence={[
+          `I am a computer specialist. I am now working as computer operator in open IT institute. I studied from Kendua Joyhori Spri Government High School. Now I am working on a special course "Web Design.    
+          I'm a self-driven Frontend Developer with a strong passion for
             crafting beautiful, user-friendly web applications. I have
             experience in working with modern technologies like React, Tailwind
             CSS, and more. My focus is always on delivering clean, scalable
-            code and a seamless user experience.
-          </p>
+            code and a seamless user experience. `,
+        
+          15000,
+          '',
+        ]}
+        speed={{ type: 'keyStrokeDelayInMs', value: 30 }}
+        omitDeletionAnimation={true}
+        style={{ fontSize: '1em', display: 'block', minHeight: '200px' }}
+        repeat={1}
+      />
         </div>
       </section>
 
