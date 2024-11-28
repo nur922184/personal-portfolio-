@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaEnvelope, FaFacebook, FaGitAlt, FaGithub, FaLaravel, FaLinkedin, FaNodeJs, FaPhone, FaReact, FaTimes, FaYoutube, } from 'react-icons/fa';
 import Me from '../../assets/_20240510_085948.jpg'
 import animation from '../../assets/green.gif'
 import animation1 from '../../assets/12.gif'
 import { SiMongodb, SiPrisma, SiTailwindcss, } from 'react-icons/si';
 import Contact from '../../Component/Contact';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const AboutHead = () => {
 
+ useEffect(() => {
+  AOS.init({
+    duration: 1000, // Animation duration in ms
+    offset: 100, // Offset for triggering animations
+    once: true, // Trigger animation only once
+  });
+}, []);
   const experiences = [
     {
       title: 'Full Stack Developer',
@@ -44,7 +53,7 @@ const AboutHead = () => {
             <img
               src={Me} // Replace with your profile image link
               alt="Md Moniruzzaman Tonoy"
-              className="w-full h-full object-cover "
+              className="w-full h-full object-cover"
             />
           </div>
         </div>
@@ -105,7 +114,7 @@ const AboutHead = () => {
             href="tel:+8801618160869"
             className="hover:text-white text-teal-400 transition"
           >
-            <FaPhone size={16}/>
+            <FaPhone size={16} />
           </a>
         </div>
 
@@ -172,7 +181,7 @@ const AboutHead = () => {
 
             {/* Education Item 2 */}
             <div className="bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition">
-            <h3 className="text-xl font-semibold text-gray-200">
+              <h3 className="text-xl font-semibold text-gray-200">
                 Bachelor of Science in Computer Science
               </h3>
               <p className="text-gray-600">ABC University</p>
@@ -181,7 +190,7 @@ const AboutHead = () => {
 
             {/* Education Item 3 */}
             <div className="bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition">
-            <h3 className="text-xl font-semibold text-gray-200">
+              <h3 className="text-xl font-semibold text-gray-200">
                 Higher Secondary Certificate (HSC)
               </h3>
               <p className="text-gray-600">National College</p>
@@ -190,7 +199,7 @@ const AboutHead = () => {
 
             {/* Education Item 4 */}
             <div className="bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition">
-            <h3 className="text-xl font-semibold text-gray-200">
+              <h3 className="text-xl font-semibold text-gray-200">
                 Secondary School Certificate (SSC)
               </h3>
               <p className="text-gray-600">Central High School</p>

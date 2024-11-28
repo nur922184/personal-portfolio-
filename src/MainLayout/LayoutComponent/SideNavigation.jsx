@@ -28,7 +28,7 @@ const SideNavigation = () => {
             </div>
             {/* Profile Section */}
             <div className="mb-8 flex flex-col items-center">
-              <div className="w-20 h-20 rounded-full overflow-hidden mb-4">
+              <div className="w-20 h-20 rounded-full overflow-hidden mb-4" data-aos="zoom-in" >
                 <img
                   src={img} // Replace with your profile image link
                   alt="Md Moniruzzaman Tonoy"

@@ -85,7 +85,7 @@ const Works = () => {
       </div>
       <div className="w-[70%] mx-auto">
         <div className="">
-          <ul className="space-y-8 md:timeline mt-8">
+          <ul className="space-y-8 mt-8">
             <li className="md:mt-8">
               <strong>Jan 2026:</strong> Initial planning and design.
             </li> 
