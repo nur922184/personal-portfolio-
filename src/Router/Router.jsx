@@ -7,6 +7,7 @@ import Blog from "../MainLayout/Blog";
 import Work from "../MainLayout/Work";
 import Home from "../MainLayout/Home";
 import BlogDetails from "../MainLayout/LayoutComponent/BlogDetails";
+import Resume from "../MainLayout/Resume";
 
 
 
@@ -37,10 +38,10 @@ const Router = createBrowserRouter([
                 path: "/work",
                 element: <Work></Work>,
             },
-            // {
-            //     path: "/resume",
-            //     element: <MainHomeLayout></MainHomeLayout>,
-            // },
+            {
+                path: "/resume",
+                element: <Resume></Resume>,
+            },
         ]
     },
     {

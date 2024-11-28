@@ -79,9 +79,9 @@ const Navbar = () => {
 
         {/* Right: Resume */}
         <div className="text-teal-500 font-medium">
-          <a href="/resume" className="hover:underline">
+          <NavLink to="/resume" className="hover:underline">
             Resume
-          </a>
+          </NavLink>
         </div>
       </div>
 

@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { Link } from 'react-scroll';
 import Contact from '../Component/Contact';
 import ThankYou from '../Component/ThankYou';
-import Me from '../assets/ddf.png'
+
 
 const Home = () => {
     return (
