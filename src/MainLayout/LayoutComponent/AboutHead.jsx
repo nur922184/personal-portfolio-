@@ -1,8 +1,10 @@
 import React from 'react';
-import { FaEnvelope, FaGitAlt, FaGithub, FaLaravel, FaLinkedin, FaNodeJs, FaPhone, FaReact, } from 'react-icons/fa';
+import { FaEnvelope, FaFacebook, FaGitAlt, FaGithub, FaLaravel, FaLinkedin, FaNodeJs, FaPhone, FaReact, FaTimes, FaYoutube, } from 'react-icons/fa';
 import Me from '../../assets/_20240510_085948.jpg'
-import animation from '../../assets/12.gif'
+import animation from '../../assets/green.gif'
+import animation1 from '../../assets/12.gif'
 import { SiMongodb, SiPrisma, SiTailwindcss, } from 'react-icons/si';
+import Contact from '../../Component/Contact';
 
 const AboutHead = () => {
 
@@ -34,12 +36,17 @@ const AboutHead = () => {
     <header className="bg-gray-900 text-white py-10 md:mt-10">
       <div className="  px-5 flex flex-col items-center text-center">
         {/* Profile Picture */}
-        <div className="w-32 h-32 rounded-full overflow-hidden mb-4 ">
-          <img
-            src={Me} // Replace with your profile image link
-            alt="Md Moniruzzaman Tonoy"
-            className="w-full h-full object-cover "
-          />
+        <div style={{
+          backgroundImage: `url(${animation1})`,
+        }}
+          className="w-36 h-36 rounded-full overflow-hidden bg-slate-200 mb-5 justify-center  items-center ">
+          <div className='w-32 h-32 rounded-full overflow-hidden mx-auto mt-2' >
+            <img
+              src={Me} // Replace with your profile image link
+              alt="Md Moniruzzaman Tonoy"
+              className="w-full h-full object-cover "
+            />
+          </div>
         </div>
 
         {/* Name and Title */}
@@ -51,32 +58,54 @@ const AboutHead = () => {
         {/* Contact Links */}
         <div className="flex space-x-4 mb-6">
           <a
-            href="https://github.com/your-profile"
+            href="https://github.com/moniruzzaman2428"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white text-2xl"
+            className="hover:text-white text-teal-400 transition"
           >
-            <FaGithub />
+            <FaGithub size={16} />
           </a>
           <a
-            href="https://linkedin.com/in/your-profile"
+            href="https://www.linkedin.com/in/md-moniruzzaman-tonoy-7bb52b285/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white text-2xl"
+            className="hover:text-white text-teal-400 transition"
           >
-            <FaLinkedin />
+            <FaLinkedin size={16} />
           </a>
           <a
-            href="mailto:your-email@example.com"
-            className="text-gray-400 hover:text-white text-2xl"
+            href="https://x.com/moniruzzaman_24"
+            target="_blank"
+            className="hover:text-white text-teal-400 transition"
           >
-            <FaEnvelope />
+            <FaTimes size={16} />
           </a>
           <a
-            href="tel:+1234567890"
-            className="text-gray-400 hover:text-white text-2xl"
+            href="https://www.facebook.com/moniruzzaman.kendua"
+            target="_blank"
+            className="hover:text-white text-teal-400 transition"
           >
-            <FaPhone />
+            <FaFacebook size={16} />
+          </a>
+          <a
+            href="mailto:moniruzzaman2428@gmail.com"
+            target="_blank"
+            className="hover:text-white text-teal-400 transition"
+          >
+            <FaEnvelope size={16} />
+          </a>
+          <a
+            href="https://www.youtube.com/@moniruzzamam2428"
+            target="_blank"
+            className="hover:text-white text-teal-400 transition"
+          >
+            <FaYoutube size={16} />
+          </a>
+          <a
+            href="tel:+8801618160869"
+            className="hover:text-white text-teal-400 transition"
+          >
+            <FaPhone size={16}/>
           </a>
         </div>
 
@@ -105,25 +134,72 @@ const AboutHead = () => {
         </div>
       </section>
 
-    {/* Works Experience  */}
-    <section id='work-experience' className="bg-gray-900 text-white py-10 px-6">
-      <div className="container mx-auto">
-        <h2 className="text-4xl font-bold text-teal-400 text-center mb-8">Work Experience</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {experiences.map((exp, index) => (
-            <div
-              key={index}
-              className="bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition"
-            >
-              <h3 className="text-xl font-semibold text-teal-300">{exp.title}</h3>
-              <p className="text-sm text-gray-400">{exp.company}</p>
-              <p className="text-sm text-gray-500 mb-4">{exp.duration}</p>
-              <p>{exp.description}</p>
-            </div>
-          ))}
+      {/* Works Experience  */}
+      <section id='work-experience' className="bg-gray-900 text-white py-10 px-6">
+        <div className="container mx-auto">
+          <h2 className="text-4xl font-bold text-teal-400 text-center mb-8">Work Experience</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {experiences.map((exp, index) => (
+              <div
+                key={index}
+                className="bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition"
+              >
+                <h3 className="text-xl font-semibold text-teal-300">{exp.title}</h3>
+                <p className="text-sm text-gray-400">{exp.company}</p>
+                <p className="text-sm text-gray-500 mb-4">{exp.duration}</p>
+                <p>{exp.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      {/* Education info  */}
+
+      <section id="educational-qualification" className="py-12">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-teal-400 text-center mb-8">
+            Educational Qualification
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 w-11/12 mx-auto">
+            {/* Education Item 1 */}
+            <div className="bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition">
+              <h3 className="text-xl font-semibold text-gray-200">
+                Master of Computer Engineering
+              </h3>
+              <p className="text-gray-600">XYZ University</p>
+              <p className="text-gray-500 text-sm">2019 - 2021</p>
+            </div>
+
+            {/* Education Item 2 */}
+            <div className="bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition">
+            <h3 className="text-xl font-semibold text-gray-200">
+                Bachelor of Science in Computer Science
+              </h3>
+              <p className="text-gray-600">ABC University</p>
+              <p className="text-gray-500 text-sm">2015 - 2019</p>
+            </div>
+
+            {/* Education Item 3 */}
+            <div className="bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition">
+            <h3 className="text-xl font-semibold text-gray-200">
+                Higher Secondary Certificate (HSC)
+              </h3>
+              <p className="text-gray-600">National College</p>
+              <p className="text-gray-500 text-sm">2013 - 2015</p>
+            </div>
+
+            {/* Education Item 4 */}
+            <div className="bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition">
+            <h3 className="text-xl font-semibold text-gray-200">
+                Secondary School Certificate (SSC)
+              </h3>
+              <p className="text-gray-600">Central High School</p>
+              <p className="text-gray-500 text-sm">2011 - 2013</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* Technical Skills */}
       <section id="technical-skills"
@@ -189,6 +265,10 @@ const AboutHead = () => {
             </p>
           </div>
         </div>
+      </section>
+      {/* Contact Info */}
+      <section>
+        <Contact></Contact>
       </section>
     </header>
   );

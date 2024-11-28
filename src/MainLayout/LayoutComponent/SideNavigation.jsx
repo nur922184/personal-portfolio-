@@ -1,5 +1,6 @@
 import { Link } from 'react-scroll';
 import img from '../../assets/mt.png'
+import { FaEnvelope, FaFacebook, FaGithub,  FaLinkedin,  FaPhone, FaTimes, FaYoutube, } from 'react-icons/fa';
 
 const SideNavigation = () => {
 
@@ -10,8 +11,8 @@ const SideNavigation = () => {
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col items-center justify-center">
           {/* Page content here */}
-          <label htmlFor="my-drawer-2" className=" btn btn-sm bg-gray-950 text-xl drawer-button lg:hidden">
-            ↣
+          <label htmlFor="my-drawer-2" className=" btn btn-sm bg-gray-950 text-xl drawer-button text-teal-400 lg:hidden">
+            ≫
           </label>
         </div>
         <div className="drawer-side ">
@@ -21,8 +22,8 @@ const SideNavigation = () => {
           >
             <div className="drawer-content mr-4 items-center">
               {/* Page content here */}
-              <label htmlFor="my-drawer-2" className=" btn btn-sm text-xl drawer-button lg:hidden">
-                ↢
+              <label htmlFor="my-drawer-2" className=" btn  text-teal-400 btn-sm text-xl drawer-button lg:hidden">
+                ≪
               </label>
             </div>
             {/* Profile Section */}
@@ -37,6 +38,58 @@ const SideNavigation = () => {
               <h2 className="text-xl font-bold text-center">Md Moniruzzaman Tonoy</h2>
               <p className="text-gray-400 text-center text-sm">Full Stack Developer</p>
             </div>
+            <div className="flex space-x-4 mb-6">
+              <a
+                href="https://github.com/moniruzzaman2428"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white text-teal-400 transition"
+              >
+                <FaGithub size={15} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/md-moniruzzaman-tonoy-7bb52b285/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white text-teal-400 transition"
+              >
+                <FaLinkedin size={15} />
+              </a>
+              <a
+                href="https://x.com/moniruzzaman_24"
+                target="_blank"
+                className="hover:text-white text-teal-400 transition"
+              >
+                <FaTimes size={15} />
+              </a>
+              <a
+                href="https://www.facebook.com/moniruzzaman.kendua"
+                target="_blank"
+               className="hover:text-white text-teal-400 transition"
+              >
+                <FaFacebook size={15} />
+              </a>
+              <a
+                href="mailto:moniruzzaman2428@gmail.com"
+                target="_blank"
+               className="hover:text-white text-teal-400 transition"
+              >
+                <FaEnvelope size={15} />
+              </a>
+              <a
+                href="https://www.youtube.com/@moniruzzamam2428"
+                target="_blank"
+                className="hover:text-white text-teal-400 transition"
+              >
+                <FaYoutube size={15} />
+              </a>
+              <a
+                href="tel:+8801618160869"
+               className="hover:text-white text-teal-400 transition"
+              >
+                <FaPhone size={15}/>
+              </a>
+            </div>
 
             {/* Navigation Links */}
             <ul className="space-y-2 mb-4">
@@ -45,9 +98,9 @@ const SideNavigation = () => {
                   to="introduction"
                   smooth={true}
                   duration={500}
-                  className="cursor-pointer text-gray-400 hover:text-teal-400 text-sm transition"
+                  className="cursor-pointer text-gray-400 hover:text-teal-400 text-sm transition hover:ml-1"
                 >
-                  Introduction
+                  ▷ Introduction
                 </Link>
               </li>
               <li>
@@ -55,19 +108,19 @@ const SideNavigation = () => {
                   to="work-experience"
                   smooth={true}
                   duration={500}
-                  className="cursor-pointer text-gray-400 hover:text-teal-400 text-sm transition"
+                  className="cursor-pointer text-gray-400 hover:text-teal-400 text-sm transition hover:ml-1"
                 >
-                  Work Experience
+                  ▷ Work Experience
                 </Link>
               </li>
               <li>
                 <Link
-                  to="studies"
+                  to="educational-qualification"
                   smooth={true}
                   duration={500}
-                  className="cursor-pointer text-gray-400 hover:text-teal-400 text-sm transition"
+                  className="cursor-pointer text-gray-400 hover:text-teal-400 text-sm transition hover:ml-1"
                 >
-                  Studies
+                  ▷ Studies
                 </Link>
               </li>
               <li>
@@ -75,9 +128,9 @@ const SideNavigation = () => {
                   to="technical-skills"
                   smooth={true}
                   duration={500}
-                  className="cursor-pointer text-gray-400 hover:text-teal-400 text-sm transition"
+                  className="cursor-pointer text-gray-400 hover:text-teal-400 text-sm transition hover:ml-1"
                 >
-                  Technical Skills
+                  ▷ Technical Skills
                 </Link>
               </li>
               <li>
@@ -85,15 +138,15 @@ const SideNavigation = () => {
                   to="contact"
                   smooth={true}
                   duration={500}
-                  className="cursor-pointer text-gray-400 hover:text-teal-400 text-sm transition"
+                  className="cursor-pointer text-gray-400 hover:text-teal-400 text-sm transition hover:ml-1"
                 >
-                  Contact
+                  ▷ Contact
                 </Link>
               </li>
             </ul>
             {/* Language Switcher */}
             <div className="mt-auto">
-              <p className="text-gray-400 text-sm md:mt-3">Language</p>
+              <p className="text-teal-400 text-sm md:mt-3">Language</p>
               <div className="flex space-x-2 md:mb-4">
                 <div className="text-sm text-white px-4 py-2 rounded">
                   English

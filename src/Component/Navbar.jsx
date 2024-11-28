@@ -7,7 +7,11 @@ const Navbar = () => {
     <nav className="md:fixed w-full bg-gradient-to-r from-black via-gray-900 to-green-900 bg-opacity-30 p-4">
       <div className="container mx-auto flex items-center justify-between">
         {/* Left: Location */}
-        <div className="text-white text-sm">Moni<span className='text-teal-400 font-bold'>RUZZ</span>aman</div>
+        <div className="text-white text-sm">
+          <NavLink to={'/'}>
+          Moni<span className='text-teal-400 font-bold'>RUZZ</span>aman
+          </NavLink>
+          </div>
 
         {/* Center: Links */}
         <ul className="hidden md:flex items-center gap-6 text-white">

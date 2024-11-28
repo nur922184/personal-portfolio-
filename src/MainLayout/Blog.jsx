@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import { animateScroll as scroll, scroller } from "react-scroll";
+import ThankYou from "../Component/ThankYou";
 
 const Blog = () => {
   const posts = [
@@ -34,7 +35,7 @@ const Blog = () => {
     });
   };
   return (
-    <div className="px-6 py-24 md:mb-7">
+    <div className="px-6 py-24 md:mb-7 w-11/12 mx-auto ">
       <h1 className="text-3xl font-bold mb-8">
         Insights on Web Development and Technology
       </h1>
@@ -58,6 +59,9 @@ const Blog = () => {
       {/* Outlet for rendering BlogDetails */}
       <div className="mt-12 border-t-2 border-gray-600 pt-6" id="details-section">
         <Outlet />
+      </div>
+      <div className="mt-20">
+      <ThankYou></ThankYou>
       </div>
     </div>
   );
