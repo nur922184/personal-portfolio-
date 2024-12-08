@@ -226,7 +226,7 @@ const AboutHead = () => {
         }}
         className="p-8 bg-cover bg-center text-white font-bold">
         <h2 className="text-4xl font-bold text-teal-400 text-center">Technical Skills</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4">
           {/* React & Redux */}
           <div className="flex items-center space-x-4">
             <FaReact className="text-blue-500 text-8xl font-extrabold" />
@@ -283,10 +283,11 @@ const AboutHead = () => {
             </p>
           </div>
         </div>
+
       </section>
       {/* Contact Info */}
       <section>
-        <Contact></Contact>
+        {/* <Contact></Contact> */}
       </section>
     </header>
   );

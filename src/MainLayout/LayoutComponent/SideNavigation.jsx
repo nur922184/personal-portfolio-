@@ -7,22 +7,22 @@ const SideNavigation = () => {
   return (
     <>
       {/* Hamburger Menu for Mobile */}
-      <div className="drawer lg:drawer-open">
+      <div className="drawer md:drawer-open">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col items-center justify-center">
           {/* Page content here */}
-          <label htmlFor="my-drawer-2" className=" btn btn-sm bg-gray-950 text-xl drawer-button text-teal-400 lg:hidden">
+          <label htmlFor="my-drawer-2" className=" btn btn-sm bg-gray-950 text-xl drawer-button text-teal-400 md:hidden">
             ≫
           </label>
         </div>
         <div className="drawer-side ">
           <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
           <nav
-            className={`h-[85%] md:h-[78%]  w-64 bg-gray-800 text-white flex flex-col py-4 px-3 transition-transform duration-300 z-40 rounded-lg`}
+            className={`h-[85%] md:h-[78%] md:w-52  lg:w-64 bg-gray-800 text-white flex flex-col py-4 px-3 transition-transform duration-300 z-40 rounded-lg`}
           >
             <div className="drawer-content mr-4 items-center">
               {/* Page content here */}
-              <label htmlFor="my-drawer-2" className=" btn  text-teal-400 btn-sm text-xl drawer-button lg:hidden">
+              <label htmlFor="my-drawer-2" className=" btn  text-teal-400 btn-sm text-xl drawer-button md:hidden">
                 ≪
               </label>
             </div>
@@ -38,7 +38,7 @@ const SideNavigation = () => {
               <h2 className="text-xl font-bold text-center">Md Moniruzzaman Tonoy</h2>
               <p className="text-gray-400 text-center text-sm">Full Stack Developer</p>
             </div>
-            <div className="flex space-x-4 mb-6">
+            <div className="flex space-x-3 mb-6">
               <a
                 href="https://github.com/moniruzzaman2428"
                 target="_blank"

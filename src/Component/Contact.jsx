@@ -7,7 +7,7 @@ import Me from '../../src/assets/mt.png'
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-16 md:flex w-11/12 mx-auto md:flex-row-reverse justify-between items-center">
+    <section id="contact" className="py-16 lg:flex w-11/12 mx-auto md:flex-row-reverse justify-between items-center">
       <div className="container mx-auto text-center w-96">
         <h3 className="text-3xl font-bold mb-8"></h3>
         <p className="text-lg mb-6">
