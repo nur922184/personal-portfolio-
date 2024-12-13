@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
-import { animateScroll as scroll, scroller } from "react-scroll";
+import { animateScroll as scroller } from "react-scroll";
 import ThankYou from "../Component/ThankYou";
 
 const Blog = () => {

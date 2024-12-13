@@ -1,11 +1,13 @@
 import React from "react";
+import Thanks from '../assets/thank-you-8-9441.gif'
+
 
 const ThankYou = () => {
   return (
     <div className="md:w-[70%] mx-auto bg-gradient-to-r from-black via-gray-900 to-green-900 p-10 text-white rounded-lg shadow-lg">
       <div className="text-center">
         {/* Title */}
-        <h1 className="text-3xl font-bold mb-4">Thank You :)</h1>
+        <img className="w-60 mx-auto" src={Thanks} alt="" />
 
         {/* Description */}
         <p className="text-gray-300 mb-6 md:w-96 mx-auto">
