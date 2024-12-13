@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+
+const plugin = require('tailwind-scrollbar');
 export default {
   content: [
     "./index.html",
@@ -12,6 +14,7 @@ export default {
           '0%, 100%': { backgroundPosition: '0% 50%' },
           '50%': { backgroundPosition: '100% 50%' },
         },
+        scrollbar: ['rounded']
       },
       animation: {
         gradient: 'gradient 8s ease infinite',
@@ -20,6 +23,8 @@ export default {
   },
   plugins: [
     require('daisyui'),
+    plugin({ nocompatible: true }),
+    require('tailwind-scrollbar'),
   ],
 }
 
