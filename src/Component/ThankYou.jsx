@@ -1,5 +1,5 @@
 import React from "react";
-import Thanks from '../assets/thank-you-8-9441.gif'
+import Thanks from '../assets/thank-you.gif'
 
 
 const ThankYou = () => {
