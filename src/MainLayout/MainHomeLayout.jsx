@@ -1,12 +1,10 @@
-import React from 'react';
 import Header from '../Component/Header';
 import Footer from '../Component/Footer';
 import { Outlet } from 'react-router-dom';
-import Home from './Home';
-import About from './About';
 // import Home from './Home';
 
-const MainHomeLayout = () => {
+const MainHomeLayout = () => { 
+
     return (
         <div>
             <header>
@@ -14,7 +12,6 @@ const MainHomeLayout = () => {
             </header>
             <main>
                 <Outlet></Outlet>
-               
             </main>
             <footer>
                 <Footer></Footer>
