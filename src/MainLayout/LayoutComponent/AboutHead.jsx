@@ -61,7 +61,7 @@ const AboutHead = () => {
 
         {/* Name and Title */}
         <h1 className="text-4xl font-bold mb-2">Md Moniruzzaman Tonoy</h1>
-        <p className="text-lg font-medium text-gray-400 mb-4">
+        <p className="text-lg font-medium dark:text-gray-400 mb-4">
           Full Stack Web Developer
         </p>
 
@@ -71,7 +71,7 @@ const AboutHead = () => {
             href="https://github.com/moniruzzaman2428"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-white text-teal-400 transition"
+            className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-red-700"
           >
             <FaGithub size={16} />
           </a>
@@ -79,41 +79,41 @@ const AboutHead = () => {
             href="https://www.linkedin.com/in/md-moniruzzaman-tonoy-7bb52b285/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-white text-teal-400 transition"
+            className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-red-700"
           >
             <FaLinkedin size={16} />
           </a>
           <a
             href="https://x.com/moniruzzaman_24"
             target="_blank"
-            className="hover:text-white text-teal-400 transition"
+            className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-red-700"
           >
             <FaTimes size={16} />
           </a>
           <a
             href="https://www.facebook.com/moniruzzaman.kendua"
             target="_blank"
-            className="hover:text-white text-teal-400 transition"
+            className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-red-700"
           >
             <FaFacebook size={16} />
           </a>
           <a
             href="mailto:moniruzzaman2428@gmail.com"
             target="_blank"
-            className="hover:text-white text-teal-400 transition"
+            className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-red-700"
           >
             <FaEnvelope size={16} />
           </a>
           <a
             href="https://www.youtube.com/@moniruzzamam2428"
             target="_blank"
-            className="hover:text-white text-teal-400 transition"
+            className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-red-700"
           >
             <FaYoutube size={16} />
           </a>
           <a
             href="tel:+8801618160869"
-            className="hover:text-white text-teal-400 transition"
+            className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-red-700"
           >
             <FaPhone size={16} />
           </a>
@@ -153,18 +153,18 @@ const AboutHead = () => {
       </section>
 
       {/* Works Experience  */}
-      <section id='work-experience' className="bg-gray-900 text-white py-10 px-6">
+      <section id='work-experience' className=" bg-violet-400 rounded-md dark:bg-gray-900 dark:text-white py-10 px-6">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold text-teal-400 text-center mb-8">Work Experience</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {experiences.map((exp, index) => (
               <div
                 key={index}
-                className="bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition"
+                className="bg-violet-300 dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition"
               >
-                <h3 className="text-xl font-semibold text-teal-300">{exp.title}</h3>
-                <p className="text-sm text-gray-400">{exp.company}</p>
-                <p className="text-sm text-gray-500 mb-4">{exp.duration}</p>
+                <h3 className="text-xl font-semibold dark:text-teal-300">{exp.title}</h3>
+                <p className="text-sm dark:text-gray-400">{exp.company}</p>
+                <p className="text-sm dark:text-gray-500 mb-4">{exp.duration}</p>
                 <p>{exp.description}</p>
               </div>
             ))}
@@ -174,13 +174,13 @@ const AboutHead = () => {
       {/* Education info  */}
 
       <section id="educational-qualification" className="py-12">
-        <div className="container mx-auto px-4">
+        <div className="dark:bg-gray-900 shadow-2xl p-7 rounded-lg container mx-auto px-4">
           <h2 className="text-4xl font-bold text-teal-400 text-center mb-8">
             Educational Qualification
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 w-11/12 mx-auto">
             {/* Education Item 1 */}
-            <div className="bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition">
+            <div className="dark:bg-gray-800 bg-violet-400 rounded-lg shadow-md p-6 hover:shadow-lg transition">
               <h3 className="text-xl font-semibold text-gray-200">
                 Master of Computer Engineering
               </h3>
@@ -189,7 +189,7 @@ const AboutHead = () => {
             </div>
 
             {/* Education Item 2 */}
-            <div className="bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition">
+            <div className="dark:bg-gray-800 bg-violet-400 rounded-lg shadow-md p-6 hover:shadow-lg transition">
               <h3 className="text-xl font-semibold text-gray-200">
                 Bachelor of Science in Computer Science
               </h3>
@@ -198,7 +198,7 @@ const AboutHead = () => {
             </div>
 
             {/* Education Item 3 */}
-            <div className="bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition">
+            <div className="dark:bg-gray-800 bg-violet-400 rounded-lg shadow-md p-6 hover:shadow-lg transition">
               <h3 className="text-xl font-semibold text-gray-200">
                 Higher Secondary Certificate (HSC)
               </h3>
@@ -207,7 +207,7 @@ const AboutHead = () => {
             </div>
 
             {/* Education Item 4 */}
-            <div className="bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition">
+            <div className="dark:bg-gray-800 bg-violet-400 rounded-lg shadow-md p-6 hover:shadow-lg transition">
               <h3 className="text-xl font-semibold text-gray-200">
                 Secondary School Certificate (SSC)
               </h3>

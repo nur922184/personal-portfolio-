@@ -37,14 +37,14 @@ const Works = () => {
     <section id="my-works" className="py-11">
       <div className="container mx-auto px-4 md:mt-16">
 
-        <h2 className="text-4xl font-bold text-teal-400 text-center mb-16">
+        <h2 className="text-4xl font-bold dark:text-teal-400 text-gray-900 text-center mb-16">
           My Works
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <div
               key={project.id}
-              className="bg-gray-800  shadow-md p-6 hover:shadow-lg transition rounded-lg overflow-hidden"
+              className="dark:bg-gray-800 bg-violet-400  shadow-md p-6 hover:shadow-lg transition rounded-lg overflow-hidden"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -54,10 +54,10 @@ const Works = () => {
                 className="w-full h-64 object-cover rounded-lg"
               />
               <div className="p-4">
-                <h3 className="text-xl font-semibold text-gray-300">
+                <h3 className="text-xl font-semibold mb-3 dark:text-gray-200 text-gray-900">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 text-sm mb-4">
+                <p className="dark:text-gray-500 text-gray-800 text-sm mb-4">
                   {project.description}
                 </p>
                 <div className="flex justify-between items-center">
@@ -65,7 +65,7 @@ const Works = () => {
                     href={project.liveDemo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-teal-500 flex items-center hover:text-teal-700"
+                    className="dark:text-teal-500 flex items-center hover:text-teal-700"
                   >
                     Live Demo <FaExternalLinkAlt className="ml-2" />
                   </a>
@@ -107,13 +107,13 @@ const Works = () => {
             </span>
           ))}
         </div>
-        <div className="mt-8 bg-gray-800 p-4 rounded-lg shadow-lg">
+        <div className="mt-8 bg-violet-400  dark:bg-gray-800 p-4 rounded-lg shadow-lg">
           <blockquote>
-            <p className="text-gray-400 italic">
+            <p className="dark:text-gray-400 italic">
               "This e-commerce platform has significantly improved our online sales.
               Excellent work and great attention to detail!"
             </p>
-            <footer className="mt-2 text-teal-500 font-bold">— John Doe, CEO of XYZ</footer>
+            <footer className="mt-2 dark:text-teal-500 font-bold">— John Doe, CEO of XYZ</footer>
           </blockquote>
         </div>
       </div>

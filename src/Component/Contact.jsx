@@ -18,7 +18,7 @@ const Contact = () => {
             href="https://github.com/moniruzzaman2428"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white hover:text-teal-400 transition"
+             className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-lime-600"
           >
             <FaGithub size={30} />
           </a>
@@ -26,35 +26,35 @@ const Contact = () => {
             href="https://www.linkedin.com/in/md-moniruzzaman-tonoy-7bb52b285/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white hover:text-teal-400 transition"
+         className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-blue-500"
           >
             <FaLinkedin size={30} />
           </a>
           <a
             href="https://x.com/moniruzzaman_24"
             target="_blank"
-            className="text-white hover:text-teal-400 transition"
+         className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-pink-500"
           >
             <FaTimes size={30} />
           </a>
           <a
             href="https://www.facebook.com/moniruzzaman.kendua"
             target="_blank"
-            className="text-white hover:text-teal-400 transition"
+         className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-blue-700"
           >
             <FaFacebook size={30} />
           </a>
           <a
             href="mailto:moniruzzaman2428@gmail.com"
             target="_blank"
-            className="text-white hover:text-teal-400 transition"
+         className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-cyan-900"
           >
             <FaEnvelope size={30} />
           </a>
           <a
             href="https://www.youtube.com/@moniruzzamam2428"
             target="_blank"
-            className="text-white hover:text-teal-400 transition"
+         className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-red-700"
           >
             <FaYoutube size={30} />
           </a>
@@ -62,7 +62,7 @@ const Contact = () => {
       </div>
       <div className=' md:w-[700px] mt-3'>
         <div
-          className="bg-teal-900 text-white p-8 rounded-lg max-w-md mx-auto">
+          className="bg-violet-400 dark:bg-teal-900 text-white p-8 rounded-lg max-w-md mx-auto">
           <div
             style={{
               backgroundImage: `url(${img})`,
