@@ -1,6 +1,6 @@
 import React, { useEffect, } from 'react';
 // import { FaCode, FaUsers, FaRocket } from 'react-icons/fa';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { Link } from 'react-scroll';
 import Contact from '../Component/Contact';
 import ThankYou from '../Component/ThankYou';
@@ -9,11 +9,14 @@ import "aos/dist/aos.css";
 import banner from '../assets/fgsdgdfgsgsdfg.gif'
 import Animation from '../Component/Animation';
 import Swiper from '../Swiper/Swiper';
+import '../MainLayout/LayoutComponent/Home.css'
+import "react-awesome-button/dist/styles.css";
 
 const Home = () => {
     useEffect(() => {
         AOS.init({ duration: 1000 }); // AOS initialization
     }, []);
+    // const navigate = useNavigate();
 
     return (
         <div>
@@ -22,7 +25,7 @@ const Home = () => {
                 style={{
                     backgroundImage: `url(${banner})`,
                 }}
-                className="bg-gradient-to-r bg-center from-black via-gray-900 to-green-900 p-5  py-20">
+                className="bg-slate-50 dark:bg-gradient-to-r bg-center from-black via-gray-900 to-green-900 p-5  py-20">
                 <div className=' flex justify-around' data-aos="fade-down">
                     <div className="container md:w-[50%] mx-auto md:mt-14">
                         <h4 className="text-3xl md:text-4xl font-bold text-left md:-ml-20 text-white mb-4">Hi, I am</h4>
@@ -33,20 +36,42 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="flex justify-center gap-6" data-aos="fade-up">
-                    <NavLink
-                        to={'work'}
-                        className="bg-black text-teal-400 px-6 py-3 rounded-lg shadow-md hover:bg-teal-400 hover:text-black transition"
-                    >
-                        View My Work
-                    </NavLink>
-                    <Link
-                        to="contact"
-                        smooth={true}
-                        duration={500}
-                        className="border cursor-pointer border-teal-400 px-6 py-3 rounded-lg shadow-md hover:bg-teal-400 hover:text-black transition"
-                    >
-                        Get In Touch
-                    </Link>
+                    {/* <div className=" p-1 rounded-md">
+                        <AwesomeButton
+                            type="primary"
+                            className="!bg-blue-500 !text-white !rounded-md "
+                            onPress={() => navigate("/work")}
+                        >
+                            View My Work
+                        </AwesomeButton>
+                    </div> */}
+                    <div>
+                        <NavLink to="/work">
+                            <button className="button" role="button">
+                            <span>View My Work</span>
+                            </button>
+                        </NavLink>
+                    </div>
+                    <div>
+                        <Link to="contact"
+                          smooth={true}
+                          duration={500}>
+                            <button className="button1" role="button"> Get In Touch</button>
+                        </Link>
+                    </div>
+                    {/* <AwesomeButton>
+                        <Link
+                            to="contact"
+                            type="primary"
+                            smooth={true}
+                            size="small"
+                            duration={500}
+                            className="border cursor-pointer border-teal-400 px-6 py-3 rounded-lg shadow-md  hover:text-black transition"
+                        >
+                           
+                        </Link>
+                    </AwesomeButton> */}
+
                 </div>
             </section>
 

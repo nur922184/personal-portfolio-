@@ -41,14 +41,14 @@ const Blog = () => {
       </h1>
       <ul className="space-y-6">
         {posts.map((post) => (
-          <li key={post.id} className="border-l-2 border-gray-600 pl-4 hover:cursor-pointer hover:ml-5">
+          <li key={post.id} className="border-l-2 border-gray-600 hover:border-teal-400 hover:text-teal-400 pl-4 hover:cursor-pointer hover:ml-5">
             <Link
               to={`details/${post.id}`}
               className="text-lg font-semibold"
               onClick={handleScrollToDetails}
             >
               {post.title}
-            <span className="text-gray-400 text-sm block mt-1">
+            <span className="text-gray-400  hover:text-teal-400  text-sm block mt-1">
               {post.date}
             </span>
             </Link>

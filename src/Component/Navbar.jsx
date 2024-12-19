@@ -1,17 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaHome, FaUser, FaBriefcase, FaBook } from 'react-icons/fa';
+import { BsMoon, BsSun } from 'react-icons/bs';
 
 const Navbar = () => {
+
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") || "light" // Default to light theme
+  );
+
+  // Toggle theme and save to localStorage
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+  };
+
+  // Apply theme class to the root element
+  useEffect(() => {
+    const rootElement = document.documentElement;
+    if (theme === "dark") {
+      rootElement.classList.add("dark");
+    } else {
+      rootElement.classList.remove("dark");
+    }
+  }, [theme]);
+
   return (
     <nav className="md:fixed w-full bg-gradient-to-r from-black via-gray-900 to-green-900 bg-opacity-30 p-4">
       <div className="container mx-auto flex items-center justify-between">
         {/* Left: Location */}
         <div className="text-white text-sm">
           <NavLink to={'/'}>
-          Moni<span className='text-teal-400 font-bold'>RUZZ</span>aman
+            Moni<span className='text-teal-400 font-bold'>RUZZ</span>aman
           </NavLink>
-          </div>
+        </div>
 
         {/* Center: Links */}
         <ul className="hidden md:flex items-center gap-6 text-white">
@@ -19,10 +42,9 @@ const Navbar = () => {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `flex items-center gap-2 ${
-                  isActive
-                    ? 'text-teal-400 border-b-2 border-teal-400'
-                    : 'hover:text-teal-400 border-b-2 border-transparent hover:border-teal-400'
+                `flex items-center gap-2 ${isActive
+                  ? 'text-teal-400 border-b-2 border-teal-400'
+                  : 'hover:text-teal-400 border-b-2 border-transparent hover:border-teal-400'
                 } transition`
               }
             >
@@ -34,10 +56,9 @@ const Navbar = () => {
             <NavLink
               to="/about"
               className={({ isActive }) =>
-                `flex items-center gap-2 ${
-                  isActive
-                    ? 'text-teal-400 border-b-2 border-teal-400'
-                    : 'hover:text-teal-400 border-b-2 border-transparent hover:border-teal-400'
+                `flex items-center gap-2 ${isActive
+                  ? 'text-teal-400 border-b-2 border-teal-400'
+                  : 'hover:text-teal-400 border-b-2 border-transparent hover:border-teal-400'
                 } transition`
               }
             >
@@ -49,10 +70,9 @@ const Navbar = () => {
             <NavLink
               to="/work"
               className={({ isActive }) =>
-                `flex items-center gap-2 ${
-                  isActive
-                    ? 'text-teal-400 border-b-2 border-teal-400'
-                    : 'hover:text-teal-400 border-b-2 border-transparent hover:border-teal-400'
+                `flex items-center gap-2 ${isActive
+                  ? 'text-teal-400 border-b-2 border-teal-400'
+                  : 'hover:text-teal-400 border-b-2 border-transparent hover:border-teal-400'
                 } transition`
               }
             >
@@ -64,10 +84,9 @@ const Navbar = () => {
             <NavLink
               to="/blog"
               className={({ isActive }) =>
-                `flex items-center gap-2 ${
-                  isActive
-                    ? 'text-teal-400 border-b-2 border-teal-400'
-                    : 'hover:text-teal-400 border-b-2 border-transparent hover:border-teal-400'
+                `flex items-center gap-2 ${isActive
+                  ? 'text-teal-400 border-b-2 border-teal-400'
+                  : 'hover:text-teal-400 border-b-2 border-transparent hover:border-teal-400'
                 } transition`
               }
             >
@@ -82,6 +101,12 @@ const Navbar = () => {
           <NavLink to="/resume" className="hover:underline">
             Resume
           </NavLink>
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-full ml-6 bg-gray-200 dark:bg-gray-700 text-black dark:text-white transition-colors duration-300"
+          >
+            {theme === "light" ? <BsMoon size={14} /> : <BsSun size={14} />}
+          </button>
         </div>
       </div>
 
@@ -92,10 +117,9 @@ const Navbar = () => {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `${
-                  isActive
-                    ? 'text-teal-400 border-b-2 border-teal-400'
-                    : 'text-white hover:text-teal-400 border-b-2 border-transparent hover:border-teal-400'
+                `${isActive
+                  ? 'text-teal-400 border-b-2 border-teal-400'
+                  : 'text-white hover:text-teal-400 border-b-2 border-transparent hover:border-teal-400'
                 } transition`
               }
             >
@@ -106,10 +130,9 @@ const Navbar = () => {
             <NavLink
               to="/about"
               className={({ isActive }) =>
-                `${
-                  isActive
-                    ? 'text-teal-400 border-b-2 border-teal-400'
-                    : 'text-white hover:text-teal-400 border-b-2 border-transparent hover:border-teal-400'
+                `${isActive
+                  ? 'text-teal-400 border-b-2 border-teal-400'
+                  : 'text-white hover:text-teal-400 border-b-2 border-transparent hover:border-teal-400'
                 } transition`
               }
             >
@@ -120,10 +143,9 @@ const Navbar = () => {
             <NavLink
               to="/work"
               className={({ isActive }) =>
-                `${
-                  isActive
-                    ? 'text-teal-400 border-b-2 border-teal-400'
-                    : 'text-white hover:text-teal-400 border-b-2 border-transparent hover:border-teal-400'
+                `${isActive
+                  ? 'text-teal-400 border-b-2 border-teal-400'
+                  : 'text-white hover:text-teal-400 border-b-2 border-transparent hover:border-teal-400'
                 } transition`
               }
             >
@@ -134,10 +156,9 @@ const Navbar = () => {
             <NavLink
               to="/blog"
               className={({ isActive }) =>
-                `${
-                  isActive
-                    ? 'text-teal-400 border-b-2 border-teal-400'
-                    : 'text-white hover:text-teal-400 border-b-2 border-transparent hover:border-teal-400'
+                `${isActive
+                  ? 'text-teal-400 border-b-2 border-teal-400'
+                  : 'text-white hover:text-teal-400 border-b-2 border-transparent hover:border-teal-400'
                 } transition`
               }
             >

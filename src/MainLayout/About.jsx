@@ -1,7 +1,7 @@
 import React from 'react';
 import AboutHead from './LayoutComponent/AboutHead';
 import SideNavigation from './LayoutComponent/SideNavigation';
-import Contact from '../Component/Contact';
+
 
 
 

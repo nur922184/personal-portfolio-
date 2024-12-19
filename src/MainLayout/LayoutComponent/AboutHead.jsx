@@ -43,7 +43,7 @@ const AboutHead = () => {
   ];
 
   return (
-    <header className="bg-gray-900 text-white py-10 md:mt-10">
+    <header className="  dark:bg-gray-900 text-gray-800 dark:text-white py-10 md:mt-10">
       <div className="  px-5 flex flex-col items-center text-center">
         {/* Profile Picture */}
         <div style={{

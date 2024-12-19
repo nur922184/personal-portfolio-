@@ -11,14 +11,14 @@ const SideNavigation = () => {
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col items-center justify-center">
           {/* Page content here */}
-          <label htmlFor="my-drawer-2" className=" btn btn-sm bg-gray-950 text-xl drawer-button text-teal-400 md:hidden">
+          <label htmlFor="my-drawer-2" className=" btn btn-sm dark:bg-gray-950 text-xl drawer-button text-teal-400 md:hidden">
             ≫
           </label>
         </div>
         <div className="drawer-side ">
           <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
           <nav
-            className={`h-[85%] md:h-[78%] md:w-52  lg:w-64 bg-gray-800 text-white flex flex-col py-4 px-3 transition-transform duration-300 z-40 rounded-lg`}
+            className={`h-[85%] md:h-[78%] md:w-52  lg:w-64 bg-violet-400 dark:bg-gray-800 dark:text-white flex flex-col py-4 px-3 transition-transform duration-300 z-40 rounded-lg`}
           >
             <div className="drawer-content mr-4 items-center">
               {/* Page content here */}
@@ -43,7 +43,7 @@ const SideNavigation = () => {
                 href="https://github.com/moniruzzaman2428"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white text-teal-400 transition"
+                className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-red-700"
               >
                 <FaGithub size={15} />
               </a>
@@ -51,41 +51,41 @@ const SideNavigation = () => {
                 href="https://www.linkedin.com/in/md-moniruzzaman-tonoy-7bb52b285/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white text-teal-400 transition"
+                className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-red-700"
               >
                 <FaLinkedin size={15} />
               </a>
               <a
                 href="https://x.com/moniruzzaman_24"
                 target="_blank"
-                className="hover:text-white text-teal-400 transition"
+                className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-red-700"
               >
                 <FaTimes size={15} />
               </a>
               <a
                 href="https://www.facebook.com/moniruzzaman.kendua"
                 target="_blank"
-               className="hover:text-white text-teal-400 transition"
+               className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-red-700"
               >
                 <FaFacebook size={15} />
               </a>
               <a
                 href="mailto:moniruzzaman2428@gmail.com"
                 target="_blank"
-               className="hover:text-white text-teal-400 transition"
+               className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-red-700"
               >
                 <FaEnvelope size={15} />
               </a>
               <a
                 href="https://www.youtube.com/@moniruzzamam2428"
                 target="_blank"
-                className="hover:text-white text-teal-400 transition"
+                className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-red-700"
               >
                 <FaYoutube size={15} />
               </a>
               <a
                 href="tel:+8801618160869"
-               className="hover:text-white text-teal-400 transition"
+               className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-red-700"
               >
                 <FaPhone size={15}/>
               </a>
