@@ -105,7 +105,7 @@ const Navbar = () => {
             onClick={toggleTheme}
             className="p-2 rounded-full ml-6 bg-gray-200 dark:bg-gray-700 text-black dark:text-white transition-colors duration-300"
           >
-            {theme === "light" ? <BsMoon size={14} /> : <BsSun size={14} />}
+            {theme === "light" ? <BsMoon size={18} /> : <BsSun size={18} />}
           </button>
         </div>
       </div>

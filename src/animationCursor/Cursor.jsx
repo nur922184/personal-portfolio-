@@ -46,8 +46,8 @@ const Cursor = () => {
 
       {/* Custom Cursor Outline */}
       <div
-        className="fixed top-0 left-0 w-[35px] h-[35px] border-dashed border-2 dark:border-white/50 border-blue-500
-                   rounded-full z-50 pointer-events-none shadow-md animate-spin"
+        className="fixed top-0 left-0 w-[35px] h-[35px] border-dotted border dark:border-white/50 border-blue-500
+                   rounded-full z-50 pointer-events-none animate-spin"
         data-cursor-outline
       ></div>
     </>

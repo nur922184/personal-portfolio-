@@ -1,11 +1,19 @@
 import React from 'react';
-import LoadingPage from '../Component/LoadingPage';
 
 const Resume = () => {
     return (
-        <div className=''>
-            <LoadingPage></LoadingPage>
-        <div className='absolute bottom-52 ml-52 md:left-[150px]  lg:left-[440px]'>This is Private</div>
+        <div className="h-screen flex flex-col justify-center items-center text-center">
+            <div>
+                <span className="loading loading-spinner text-primary"></span>
+                <span className="loading loading-spinner text-secondary"></span>
+                <span className="loading loading-spinner text-accent"></span>
+                <span className="loading loading-spinner text-neutral"></span>
+                <span className="loading loading-spinner text-info"></span>
+                <span className="loading loading-spinner text-success"></span>
+                <span className="loading loading-spinner text-warning"></span>
+                <span className="loading loading-spinner text-error"></span>
+            </div>
+            <div className='mt-3'>This is Private</div>
         </div>
     );
 };

@@ -11,8 +11,8 @@ const SideNavigation = () => {
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col items-center justify-center">
           {/* Page content here */}
-          <label htmlFor="my-drawer-2" className=" btn btn-sm dark:bg-gray-950 text-xl drawer-button text-teal-400 md:hidden">
-            ≫
+          <label htmlFor="my-drawer-2" className=" btn btn-sm bg-violet-400 dark:bg-gray-950 text-xl drawer-button text-teal-400 md:hidden">
+            |-≫
           </label>
         </div>
         <div className="drawer-side ">
