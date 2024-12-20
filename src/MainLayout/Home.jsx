@@ -1,6 +1,6 @@
 import React, { useEffect, } from 'react';
 // import { FaCode, FaUsers, FaRocket } from 'react-icons/fa';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, } from 'react-router-dom';
 import { Link } from 'react-scroll';
 import Contact from '../Component/Contact';
 import ThankYou from '../Component/ThankYou';

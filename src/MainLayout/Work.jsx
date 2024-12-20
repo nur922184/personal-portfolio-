@@ -30,6 +30,15 @@ const Works = () => {
       sourceCode: "https://github.com/username/ecommerce",
       image: "https://i.ibb.co.com/Lg2JQkH/Screenshot-2024-11-28-090735.png",
     },
+    {
+      id: 4,
+      title: "Crowd Funding",
+      description:
+        "CrowdFund is a platform where people can raise money for different projects, ideas, or causes by inviting others to contribute financially.",
+      liveDemo: "https://my-assignment-ten-57a0d.web.app/",
+      sourceCode: "https://github.com/username/ecommerce",
+      image: "https://i.ibb.co.com/m9RctdG/Screenshot-2024-12-20-233742.png",
+    },
   ];
 
 
@@ -40,7 +49,7 @@ const Works = () => {
         <h2 className="text-4xl font-bold dark:text-teal-400 text-gray-900 text-center mb-16">
           My Works
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {projects.map((project) => (
             <div
               key={project.id}
@@ -51,7 +60,7 @@ const Works = () => {
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-64 object-cover rounded-lg"
+                className="w-full max-h-72 object-cover object-center rounded-lg"
               />
               <div className="p-4">
                 <h3 className="text-xl font-semibold mb-3 dark:text-gray-200 text-gray-900">

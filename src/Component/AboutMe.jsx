@@ -28,14 +28,14 @@ const AboutMe = () => {
         <img
           src={img} // Replace with your image URL
           alt="Md Moniruzzaman Tonoy"
-          className="w-32 h-32 rounded-full bg-cover mb-6 shadow-lg"
+          className="w-32 h-32 rounded-full bg-cover mb-6 shadow-lg transition-transform duration-300 transform hover:scale-150"
         />
 
-        <h1 className="text-2xl font-bold mb-4 text-center text-teal-400">About Me</h1>
+        <h1 className="text-2xl font-bold mb-4 text-center dark:text-teal-400">About Me</h1>
       </div>
 
       {/* Bio Steps */}
-      <ol className="list-decimal list-inside space-y-4 text-gray-200">
+      <ol className="list-decimal list-inside space-y-4 text-gray-800 dark:text-gray-200">
         {bioSteps.map((step, index) => (
           <li key={index} className="pl-2">{step}</li>
         ))}

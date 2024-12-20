@@ -49,12 +49,12 @@ const AboutHead = () => {
         <div style={{
           backgroundImage: `url(${animation1})`,
         }}
-          className="w-36 h-36 rounded-full overflow-hidden bg-slate-200 mb-5 justify-center  items-center ">
+          className="w-36 h-36 rounded-full  bg-slate-200 mb-5 justify-center  items-center ">
           <div className='w-32 h-32 rounded-full overflow-hidden mx-auto mt-2' >
             <img
               src={Me} // Replace with your profile image link
               alt="Md Moniruzzaman Tonoy"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-transform duration-400  hover:scale-150 "
             />
           </div>
         </div>

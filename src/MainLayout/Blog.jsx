@@ -41,18 +41,21 @@ const Blog = () => {
       </h1>
       <ul className="space-y-6">
         {posts.map((post) => (
-          <li key={post.id} className="border-l-2 border-gray-600 hover:border-teal-400 hover:text-teal-400 pl-4 hover:cursor-pointer hover:ml-5">
-            <Link
-              to={`details/${post.id}`}
-              className="text-lg font-semibold"
-              onClick={handleScrollToDetails}
-            >
-              {post.title}
-            <span className="text-gray-400  hover:text-teal-400  text-sm block mt-1">
-              {post.date}
-            </span>
-            </Link>
-          </li>
+          <div>
+            <li key={post.id} className="group hover:shadow-2xl hover:text-pink-500 transition-all duration-300 ease-in-out pl-4 hover:cursor-pointer ">
+              <Link
+                to={`details/${post.id}`}
+                className="text-lg font-semibold "
+                onClick={handleScrollToDetails}
+              >
+                <span className="bg-left-bottom bg-gradient-to-r from-pink-500 to-pink-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">{post.title}</span>
+                <span className="dark:text-gray-400  dark:hover:text-teal-400  text-sm block mt-1">
+                  {post.date}
+                </span>
+              </Link>
+            </li>
+          </div>
+
         ))}
       </ul>
 
@@ -61,7 +64,7 @@ const Blog = () => {
         <Outlet />
       </div>
       <div className="mt-20">
-      <ThankYou></ThankYou>
+        <ThankYou></ThankYou>
       </div>
     </div>
   );

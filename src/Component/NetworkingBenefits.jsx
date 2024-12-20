@@ -55,7 +55,7 @@ const NetworkingBenefits = () => {
 
   return (
     <section className="py-8 px-4">
-      <h2 className="text-3xl font-bold text-center text-gray-100 mb-6">
+      <h2 className="text-3xl font-bold text-center dark:text-gray-100 mb-6">
         Networking is Important for Career Growth
       </h2>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -77,7 +77,7 @@ const NetworkingBenefits = () => {
                 {copiedIndex === index ? <FaCheck /> : <FaCopy />}
               </button>
             </div>
-            <p className="text-gray-200 mt-2">{benefit.description}</p>
+            <p className="dark:text-gray-200 mt-2">{benefit.description}</p>
           </div>
         ))}
       </div>

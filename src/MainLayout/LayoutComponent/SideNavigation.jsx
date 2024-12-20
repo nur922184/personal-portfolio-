@@ -1,6 +1,6 @@
 import { Link } from 'react-scroll';
 import img from '../../assets/mt.png'
-import { FaEnvelope, FaFacebook, FaGithub,  FaLinkedin,  FaPhone, FaTimes, FaYoutube, } from 'react-icons/fa';
+import { FaEnvelope, FaFacebook, FaGithub, FaLinkedin, FaPhone, FaTimes, FaYoutube, } from 'react-icons/fa';
 
 const SideNavigation = () => {
 
@@ -32,11 +32,11 @@ const SideNavigation = () => {
                 <img
                   src={img} // Replace with your profile image link
                   alt="Md Moniruzzaman Tonoy"
-                  className="w-full h-full"
+                  className="w-full h-full transition-transform duration-300 transform hover:scale-150"
                 />
               </div>
               <h2 className="text-xl font-bold text-center">Md Moniruzzaman Tonoy</h2>
-              <p className="text-gray-400 text-center text-sm">Full Stack Developer</p>
+              <p className=" text-green-50 hover:text-cyan-900 dark:text-gray-400 dark:hover:text-teal-400 text-center text-sm">Full Stack Developer</p>
             </div>
             <div className="flex space-x-3 mb-6">
               <a
@@ -65,14 +65,14 @@ const SideNavigation = () => {
               <a
                 href="https://www.facebook.com/moniruzzaman.kendua"
                 target="_blank"
-               className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-red-700"
+                className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-red-700"
               >
                 <FaFacebook size={15} />
               </a>
               <a
                 href="mailto:moniruzzaman2428@gmail.com"
                 target="_blank"
-               className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-red-700"
+                className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-red-700"
               >
                 <FaEnvelope size={15} />
               </a>
@@ -85,9 +85,9 @@ const SideNavigation = () => {
               </a>
               <a
                 href="tel:+8801618160869"
-               className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-red-700"
+                className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-red-700"
               >
-                <FaPhone size={15}/>
+                <FaPhone size={15} />
               </a>
             </div>
 
@@ -98,7 +98,8 @@ const SideNavigation = () => {
                   to="introduction"
                   smooth={true}
                   duration={500}
-                  className="cursor-pointer text-gray-400 hover:text-teal-400 text-sm transition hover:ml-1"
+                  className="cursor-pointer text-green-50 hover:text-cyan-900 dark:text-gray-400 dark:hover:text-teal-400 text-sm transition hover:ml-1"
+
                 >
                   ▷ Introduction
                 </Link>
@@ -108,7 +109,7 @@ const SideNavigation = () => {
                   to="work-experience"
                   smooth={true}
                   duration={500}
-                  className="cursor-pointer text-gray-400 hover:text-teal-400 text-sm transition hover:ml-1"
+                  className="cursor-pointer text-green-50 hover:text-cyan-900 dark:text-gray-400 dark:hover:text-teal-400 text-sm transition hover:ml-1"
                 >
                   ▷ Work Experience
                 </Link>
@@ -118,7 +119,8 @@ const SideNavigation = () => {
                   to="educational-qualification"
                   smooth={true}
                   duration={500}
-                  className="cursor-pointer text-gray-400 hover:text-teal-400 text-sm transition hover:ml-1"
+                  className="cursor-pointer text-green-50 hover:text-cyan-900 dark:text-gray-400 dark:hover:text-teal-400 text-sm transition hover:ml-1"
+
                 >
                   ▷ Studies
                 </Link>
@@ -128,7 +130,8 @@ const SideNavigation = () => {
                   to="technical-skills"
                   smooth={true}
                   duration={500}
-                  className="cursor-pointer text-gray-400 hover:text-teal-400 text-sm transition hover:ml-1"
+                  className="cursor-pointer text-green-50 hover:text-cyan-900 dark:text-gray-400 dark:hover:text-teal-400 text-sm transition hover:ml-1"
+
                 >
                   ▷ Technical Skills
                 </Link>
@@ -138,7 +141,8 @@ const SideNavigation = () => {
                   to="contact"
                   smooth={true}
                   duration={500}
-                  className="cursor-pointer text-gray-400 hover:text-teal-400 text-sm transition hover:ml-1"
+                  className="cursor-pointer text-green-50 hover:text-cyan-900 dark:text-gray-400 dark:hover:text-teal-400 text-sm transition hover:ml-1"
+
                 >
                   ▷ Contact
                 </Link>
@@ -146,7 +150,7 @@ const SideNavigation = () => {
             </ul>
             {/* Language Switcher */}
             <div className="mt-auto">
-              <p className="text-teal-400 text-sm md:mt-3">Language</p>
+              <p className="dark:text-teal-400 text-sm md:mt-3">Language</p>
               <div className="flex space-x-2 md:mb-4">
                 <div className="text-sm text-white px-4 py-2 rounded">
                   English

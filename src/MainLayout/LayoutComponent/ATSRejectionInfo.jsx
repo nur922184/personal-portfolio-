@@ -3,12 +3,12 @@ import { FaInfoCircle, FaClipboardList, FaCheckCircle } from "react-icons/fa";
 
 const ATSRejectionInfo = () => {
   return (
-    <section className="py-8 px-4 text-slate-100">
-      <h2 className="text-3xl font-bold text-center text-gray-200 mb-6">
+    <section className="py-8 px-4 dark:text-slate-100">
+      <h2 className="text-3xl font-bold text-center dark:text-gray-200 mb-6">
         Why Do I Apply to Hundreds of Jobs but Receive No Responses?
       </h2>
       <div className="max-w-4xl mx-auto p-6 rounded-lg shadow-md">
-        <p className="text-gray-200 text-lg leading-relaxed mb-6">
+        <p className="dark:text-gray-200 text-lg leading-relaxed mb-6">
           In today's competitive job market, many companies use Applicant
           Tracking Systems (ATS) to streamline their hiring processes. This
           software filters out resumes, selecting only those from relevant and
@@ -22,7 +22,7 @@ const ATSRejectionInfo = () => {
           <h3 className="text-2xl font-semibold flex items-center text-teal-600 mb-3">
             <FaInfoCircle className="mr-2" /> How Does ATS Work?
           </h3>
-          <p className="text-gray-200">
+          <p className="dark:text-gray-200">
             ATS uses algorithms to scan resumes and filter them based on
             specific keywords, experience, skills, and other qualifications. HR
             sets certain criteria for a job position, and ATS sorts resumes
@@ -35,7 +35,7 @@ const ATSRejectionInfo = () => {
             <FaClipboardList className="mr-2 " /> Tips for Creating ATS-Friendly
             Resumes:
           </h3>
-          <ul className="space-y-3  hover:text-white transition">
+          <ul className="space-y-3 transition">
             {[
               "Include Specific Keywords from the Job Description",
               "Use Simple Formatting",
@@ -48,7 +48,7 @@ const ATSRejectionInfo = () => {
             ].map((tip, index) => (
               <li
                 key={index}
-                className="flex items-center text-gray-400 text-sm p-3 rounded shadow-sm hover:bg-teal-400 hover:text-white transition"
+                className="flex items-center dark:text-gray-400 text-sm p-3 rounded shadow-sm hover:bg-teal-300  dark:hover:text-black transition"
               >
                 <FaCheckCircle className="text-teal-600 mr-3 hover:text-white transition" /> {tip}
               </li>
