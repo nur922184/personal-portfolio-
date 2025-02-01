@@ -25,9 +25,9 @@ const Navbar = () => {
       rootElement.classList.remove("dark");
     }
   }, [theme]);
-
+//  className="bg-opacity-25 md:fixed w-full bg-gradient-to-r from-black via-gray-900 to-green-900 p-4"
   return (
-    <nav className="md:fixed w-full bg-gradient-to-r from-black via-gray-900 to-green-900 bg-opacity-30 p-4">
+    <nav className="bg-opacity-25 md:fixed w-full bg-gradient-to-r from-black via-gray-900 to-green-900 p-4">
       <div className="container mx-auto flex items-center justify-between">
         {/* Left: Location */}
         <div className="text-white text-sm">

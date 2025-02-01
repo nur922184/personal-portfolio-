@@ -20,7 +20,7 @@ const ThankYou = () => {
         {/* Email Subscription Form */}
         <form className="flex justify-center items-center space-x-2">
           <div class="input-container">
-            <input placeholder="Email" type="email" />
+            <input placeholder="Email" type="email" required />
           </div>
           {/* <input
             type="email"

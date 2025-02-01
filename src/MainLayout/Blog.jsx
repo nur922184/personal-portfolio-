@@ -47,10 +47,9 @@ const Blog = () => {
               <NavLink
                 to={`details/${post.id}`}
                 className={({ isActive }) =>
-                  `text-lg font-semibold ${
-                    isActive
-                      ? "text-pink-500 underline"
-                      : "hover:text-pink-500"
+                  `text-lg font-semibold ${isActive
+                    ? "text-pink-500 underline"
+                    : "hover:text-pink-500"
                   }`
                 }
                 onClick={handleScrollToDetails}
