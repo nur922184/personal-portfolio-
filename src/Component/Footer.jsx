@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container mx-auto md:flex  md:flex-row md:items-center md:justify-between">
         {/* Left Section: Copyright */}
         <div className="text-sm  md:text-left">
-          © 2024 / Md Moniruzzaman Tonoy
+          © 2025 / Md Moniruzzaman Tonoy
         </div>
 
         {/* Right Section: Social Icons */}

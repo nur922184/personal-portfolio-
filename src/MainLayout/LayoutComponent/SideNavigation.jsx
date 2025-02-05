@@ -12,13 +12,13 @@ const SideNavigation = () => {
         <div className="drawer-content flex flex-col items-center justify-center">
           {/* Page content here */}
           <label htmlFor="my-drawer-2" className=" btn btn-sm bg-violet-400 dark:bg-gray-950 text-xl drawer-button text-teal-400 md:hidden">
-            |-≫
+            ≫
           </label>
         </div>
         <div className="drawer-side ">
           <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
           <nav
-            className={`h-[85%] md:h-[78%] md:w-52  lg:w-64 bg-violet-400 dark:bg-gray-800 dark:text-white flex flex-col py-4 px-3 transition-transform duration-300 z-40 rounded-lg`}
+            className={`h-[100%] md:h-[78%] md:w-52  lg:w-64 bg-violet-400 dark:bg-gray-800 dark:text-white flex flex-col py-4 px-3 transition-transform duration-300 z-40 rounded-lg`}
           >
             <div className="drawer-content mr-4 items-center">
               {/* Page content here */}
@@ -147,19 +147,21 @@ const SideNavigation = () => {
                   ▷ Contact
                 </Link>
               </li>
-            </ul>
-            {/* Language Switcher */}
-            <div className="mt-auto">
-              <p className="dark:text-teal-400 text-sm md:mt-3">Language</p>
-              <div className="flex space-x-2 md:mb-4">
-                <div className="text-sm text-white px-4 py-2 rounded">
-                  English
-                </div>
-                <div className="text-sm text-white px-4 py-2 rounded">
-                  Bangla
+
+              {/* Language Switcher */}
+              <div className="mt-auto">
+                <p className="dark:text-teal-400 text-sm md:mt-3">Language</p>
+                <div className="flex space-x-2 md:mb-4">
+                  <div className="text-sm text-white px-4 py-2 rounded">
+                    English
+                  </div>
+                  <div className="text-sm text-white px-4 py-2 rounded">
+                    Bangla
+                  </div>
                 </div>
               </div>
-            </div>
+
+            </ul>
           </nav>
         </div>
       </div>

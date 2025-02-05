@@ -16,7 +16,7 @@ const About = () => {
                     <SideNavigation></SideNavigation>
                 </div> */}
             <main className='grid md:grid-cols-12'>
-                <aside className='md:col-span-2 lg:col-span-3 md:mt-16 fixed '>
+                <aside className='md:col-span-2 lg:col-span-3 md:mt-16 fixed  '>
                     <SideNavigation></SideNavigation>
                 </aside>
                 <section className='md:col-span-10 lg:col-span-9 md:ml-56 lg:ml-72 lg:w-full'>
