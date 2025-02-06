@@ -15,12 +15,12 @@ const skills = [
 
 export default function SkillsShowcase() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-900 p-6">
-      <div className="bg-gray-800 p-8 rounded-2xl shadow-lg w-full max-w-4xl">
+    <div className="min-h-screen flex items-center justify-center dark:bg-gray-900 shadow-lg p-6">
+      <div className="dark:bg-gray-800 bg-violet-400 p-8 rounded-2xl shadow-lg w-full max-w-4xl">
         <h2 className="text-3xl font-bold text-white text-center mb-6">My Skills</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
           {skills.map((skill, index) => (
-            <div key={index} className="flex items-center space-x-3 p-4 bg-gray-700 rounded-xl shadow-md hover:scale-105 transition-transform">
+            <div key={index} className="flex items-center space-x-3 p-4 dark:bg-gray-700 bg-violet-300 opacity-70 rounded-xl shadow-md hover:scale-105 transition-transform">
               <span className="text-3xl">{skill.icon}</span>
               <p className="text-white text-lg">{skill.name}</p>
             </div>

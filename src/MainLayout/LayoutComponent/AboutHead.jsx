@@ -227,7 +227,7 @@ const AboutHead = () => {
       </section>
       {/* Contact Info */}
       <section id='contact'>
-        <div className="flex justify-center items-center min-h-screen bg-gray-900">
+        <div className="flex justify-center items-center min-h-screen dark:bg-gray-900">
           <ContactInfo />
         </div>
       </section>

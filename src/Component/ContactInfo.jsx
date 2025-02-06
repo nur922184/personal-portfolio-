@@ -2,7 +2,7 @@ import { FaMapMarkerAlt, FaClock, FaEnvelope, FaGlobe, FaFacebook, FaGithub, FaL
 
 const ContactInfo = () => {
   return (
-    <div className=" w-4/6 text-center mx-auto p-6 bg-gray-800 text-white rounded-lg shadow-lg">
+    <div className=" w-4/6 text-center mx-auto p-6 dark:bg-gray-800 bg-violet-400 text-white rounded-lg shadow-lg">
       <h2 className="text-2xl font-bold mb-4">📞 Contact Information</h2>
       <ul className="space-y-3">
         <li className="flex items-center">
