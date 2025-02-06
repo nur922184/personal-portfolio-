@@ -1,5 +1,6 @@
 import React from "react";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import lifelink from '../assets/lifelink.png'
 
 const Works = () => {
   const projects = [
@@ -18,17 +19,17 @@ const Works = () => {
       description:
         "A web app to manage cricket player availability and selections for matches.",
       liveDemo: "https://magical-gumption-061d0e.netlify.app/",
-      sourceCode: "https://github.com/username/donation-site",
+      sourceCode: "https://github.com/nur922184/gadget-heaven-accessories",
       image: "https://i.ibb.co.com/bHP8G53/Screenshot-2024-11-28-091404.png",
     },
     {
       id: 3,
-      title: "Path to Adoption Starts Here",
+      title: " Lifelink facilitators.",
       description:
-        "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has.",
-      liveDemo: "https://cozy-snickerdoodle-cf2180.netlify.app/",
-      sourceCode: "https://github.com/username/ecommerce",
-      image: "https://i.ibb.co.com/Lg2JQkH/Screenshot-2024-11-28-090735.png",
+        "To be the leading online platform for fostering meaningful and lasting relationships across Bangladesh and beyond.",
+      liveDemo: "https://my-final-project-36ab9.web.app/",
+      sourceCode: "https://github.com/nur922184/life-link-client",
+      image: lifelink,
     },
     {
       id: 4,
@@ -36,7 +37,7 @@ const Works = () => {
       description:
         "CrowdFund is a platform where people can raise money for different projects, ideas, or causes by inviting others to contribute financially.",
       liveDemo: "https://my-assignment-ten-57a0d.web.app/",
-      sourceCode: "https://github.com/username/ecommerce",
+      sourceCode: "https://github.com/nur922184/crowd-funding-client-10",
       image: "https://i.ibb.co.com/m9RctdG/Screenshot-2024-12-20-233742.png",
     },
   ];

@@ -8,37 +8,35 @@ import Contact from '../../Component/Contact';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { TypeAnimation } from 'react-type-animation';
+import SkillsShowcase from '../../Component/SkillsShowcase';
 
 const AboutHead = () => {
 
- useEffect(() => {
-  AOS.init({
-    duration: 1000, // Animation duration in ms
-    offset: 100, // Offset for triggering animations
-    once: true, // Trigger animation only once
-  });
-}, []);
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration in ms
+      offset: 100, // Offset for triggering animations
+      once: true, // Trigger animation only once
+    });
+  }, []);
   const experiences = [
     {
       title: 'Full Stack Developer',
-      company: 'Tech Solutions Ltd.',
-      duration: 'Jan 2022 - Present',
+      company: 'Programming Hero.',
+      duration: 'Jan 2024 - Present',
       description:
-        'Developed and maintained web applications using React, Node.js, and MongoDB. Collaborated with a team to optimize performance and enhance user experiences.',
+        `I am a Full Stack Developer, recently completed my course and did an internship. I can develop web applications using React.js, Node.js, Express.js and MongoDB. During the internship, I gained experience in real-world projects, where I worked on Responsive Web Design, REST API integration, and Authentication.
+        Also, I have worked on various individual and team-based projects, where I have gained expertise in Performance Optimization and Deployment, as well as improving the functionality of Frontend and Backend. I have a keen interest in learning new trends in technology and am always ready to take on new challenges to solve problems.`,
     },
     {
-      title: 'Frontend Developer',
-      company: 'Creative Minds',
-      duration: 'Jun 2020 - Dec 2021',
+      title: 'Microsoft Office Application',
+      company: 'Open IT Institute',
+      duration: 'Jun 2021 -Present ',
       description:
-        'Specialized in creating responsive designs using React and Tailwind CSS. Focused on improving UI/UX designs for better engagement.',
-    },
-    {
-      title: 'Intern - Web Development',
-      company: 'Web Innovators Inc.',
-      duration: 'Jan 2020 - May 2020',
-      description:
-        'Assisted in developing e-commerce websites and implemented SEO best practices. Gained hands-on experience in JavaScript and CSS frameworks.',
+        `**"I am Md. Moniruzzaman, a Level 1 Instructor, Executive Mentor, and Graphics Designer. Currently working as an Instructor for Microsoft Office courses at Open IT Institute and also doing Label One Courses.
+        I am proficient in all the important tools of Microsoft Office such as MS Word, Excel, PowerPoint, Access, etc. and provide practical training to students. I help students become proficient in the workplace by teaching office automation, data management, and presentation design.
+
+        At the same time, I am an experienced Graphics Designer, where I work using Adobe Photoshop, Illustrator, InDesign, Canva, and other design tools. I have gained experience by working on Logo Design, Branding, Banner & Poster Design, Social Media Design, and various print and digital design projects.`,
     },
   ];
 
@@ -132,23 +130,23 @@ const AboutHead = () => {
         <div className="container mx-auto w-[70%]">
           <h3 className="text-3xl font-bold mb-8">About Me</h3>
           <TypeAnimation
-        splitter={(str) => str.split(/(?= )/)} // 'Lorem ipsum dolor' -> ['Lorem', ' ipsum', ' dolor']
-        sequence={[
-          `I am a computer specialist. I am now working as computer operator in open IT institute. I studied from Kendua Joyhori Spri Government High School. Now I am working on a special course "Web Design.    
+            splitter={(str) => str.split(/(?= )/)} // 'Lorem ipsum dolor' -> ['Lorem', ' ipsum', ' dolor']
+            sequence={[
+              `I am a computer specialist. I am now working as computer operator in open IT institute. I studied from Kendua Joyhori Spri Government High School. Now I am working on a special course "Web Design.    
           I'm a self-driven Frontend Developer with a strong passion for
             crafting beautiful, user-friendly web applications. I have
             experience in working with modern technologies like React, Tailwind
             CSS, and more. My focus is always on delivering clean, scalable
             code and a seamless user experience. `,
-        
-          15000,
-          '',
-        ]}
-        speed={{ type: 'keyStrokeDelayInMs', value: 30 }}
-        omitDeletionAnimation={true}
-        style={{ fontSize: '1em', display: 'block', minHeight: '200px' }}
-        repeat={1}
-      />
+
+              15000,
+              '',
+            ]}
+            speed={{ type: 'keyStrokeDelayInMs', value: 30 }}
+            omitDeletionAnimation={true}
+            style={{ fontSize: '1em', display: 'block', minHeight: '200px' }}
+            repeat={1}
+          />
         </div>
       </section>
 
@@ -156,7 +154,7 @@ const AboutHead = () => {
       <section id='work-experience' className=" bg-violet-400 rounded-md dark:bg-gray-900 dark:text-white py-10 px-6">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold text-teal-400 text-center mb-8">Work Experience</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
             {experiences.map((exp, index) => (
               <div
                 key={index}
@@ -185,7 +183,7 @@ const AboutHead = () => {
                 Master of Computer Engineering
               </h3>
               <p className="text-gray-600">XYZ University</p>
-              <p className="text-gray-500 text-sm">2019 - 2021</p>
+              <p className="text-gray-500 text-sm">0000-0000</p>
             </div>
 
             {/* Education Item 2 */}
@@ -194,7 +192,7 @@ const AboutHead = () => {
                 Bachelor of Science in Computer Science
               </h3>
               <p className="text-gray-600">ABC University</p>
-              <p className="text-gray-500 text-sm">2015 - 2019</p>
+              <p className="text-gray-500 text-sm">0000-0000</p>
             </div>
 
             {/* Education Item 3 */}
@@ -203,7 +201,7 @@ const AboutHead = () => {
                 Higher Secondary Certificate (HSC)
               </h3>
               <p className="text-gray-600">National College</p>
-              <p className="text-gray-500 text-sm">2013 - 2015</p>
+              <p className="text-gray-500 text-sm">2025 - 2026</p>
             </div>
 
             {/* Education Item 4 */}
@@ -211,8 +209,8 @@ const AboutHead = () => {
               <h3 className="text-xl font-semibold text-gray-200">
                 Secondary School Certificate (SSC)
               </h3>
-              <p className="text-gray-600">Central High School</p>
-              <p className="text-gray-500 text-sm">2011 - 2013</p>
+              <p className="text-gray-600">Kendua Joyhori Spri govt High School</p>
+              <p className="text-gray-500 text-sm">2023-2024</p>
             </div>
           </div>
         </div>
@@ -220,68 +218,9 @@ const AboutHead = () => {
 
 
       {/* Technical Skills */}
-      <section id="technical-skills"
-        style={{
-          backgroundImage: `url(${animation})`,
-        }}
-        className="p-8 bg-cover bg-center text-white font-bold">
-        <h2 className="text-4xl font-bold text-teal-400 text-center">Technical Skills</h2>
-        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4">
-          {/* React & Redux */}
-          <div className="flex items-center space-x-4">
-            <FaReact className="text-blue-500 text-8xl font-extrabold" />
-            <p className=" text-sm">
-              <span className="font-extrabold text-teal-500">React & Redux:</span> Developing dynamic, responsive front-ends with React, Redux, and hooks for state management.
-            </p>
-          </div>
-
-          {/* Node.js & Express */}
-          <div className="flex items-center space-x-4">
-            <FaNodeJs className="text-green-600 text-8xl font-extrabold" />
-            <p className=" text-sm">
-              <span className="font-extrabold text-teal-500">Node.js & Express:</span> Building scalable RESTful APIs and real-time services using Node.js and Express, with JWT authentication.
-            </p>
-          </div>
-
-          {/* Laravel & PHP */}
-          <div className="flex items-center space-x-4">
-            <FaLaravel className="text-red-500 text-8xl font-extrabold" />
-            <p className=" text-sm">
-              <span className="font-extrabold text-teal-500">Laravel & PHP:</span> Developing secure and maintainable back-end systems with Laravel, leveraging Eloquent ORM and MySQL.
-            </p>
-          </div>
-
-          {/* Prisma */}
-          <div className="flex items-center space-x-4">
-            <SiPrisma className="text-indigo-600 text-8xl font-extrabold" />
-            <p className=" text-sm">
-              <span className="font-extrabold text-teal-500">Prisma:</span> Managing database schemas and queries efficiently using Prisma ORM for both SQL and NoSQL databases.
-            </p>
-          </div>
-
-          {/* Tailwind CSS */}
-          <div className="flex items-center space-x-4">
-            <SiTailwindcss className="text-teal-500 text-8xl font-extrabold" />
-            <p className=" text-sm">
-              <span className="font-extrabold text-teal-500">Tailwind CSS:</span> Designing responsive, modern UIs using Tailwind CSS for rapid styling and consistent design systems.
-            </p>
-          </div>
-
-          {/* MongoDB & SQL */}
-          <div className="flex items-center space-x-4">
-            <SiMongodb className="text-green-700 text-8xl font-extrabold" />
-            <p className=" text-sm">
-              <span className="font-extrabold text-teal-500">MongoDB & SQL:</span> Managing data with MongoDB for NoSQL solutions and MySQL/PostgreSQL for relational databases.
-            </p>
-          </div>
-
-          {/* Git & CI/CD */}
-          <div className="flex items-center space-x-4">
-            <FaGitAlt className="text-orange-600 text-8xl font-extrabold" />
-            <p className=" text-sm">
-              <span className="font-extrabold text-teal-500">Git & CI/CD:</span> Version control with Git and automating deployments using CI/CD pipelines (GitHub Actions, Jenkins).
-            </p>
-          </div>
+      <section id="technical-skills">
+        <div>
+          <SkillsShowcase></SkillsShowcase>
         </div>
 
       </section>

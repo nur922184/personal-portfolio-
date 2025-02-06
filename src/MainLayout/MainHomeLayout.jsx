@@ -7,7 +7,7 @@ import Cursor from '../animationCursor/Cursor';
 const MainHomeLayout = () => { 
 
     return (
-        <div className='bg-violet-300 dark:bg-gray-900 text-black dark:text-white transition-colors duration-300 min-h-screen'>
+        <div className='bg-violet-300 top-7 dark:bg-gray-900 text-black dark:text-white transition-colors duration-300 min-h-screen'>
             <header>
                 <Cursor></Cursor>
                 <Header></Header>
