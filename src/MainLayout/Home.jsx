@@ -19,7 +19,7 @@ const Home = () => {
     // const navigate = useNavigate();
 
     return (
-        <div>
+        <div >
             {/* Hero Section */}
             <section id="home"
                 style={{
@@ -48,14 +48,14 @@ const Home = () => {
                     <div>
                         <NavLink to="/work">
                             <button className="button" role="button">
-                            <span>View My Work</span>
+                                <span>View My Work</span>
                             </button>
                         </NavLink>
                     </div>
                     <div>
                         <Link to="contact"
-                          smooth={true}
-                          duration={500}>
+                            smooth={true}
+                            duration={500}>
                             <button className="button1" role="button"> Get In Touch</button>
                         </Link>
                     </div>

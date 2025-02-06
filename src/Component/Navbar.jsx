@@ -6,7 +6,7 @@ import { BsMoon, BsSun } from 'react-icons/bs';
 const Navbar = () => {
 
   const [theme, setTheme] = useState(
-    localStorage.getItem("theme") || "light" // Default to light theme
+    localStorage.getItem("theme") || "dark" // Default to light theme
   );
 
   // Toggle theme and save to localStorage

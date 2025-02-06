@@ -3,7 +3,7 @@ import { FaDownload } from "react-icons/fa";
 
 const Resume = () => {
   // রিজিউমের লিংক এখানে দিন
-  const resumeUrl = "https://drive.google.com/file/d/1TY4hrgfVKLmMxo0PsSuiz25kQp7PPyuW/view?usp=sharing"; 
+  const resumeUrl = "https://drive.google.com/file/d/1TY4hrgfVKLmMxo0PsSuiz25kQp7PPyuW/view"; 
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-6">

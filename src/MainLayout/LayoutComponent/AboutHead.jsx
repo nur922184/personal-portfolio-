@@ -9,6 +9,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { TypeAnimation } from 'react-type-animation';
 import SkillsShowcase from '../../Component/SkillsShowcase';
+import ContactInfo from '../../Component/ContactInfo';
 
 const AboutHead = () => {
 
@@ -200,7 +201,7 @@ const AboutHead = () => {
               <h3 className="text-xl font-semibold text-gray-200">
                 Higher Secondary Certificate (HSC)
               </h3>
-              <p className="text-gray-600">National College</p>
+              <p className="text-gray-600">Kendua Government College</p>
               <p className="text-gray-500 text-sm">2025 - 2026</p>
             </div>
 
@@ -225,8 +226,10 @@ const AboutHead = () => {
 
       </section>
       {/* Contact Info */}
-      <section>
-        {/* <Contact></Contact> */}
+      <section id='contact'>
+        <div className="flex justify-center items-center min-h-screen bg-gray-900">
+          <ContactInfo />
+        </div>
       </section>
     </header>
   );

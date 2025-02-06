@@ -75,7 +75,7 @@ const Contact = () => {
               </div>
               <div>
                 <p className="text-sm font-semibold">Phone:</p>
-                <p className="text-lg">+000-000-000</p>
+                <p className="text-lg">+8801618-160869</p>
               </div>
             </div>
             <div className="flex items-center space-x-4 mb-4">
