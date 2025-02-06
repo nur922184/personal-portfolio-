@@ -1,10 +1,7 @@
 import React, { useEffect } from 'react';
 import { FaEnvelope, FaFacebook, FaGitAlt, FaGithub, FaLaravel, FaLinkedin, FaNodeJs, FaPhone, FaReact, FaTimes, FaYoutube, } from 'react-icons/fa';
 import Me from '../../assets/_20240510_085948.jpg'
-import animation from '../../assets/green.gif'
 import animation1 from '../../assets/12.gif'
-import { SiMongodb, SiPrisma, SiTailwindcss, } from 'react-icons/si';
-import Contact from '../../Component/Contact';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { TypeAnimation } from 'react-type-animation';
