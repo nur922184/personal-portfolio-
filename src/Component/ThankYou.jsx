@@ -5,13 +5,13 @@ import '../MainLayout/LayoutComponent/Home.css'
 
 const ThankYou = () => {
   return (
-    <div className="md:w-[70%] mx-auto bg-gradient-to-r from-black via-gray-900 to-green-900 p-10 text-white rounded-lg shadow-lg">
+    <div className="md:w-[80%] mx-auto bg-gradient-to-r from-black via-gray-900 to-green-900 text-white rounded-lg shadow-lg py-10">
       <div className="text-center">
         {/* Title */}
         <img className="w-60 mx-auto" src={Thanks} alt="" />
 
         {/* Description */}
-        <p className="text-gray-300 mb-6 md:w-96 mx-auto">
+        <p className="text-gray-300 mb-6  mx-auto lg:px-28">
           Stay updated with my latest insights on web development, technology,
           and engineering. I write occasionally about modern web frameworks,
           tools, and the intersection of design and technology.
@@ -20,7 +20,7 @@ const ThankYou = () => {
         {/* Email Subscription Form */}
         <form className="flex justify-center items-center space-x-2">
           <div class="input-container">
-            <input placeholder="Email" type="email" required />
+            <input placeholder="Email"  type="email" required />
           </div>
           {/* <input
             type="email"

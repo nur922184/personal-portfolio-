@@ -8,7 +8,7 @@ import Me from '../../src/assets/mt.png'
 const Contact = () => {
   return (
     <section id="contact" className="lg:flex w-11/12 mx-auto md:flex-row-reverse justify-between items-center ">
-      <div className="container mx-auto text-center w-96">
+      <div className="container mx-auto text-center">
         <h3 className="text-3xl font-bold mb-8"></h3>
         <p className="text-lg mb-6">
           Feel free to reach out for collaborations or just a friendly hello!
@@ -75,7 +75,7 @@ const Contact = () => {
               </div>
               <div>
                 <p className="text-sm font-semibold">Phone:</p>
-                <p className="text-lg">+8801618-160869</p>
+                <p className="text-xs md:text-lg">+8801618-160869</p>
               </div>
             </div>
             <div className="flex items-center space-x-4 mb-4">
@@ -93,7 +93,7 @@ const Contact = () => {
               </div>
               <div>
                 <p className="text-sm font-semibold">Address:</p>
-                <p className="text-lg">Kendua, Netrokona, Mymenshing</p>
+                <p className="text-xs md:text-lg">Kendua, Netrokona, Mymenshing</p>
               </div>
             </div>
             <div className="flex justify-center mt-6">
