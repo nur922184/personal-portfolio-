@@ -39,7 +39,7 @@ const AboutHead = () => {
   ];
 
   return (
-    <header className="  dark:bg-gray-900 text-gray-800 dark:text-white py-10 md:mt-10">
+    <header className=" bg-violet-400 rounded-md dark:bg-gray-900 dark:text-white py-10 md:mt-10">
       <div className="  px-5 flex flex-col items-center text-center">
         {/* Profile Picture */}
         <div style={{
@@ -57,7 +57,7 @@ const AboutHead = () => {
 
         {/* Name and Title */}
         <h1 className="text-4xl font-bold mb-2">Md Moniruzzaman Tonoy</h1>
-        <p className="text-lg font-medium dark:text-gray-400 mb-4">
+        <p className="text-lg font-medium dark:text-gray-700 mb-4">
           Full Stack Web Developer
         </p>
 
@@ -124,7 +124,7 @@ const AboutHead = () => {
         </a>
       </div>
       {/* About Section */}
-      <section id="introduction" className="py-16">
+      <section id="introduction" className="py-5">
         <div className="container mx-auto w-[70%]">
           <h3 className="text-3xl font-bold mb-8">About Me</h3>
           <TypeAnimation
@@ -149,7 +149,7 @@ const AboutHead = () => {
       </section>
 
       {/* Works Experience  */}
-      <section id='work-experience' className=" bg-violet-400 rounded-md dark:bg-gray-900 dark:text-white py-10 px-6">
+      <section id='work-experience' className=" bg-violet-400 rounded-md dark:bg-gray-900 dark:text-white py-5 px-5">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold text-teal-400 text-center mb-8">Work Experience</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
@@ -169,8 +169,8 @@ const AboutHead = () => {
       </section>
       {/* Education info  */}
 
-      <section id="educational-qualification" className="py-12">
-        <div className="dark:bg-gray-900 shadow-2xl p-7 rounded-lg container mx-auto px-4">
+      <section id="educational-qualification" className="bg-violet-400 rounded-md dark:bg-gray-900 dark:text-white">
+        <div className=" shadow-2xl p-7 rounded-lg container mx-auto px-4">
           <h2 className="text-4xl font-bold text-teal-400 text-center mb-8">
             Educational Qualification
           </h2>
@@ -216,15 +216,15 @@ const AboutHead = () => {
 
 
       {/* Technical Skills */}
-      <section id="technical-skills">
-        <div>
+      <section id="technical-skills" className=''>
+        <div className=''>
           <SkillsShowcase></SkillsShowcase>
         </div>
 
       </section>
       {/* Contact Info */}
       <section id='contact'>
-        <div className="flex justify-center items-center min-h-screen dark:bg-gray-900">
+        <div className="flex justify-center items-center">
           <ContactInfo />
         </div>
       </section>

@@ -36,6 +36,7 @@ const Blog = () => {
   };
 
   return (
+    <div> 
     <div className="px-6 py-24 md:mb-7 w-11/12 mx-auto">
       <h1 className="text-3xl font-bold mb-8">
         Insights on Web Development and Technology
@@ -70,10 +71,12 @@ const Blog = () => {
       <div className="mt-12 border-t-2 border-gray-600 pt-6" id="details-section">
         <Outlet />
       </div>
-      <div className="mt-20 -ml-8 w-[450px] md:w-full">
-        <ThankYou></ThankYou>
-      </div>
     </div>
+    <div className="mt-10 md:w-full">
+    <ThankYou></ThankYou>
+  </div>
+
+  </div>
   );
 };
 

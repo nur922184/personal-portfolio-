@@ -7,13 +7,13 @@ import Me from '../../src/assets/mt.png'
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-16 lg:flex w-11/12 mx-auto md:flex-row-reverse justify-between items-center">
+    <section id="contact" className="lg:flex w-11/12 mx-auto md:flex-row-reverse justify-between items-center ">
       <div className="container mx-auto text-center w-96">
         <h3 className="text-3xl font-bold mb-8"></h3>
         <p className="text-lg mb-6">
           Feel free to reach out for collaborations or just a friendly hello!
         </p>
-        <div className="flex justify-center gap-6">
+        <div className="flex justify-center gap-6 mb-8">
           <a
             href="https://github.com/moniruzzaman2428"
             target="_blank"
@@ -60,7 +60,7 @@ const Contact = () => {
           </a>
         </div>
       </div>
-      <div className=' md:w-[700px] mt-3'>
+      <div className=' md:w-[700px]'>
         <div
           className="bg-violet-400 dark:bg-teal-900 text-white p-8 rounded-lg max-w-md mx-auto">
           <div
@@ -84,7 +84,7 @@ const Contact = () => {
               </div>
               <div>
                 <p className="text-sm font-semibold">Email:</p>
-                <p className="text-lg">moniruzzamam2428@gmail.com</p>
+                <p className="text-xs md:text-lg">moniruzzamam2428@gmail.com</p>
               </div>
             </div>
             <div className="flex items-center space-x-4 mb-4">

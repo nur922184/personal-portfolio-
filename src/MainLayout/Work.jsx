@@ -98,16 +98,16 @@ const Works = () => {
           <ul className="space-y-8 mt-8">
             <li className="md:mt-8">
               <strong>Jan 2026:</strong> Initial planning and design.
-            </li> 
+            </li>
             <li>
               <strong>Feb 2026:</strong> Backend development and database setup.
-            </li> 
+            </li>
             <li>
               <strong>Mar 2026:</strong> Frontend integration and testing.
             </li>
           </ul>
         </div>
-        <div className="flex flex-wrap mt-5 mx-auto w-96">
+        <div className="flex flex-wrap mt-5 mx-auto w-full sm:w-96 justify-center">
           {["React", "Node.js", "MongoDB", "Tailwind CSS"].map((tech, index) => (
             <span
               key={index}
@@ -117,6 +117,7 @@ const Works = () => {
             </span>
           ))}
         </div>
+
         <div className="mt-8 bg-violet-400  dark:bg-gray-800 p-4 rounded-lg shadow-lg">
           <blockquote>
             <p className="dark:text-gray-400 italic">

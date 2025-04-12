@@ -19,7 +19,7 @@ const Home = () => {
     // const navigate = useNavigate();
 
     return (
-        <div >
+        <div className='' >
             {/* Hero Section */}
             <section id="home"
                 style={{
@@ -28,7 +28,7 @@ const Home = () => {
                 className="bg-slate-50 dark:bg-gradient-to-r bg-center from-black via-gray-900 to-green-900 p-5  py-20">
                 <div className=' flex justify-around' data-aos="fade-down">
                     <div className="container md:w-[50%] mx-auto md:mt-14">
-                        <h4 className="text-3xl md:text-4xl font-bold text-left md:-ml-20 text-white mb-4">Hi, I am</h4>
+                        <h4 className="text-3xl md:text-4xl font-bold text-left md:-ml-15 text-white mb-4">Hi, I am</h4>
                         <div className='text-xl'> <Animation></Animation></div>
                         <p className="text-lg md:text-xl md:ml-20 text-white mb-8">
                             A Passionate Frontend Developer & UI/UX Enthusiast
@@ -45,20 +45,33 @@ const Home = () => {
                             View My Work
                         </AwesomeButton>
                     </div> */}
-                    <div>
-                        <NavLink to="/work">
-                            <button className="button" role="button">
-                                <span>View My Work</span>
-                            </button>
-                        </NavLink>
+                    <div className="flex flex-row gap-4 mt-4">
+                        <div>
+                            <NavLink to="/work">
+                                <button
+                                    className="bg-teal-600 text-white px-6 py-2 rounded-full font-semibold shadow-md transition-all duration-300 hover:bg-teal-700 hover:scale-105 hover:shadow-lg"
+                                    role="button"
+                                >
+                                    <span>View My Work</span>
+                                </button>
+                            </NavLink>
+                        </div>
+                        <div>
+                            <Link
+                                to="contact"
+                                smooth={true}
+                                duration={500}
+                            >
+                                <button
+                                    className="bg-transparent border border-teal-600 text-teal-600 px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:bg-teal-600 hover:text-white hover:scale-105 hover:shadow-lg"
+                                    role="button"
+                                >
+                                    Get In Touch
+                                </button>
+                            </Link>
+                        </div>
                     </div>
-                    <div>
-                        <Link to="contact"
-                            smooth={true}
-                            duration={500}>
-                            <button className="button1" role="button"> Get In Touch</button>
-                        </Link>
-                    </div>
+
                     {/* <AwesomeButton>
                         <Link
                             to="contact"
@@ -96,8 +109,10 @@ const Home = () => {
             {/* Projects Section */}
 
             {/* Contact Section */}
-            <h2 className="text-4xl font-bold text-teal-400 text-center -mb-6">Contact Information</h2>
-            <Contact ></Contact>
+            <h2 className="text-4xl font-bold text-teal-400 text-center mt-8 ">Contact Information</h2>
+            <div className='mb-8 mt-8'>
+                <Contact ></Contact>
+            </div>
             <div className='mb-4'>
                 <ThankYou></ThankYou>
             </div>

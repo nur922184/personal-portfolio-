@@ -1,6 +1,7 @@
 import { Link } from 'react-scroll';
 import img from '../../assets/mt.png'
 import { FaEnvelope, FaFacebook, FaGithub, FaLinkedin, FaPhone, FaTimes, FaYoutube, } from 'react-icons/fa';
+import { AiOutlineMenuFold } from 'react-icons/ai';
 
 const SideNavigation = () => {
 
@@ -12,7 +13,7 @@ const SideNavigation = () => {
         <div className="drawer-content flex flex-col items-center justify-center">
           {/* Page content here */}
           <label htmlFor="my-drawer-2" className=" btn btn-sm bg-violet-400 dark:bg-gray-950 text-xl drawer-button text-teal-400 md:hidden">
-            ≫
+          <AiOutlineMenuFold />
           </label>
         </div>
         <div className="drawer-side ">
@@ -23,7 +24,7 @@ const SideNavigation = () => {
             <div className="drawer-content mr-4 items-center">
               {/* Page content here */}
               <label htmlFor="my-drawer-2" className=" btn  text-teal-400 btn-sm text-xl drawer-button md:hidden">
-                ≪
+                ❌
               </label>
             </div>
             {/* Profile Section */}
