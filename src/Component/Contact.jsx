@@ -1,5 +1,5 @@
 import React from "react";
-import { FaPhoneAlt,  FaMapMarkerAlt } from "react-icons/fa";
+import { FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 import { FaGithub, FaLinkedin, FaEnvelope, FaFacebook, FaYoutube, FaTimes } from "react-icons/fa";
 import img from '../../src/assets/agif1opt.gif'
 import Me from '../../src/assets/mt.png'
@@ -18,7 +18,7 @@ const Contact = () => {
             href="https://github.com/moniruzzaman2428"
             target="_blank"
             rel="noopener noreferrer"
-             className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-lime-600"
+            className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-lime-600"
           >
             <FaGithub size={30} />
           </a>
@@ -26,35 +26,35 @@ const Contact = () => {
             href="https://www.linkedin.com/in/md-moniruzzaman-tonoy-7bb52b285/"
             target="_blank"
             rel="noopener noreferrer"
-         className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-blue-500"
+            className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-blue-500"
           >
             <FaLinkedin size={30} />
           </a>
           <a
             href="https://x.com/moniruzzaman_24"
             target="_blank"
-         className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-pink-500"
+            className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-pink-500"
           >
             <FaTimes size={30} />
           </a>
           <a
             href="https://www.facebook.com/moniruzzaman.kendua"
             target="_blank"
-         className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-blue-700"
+            className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-blue-700"
           >
             <FaFacebook size={30} />
           </a>
           <a
             href="mailto:moniruzzaman2428@gmail.com"
             target="_blank"
-         className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-cyan-900"
+            className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-cyan-900"
           >
             <FaEnvelope size={30} />
           </a>
           <a
             href="https://www.youtube.com/@moniruzzamam2428"
             target="_blank"
-         className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-red-700"
+            className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-red-700"
           >
             <FaYoutube size={30} />
           </a>
@@ -75,7 +75,9 @@ const Contact = () => {
               </div>
               <div>
                 <p className="text-sm font-semibold">Phone:</p>
-                <p className="text-xs md:text-lg">+8801618-160869</p>
+                <a href="tel:+8801618160869" className="text-xs md:text-lg text-blue-300 hover:underline">
+                  +8801618-160869
+                </a>
               </div>
             </div>
             <div className="flex items-center space-x-4 mb-4">
@@ -84,7 +86,12 @@ const Contact = () => {
               </div>
               <div>
                 <p className="text-sm font-semibold">Email:</p>
-                <p className="text-xs md:text-lg">moniruzzamam2428@gmail.com</p>
+                <a
+                  href="mailto:moniruzzamam2428@gmail.com"
+                  className="text-xs md:text-lg text-blue-300 hover:underline"
+                >
+                  moniruzzamam2428@gmail.com
+                </a>
               </div>
             </div>
             <div className="flex items-center space-x-4 mb-4">

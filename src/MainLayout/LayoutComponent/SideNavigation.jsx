@@ -36,7 +36,7 @@ const SideNavigation = () => {
                   className="w-full h-full transition-transform duration-300 transform hover:scale-150"
                 />
               </div>
-              <h2 className="text-xl font-bold text-center">Md Moniruzzaman Tonoy</h2>
+              <h1 className="text-xl font-bold text-center">Md Moniruzzaman Tonoy</h1>
               <p className=" text-green-50 hover:text-cyan-900 dark:text-gray-400 dark:hover:text-teal-400 text-center text-sm">Full Stack Developer</p>
             </div>
             <div className="flex space-x-3 mb-6">
