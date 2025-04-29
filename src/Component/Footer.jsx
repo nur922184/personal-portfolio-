@@ -13,7 +13,7 @@ const Footer = () => {
         {/* Right Section: Social Icons */}
         <div className="flex items-center gap-2 mt-2 md:mt-0">
           <a
-            href="https://github.com/moniruzzaman2428"
+            href="https://github.com/nur922184"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-teal-400 transition"
@@ -36,7 +36,7 @@ const Footer = () => {
             <FaTimes size={15} />
           </a>
           <a
-            href="https://www.facebook.com/moniruzzaman.kendua"
+            href="https://www.facebook.com/md.moniruzzaman.tonoy"
             target="_blank"
             className="text-white hover:text-teal-400 transition"
           >

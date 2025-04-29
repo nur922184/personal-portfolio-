@@ -33,7 +33,7 @@ const ContactInfo = () => {
         <li className="flex items-center">
           <FaFacebook className="mr-3 text-blue-600 text-xl" />
           <a
-            href="https://www.facebook.com/moniruzzaman.kendua"
+            href="https://www.facebook.com/md.moniruzzaman.tonoy"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:underline"

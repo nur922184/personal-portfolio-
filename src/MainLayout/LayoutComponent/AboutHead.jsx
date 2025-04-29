@@ -64,7 +64,7 @@ const AboutHead = () => {
         {/* Contact Links */}
         <div className="flex space-x-4 mb-6">
           <a
-            href="https://github.com/moniruzzaman2428"
+            href="https://github.com/nur922184"
             target="_blank"
             rel="noopener noreferrer"
             className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-red-700"
@@ -87,7 +87,7 @@ const AboutHead = () => {
             <FaTimes size={16} />
           </a>
           <a
-            href="https://www.facebook.com/moniruzzaman.kendua"
+            href="https://www.facebook.com/md.moniruzzaman.tonoy"
             target="_blank"
             className="dark:hover:text-white dark:text-teal-400 transition text-gray-950 hover:text-red-700"
           >
