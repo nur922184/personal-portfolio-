@@ -111,8 +111,8 @@ const Navbar = () => {
       </div>
 
       {/* Bottom Navigation for Small Screens */}
-      <div className="w-52 h-8 items-center mx-auto md:hidden fixed bottom-2 inset-x-4 rounded-lg bg-slate-500 bg-opacity-30 shadow-lg">
-        <ul className="items-center flex justify-around w-52 h-8 mx-auto">
+      <div className="w-80 h-10 items-center align-middle mx-auto md:hidden fixed bottom-2 inset-x-4 rounded-lg bg-slate-500 bg-opacity-30 shadow-lg">
+        <ul className="items-center flex justify-around w-80 h-10 mx-auto">
           <li>
             <NavLink
               to="/"
@@ -123,7 +123,7 @@ const Navbar = () => {
                 } transition`
               }
             >
-              <FaHome />
+              <FaHome size={25} />
             </NavLink>
           </li>
           <li>
@@ -136,7 +136,7 @@ const Navbar = () => {
                 } transition`
               }
             >
-              <FaUser />
+              <FaUser size={25} />
             </NavLink>
           </li>
           <li>
@@ -149,7 +149,7 @@ const Navbar = () => {
                 } transition`
               }
             >
-              <FaBriefcase />
+              <FaBriefcase size={25} />
             </NavLink>
           </li>
           <li>
@@ -162,7 +162,7 @@ const Navbar = () => {
                 } transition`
               }
             >
-              <FaBook />
+              <FaBook size={25} />
             </NavLink>
           </li>
         </ul>
