@@ -25,7 +25,7 @@ const Navbar = () => {
       rootElement.classList.remove("dark");
     }
   }, [theme]);
-//  className="bg-opacity-25 md:fixed w-full bg-gradient-to-r from-black via-gray-900 to-green-900 p-4"
+  //  className="bg-opacity-25 md:fixed w-full bg-gradient-to-r from-black via-gray-900 to-green-900 p-4"
   return (
     <nav className="bg-opacity-25 md:fixed w-full bg-gradient-to-r from-black via-gray-900 to-green-900 p-4">
       <div className="container mx-auto flex items-center justify-between">
@@ -111,7 +111,7 @@ const Navbar = () => {
       </div>
 
       {/* Bottom Navigation for Small Screens */}
-      <div className="w-80 h-10 items-center align-middle mx-auto md:hidden fixed bottom-2 inset-x-4 rounded-lg bg-slate-500 bg-opacity-30 shadow-lg">
+      <div className="w-80 h-10 items-center align-middle mx-auto md:hidden fixed bottom-2 inset-x-4 rounded-lg bg-slate-100 bg-opacity-30 shadow-lg">
         <ul className="items-center flex justify-around w-80 h-10 mx-auto">
           <li>
             <NavLink
@@ -123,7 +123,10 @@ const Navbar = () => {
                 } transition`
               }
             >
-              <FaHome size={25} />
+
+              <span className='align-middle items-center'>
+                <FaHome size={25} />
+              </span>
             </NavLink>
           </li>
           <li>
@@ -136,7 +139,10 @@ const Navbar = () => {
                 } transition`
               }
             >
-              <FaUser size={25} />
+              <span className='align-middle items-center'>
+                <FaUser className='items-center' size={25} />
+              </span>
+
             </NavLink>
           </li>
           <li>
