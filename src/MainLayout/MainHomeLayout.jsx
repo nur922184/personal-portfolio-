@@ -1,7 +1,7 @@
 import Header from '../Component/Header';
 import Footer from '../Component/Footer';
-import { Outlet } from 'react-router-dom';
 import Cursor from '../animationCursor/Cursor';
+import NewHome from '../NewHome/NewHome';
 // import Home from './Home';
 
 const MainHomeLayout = () => { 
@@ -13,7 +13,7 @@ const MainHomeLayout = () => {
                 <Header></Header>
             </header>
             <main>
-                <Outlet></Outlet>
+                <NewHome></NewHome>
             </main>
             <footer>
                 <Footer></Footer>

@@ -21,7 +21,7 @@ const Swiper = () => {
   };
 
   return (
-    <div className="md:w-[50%] mx-auto h-80 bg-gray-900">
+    <div className="md:w-[50%] mx-auto h-80 bg-gray-900 relative">
       <SwiperReact
         spaceBetween={30}
         centeredSlides={true}

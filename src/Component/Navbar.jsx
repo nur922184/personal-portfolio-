@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { FaHome, FaUser, FaBriefcase, FaBook } from 'react-icons/fa';
 import { BsMoon, BsSun } from 'react-icons/bs';
+import { FaBook, FaBriefcase, FaDev, FaGraduationCap, FaHome, FaUser } from 'react-icons/fa';
+import { MdContactPhone } from 'react-icons/md';
+import { Link } from 'react-scroll';
 
-const Navbar = () => {
-
+const Navber = () => {
   const [theme, setTheme] = useState(
-    localStorage.getItem("theme") || "dark" // Default to light theme
+    localStorage.getItem("theme") || "dark"
   );
 
   // Toggle theme and save to localStorage
@@ -25,156 +25,221 @@ const Navbar = () => {
       rootElement.classList.remove("dark");
     }
   }, [theme]);
-  //  className="bg-opacity-25 md:fixed w-full bg-gradient-to-r from-black via-gray-900 to-green-900 p-4"
+
   return (
-    <nav className="bg-opacity-25 md:fixed w-full bg-gradient-to-r from-black via-gray-900 to-green-900 p-4">
+    <nav className={`bg-opacity-25 md:fixed w-full z-50 bg-gradient-to-r from-[#E8CBC0] via-[#536976] to-[#636FA4] p-4 ${theme === 'dark' ? 'dark' : ''}`}>
       <div className="container mx-auto flex items-center justify-between">
-        {/* Left: Location */}
-        <div className="text-white text-sm">
-          <NavLink to={'/'}>
-            Moni<span className='text-teal-400 font-bold'>RUZZ</span>aman
-          </NavLink>
+        {/* Left: Logo */}
+        <div className="text-blue-950 dark:text-white text-sm font-bold cursor-pointer">
+          Moni<span className='text-teal-600 dark:text-teal-400'>Ruzz</span>aman
         </div>
 
         {/* Center: Links */}
-        <ul className="hidden md:flex items-center gap-6 text-white">
+        <ul className="hidden md:flex items-center gap-6 text-white dark:text-gray-200">
           <li>
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                `flex items-center gap-2 ${isActive
-                  ? 'text-teal-400 border-b-2 border-teal-400'
-                  : 'hover:text-teal-400 border-b-2 border-transparent hover:border-teal-400'
-                } transition`
-              }
+            <Link
+              to="home"
+              smooth={true}
+              duration={500}
+              spy={true}
+              offset={-80}
+              activeClass="text-teal-400 border-b-2 border-teal-400"
+              className="flex items-center gap-2 cursor-pointer hover:text-teal-400 border-b-2 border-transparent hover:border-teal-400 transition"
             >
-              <FaHome />
-              Home
-            </NavLink>
+              <FaHome /> Home
+            </Link>
           </li>
           <li>
-            <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                `flex items-center gap-2 ${isActive
-                  ? 'text-teal-400 border-b-2 border-teal-400'
-                  : 'hover:text-teal-400 border-b-2 border-transparent hover:border-teal-400'
-                } transition`
-              }
+            <Link
+              to="about"
+              smooth={true}
+              duration={500}
+              spy={true}
+              offset={-80}
+              activeClass="text-teal-400 border-b-2 border-teal-400"
+              className="flex items-center gap-2 cursor-pointer hover:text-teal-400 border-b-2 border-transparent hover:border-teal-400 transition"
             >
-              <FaUser />
-              About
-            </NavLink>
+              <FaUser /> About
+            </Link>
           </li>
           <li>
-            <NavLink
-              to="/work"
-              className={({ isActive }) =>
-                `flex items-center gap-2 ${isActive
-                  ? 'text-teal-400 border-b-2 border-teal-400'
-                  : 'hover:text-teal-400 border-b-2 border-transparent hover:border-teal-400'
-                } transition`
-              }
+            <Link
+              to="education"
+              smooth={true}
+              duration={500}
+              spy={true}
+              offset={-80}
+              activeClass="text-teal-400 border-b-2 border-teal-400"
+              className="flex items-center gap-2 cursor-pointer hover:text-teal-400 border-b-2 border-transparent hover:border-teal-400 transition"
             >
-              <FaBriefcase />
-              Work
-            </NavLink>
+              <FaGraduationCap  /> Education
+            </Link>
           </li>
           <li>
-            <NavLink
-              to="/blog"
-              className={({ isActive }) =>
-                `flex items-center gap-2 ${isActive
-                  ? 'text-teal-400 border-b-2 border-teal-400'
-                  : 'hover:text-teal-400 border-b-2 border-transparent hover:border-teal-400'
-                } transition`
-              }
+            <Link
+              to="work"
+              smooth={true}
+              duration={500}
+              spy={true}
+              offset={-80}
+              activeClass="text-teal-400 border-b-2 border-teal-400"
+              className="flex items-center gap-2 cursor-pointer hover:text-teal-400 border-b-2 border-transparent hover:border-teal-400 transition"
             >
-              <FaBook />
-              Blog
-            </NavLink>
+              <FaBriefcase /> Projects
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="contact"
+              smooth={true}
+              duration={500}
+              spy={true}
+              offset={-80}
+              activeClass="text-teal-400 border-b-2 border-teal-400"
+              className="flex items-center gap-2 cursor-pointer hover:text-teal-400 border-b-2 border-transparent hover:border-teal-400 transition"
+            >
+              <MdContactPhone /> Contact
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="blog"
+              smooth={true}
+              duration={500}
+              spy={true}
+              offset={-80}
+              activeClass="text-teal-400 border-b-2 border-teal-400"
+              className="flex items-center gap-2 cursor-pointer hover:text-teal-400 border-b-2 border-transparent hover:border-teal-400 transition"
+            >
+              <FaBook /> Blog
+            </Link>
           </li>
         </ul>
 
-        {/* Right: Resume */}
-        <div className="text-teal-500 font-medium">
-          <NavLink to="/resume" className="hover:underline">
+        {/* Right: Resume + Theme Button */}
+        <div className="text-teal-500 dark:text-teal-400 font-medium flex items-center">
+          <Link
+            to="resume"
+            smooth={true}
+            duration={500}
+            spy={true}
+            offset={-80}
+            className="cursor-pointer hover:underline mr-4"
+          >
             Resume
-          </NavLink>
+          </Link>
+          <Link
+            to="dev"
+            smooth={true}
+            duration={500}
+            spy={true}
+            offset={-80}>
+            <button
+              className="p-2 rounded-full ml-2 bg-gray-200 dark:bg-gray-700 text-black dark:text-white transition-colors duration-300 hover:bg-teal-200 dark:hover:bg-teal-700"
+            >
+              <FaDev size={18} />
+            </button>
+          </Link>
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-full ml-6 bg-gray-200 dark:bg-gray-700 text-black dark:text-white transition-colors duration-300"
+            className="p-2 rounded-full ml-4 bg-gray-200 dark:bg-gray-700 text-black dark:text-white transition-colors duration-300 hover:bg-teal-200 dark:hover:bg-teal-700"
           >
-            {theme === "light" ? <BsMoon size={18} /> : <BsSun size={18} />}
+            {theme === "light" ? <BsMoon size={16} /> : <BsSun size={16} />}
           </button>
         </div>
       </div>
 
       {/* Bottom Navigation for Small Screens */}
-      <div className="w-80 h-10 items-center align-middle mx-auto md:hidden fixed bottom-2 inset-x-4 rounded-lg bg-slate-100 bg-opacity-30 shadow-lg">
-        <ul className="items-center flex justify-around w-80 h-10 mx-auto">
-          <li>
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                `${isActive
-                  ? 'text-teal-400 border-b-2 border-teal-400'
-                  : 'text-white hover:text-teal-400 border-b-2 border-transparent hover:border-teal-400'
-                } transition`
-              }
-            >
-
-              <span className='align-middle items-center'>
-                <FaHome size={25} />
-              </span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                `${isActive
-                  ? 'text-teal-400 border-b-2 border-teal-400'
-                  : 'text-white hover:text-teal-400 border-b-2 border-transparent hover:border-teal-400'
-                } transition`
-              }
-            >
-              <span className='align-middle items-center'>
-                <FaUser className='items-center' size={25} />
-              </span>
-
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/work"
-              className={({ isActive }) =>
-                `${isActive
-                  ? 'text-teal-400 border-b-2 border-teal-400'
-                  : 'text-white hover:text-teal-400 border-b-2 border-transparent hover:border-teal-400'
-                } transition`
-              }
-            >
-              <FaBriefcase size={25} />
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/blog"
-              className={({ isActive }) =>
-                `${isActive
-                  ? 'text-teal-400 border-b-2 border-teal-400'
-                  : 'text-white hover:text-teal-400 border-b-2 border-transparent hover:border-teal-400'
-                } transition`
-              }
-            >
-              <FaBook size={25} />
-            </NavLink>
-          </li>
-        </ul>
+      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 md:hidden">
+        {/* Gradient Border */}
+        <div className="p-[2px] rounded-full bg-gradient-to-r from-blue-400 via-teal-400 to-purple-500">
+          {/* Inner Navbar */}
+          <div className="rounded-full bg-slate-900 bg-opacity-90 backdrop-blur-md shadow-lg">
+            <ul className="flex justify-around items-center w-[300px] h-10 px-4">
+              <li>
+                <Link
+                  to="home"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  offset={-80}
+                  activeClass="text-teal-400"
+                  className="cursor-pointer text-white hover:text-teal-400 transition"
+                >
+                  <FaHome size={16} />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="about"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  offset={-80}
+                  activeClass="text-teal-400"
+                  className="cursor-pointer text-white hover:text-teal-400 transition"
+                >
+                  <FaUser size={16} />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="education"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  offset={-80}
+                  activeClass="text-teal-400"
+                  className="cursor-pointer text-white hover:text-teal-400 transition"
+                >
+                  <FaGraduationCap size={18} />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="work"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  offset={-80}
+                  activeClass="text-teal-400"
+                  className="cursor-pointer text-white hover:text-teal-400 transition"
+                >
+                  <FaBriefcase size={16} />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="contact"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  offset={-80}
+                  activeClass="text-teal-400"
+                  className="cursor-pointer text-white hover:text-teal-400 transition"
+                >
+                  <MdContactPhone size={16} />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="blog"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  offset={-80}
+                  activeClass="text-teal-400"
+                  className="cursor-pointer text-white hover:text-teal-400 transition"
+                >
+                  <FaBook size={16} />
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </nav>
   );
 };
 
-export default Navbar;
+export default Navber;

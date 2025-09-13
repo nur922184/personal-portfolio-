@@ -1,11 +1,42 @@
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer utilities {
-    .scrollbar {
-      @apply scrollbar-thin scrollbar-thumb-teal-500 scrollbar-track-teal-200;
-    }
+  .scrollbar {
+    @apply scrollbar-thin scrollbar-thumb-teal-500 scrollbar-track-teal-200;
   }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(45, 212, 191, 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(45, 212, 191, 0.8), 0 0 30px rgba(45, 212, 191, 0.4);
+  }
+}
+
+.group:hover .group-hover\:animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.group:hover .group-hover\:animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+

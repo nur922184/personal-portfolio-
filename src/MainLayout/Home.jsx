@@ -1,69 +1,54 @@
-import React, { useEffect, } from 'react';
-// import { FaCode, FaUsers, FaRocket } from 'react-icons/fa';
-import { NavLink, } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import { Link } from 'react-scroll';
-import Contact from '../Component/Contact';
-import ThankYou from '../Component/ThankYou';
 import AOS from "aos";
 import "aos/dist/aos.css";
-import banner from '../assets/fgsdgdfgsgsdfg.gif'
+import banner from '../assets/fgsdgdfgsgsdfg.gif';
+import profileImage from '../assets/me.jpg'; // You'll need to add your own profile image
 import Animation from '../Component/Animation';
-import Swiper from '../Swiper/Swiper';
-import '../MainLayout/LayoutComponent/Home.css'
-import "react-awesome-button/dist/styles.css";
 
 const Home = () => {
     useEffect(() => {
-        AOS.init({ duration: 1000 }); // AOS initialization
+        AOS.init({
+            duration: 1000,
+            once: true // Animations happen only once when scrolling
+        });
     }, []);
-    // const navigate = useNavigate();
 
     return (
-        <div className='' >
+        <div>
             {/* Hero Section */}
-            <section id="home"
-                style={{
-                    backgroundImage: `url(${banner})`,
-                }}
-                className="bg-slate-50 dark:bg-gradient-to-r bg-center from-black via-gray-900 to-green-900 p-5  py-20">
-                <div className=' flex justify-around' data-aos="fade-down">
-                    <div className="container md:w-[50%] mx-auto md:mt-14">
-                        <h4 className="text-3xl md:text-4xl font-bold text-left md:-ml-15 text-white mb-4">Hi, I am</h4>
-                        <div className='text-xl'> <Animation></Animation></div>
-                        <p className="text-lg md:text-xl md:ml-20 text-white mb-8">
-                            A Passionate Frontend Developer & UI/UX Enthusiast
-                        </p>
-                    </div>
-                </div>
-                <div className="flex justify-center gap-6" data-aos="fade-up">
-                    {/* <div className=" p-1 rounded-md">
-                        <AwesomeButton
-                            type="primary"
-                            className="!bg-blue-500 !text-white !rounded-md "
-                            onPress={() => navigate("/work")}
-                        >
-                            View My Work
-                        </AwesomeButton>
-                    </div> */}
-                    <div className="flex flex-row gap-4 mt-4">
-                        <div>
-                            <NavLink to="/work">
+            <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#2c3e50] via-[#4ca1af] to-[#c4e0e5] dark:from-[#0f172a] dark:via-[#1e3a8a] dark:to-[#0f766e] p-5 py-20 relative overflow-hidden">
+                {/* Animated background elements */}
+                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNykiIHN0cm9rZS13aWR0aD0iMiI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMTUiLz48L2c+PC9zdmc+')] opacity-20 dark:opacity-10"></div>
+
+                <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-10 relative z-10">
+                    {/* Left Content */}
+                    <div className="md:w-1/2 order-2 md:order-1" data-aos="fade-right">
+                        <div className="text-left">
+                            <h4 className="text-3xl md:text-4xl font-bold text-white dark:text-gray-100 mb-4 drop-shadow-md">Hi, I am</h4>
+                            <div className="text-xl mb-4">
+                                <Animation />
+                            </div>
+                            <p className="text-lg md:text-xl text-white dark:text-gray-200 mb-8 drop-shadow-md">
+                                A Passionate Frontend Developer & UI/UX Enthusiast
+                            </p>
+                            <p className="text-md text-white/90 dark:text-gray-300 mb-8 drop-shadow-md">
+                                I create beautiful, functional, and responsive web experiences
+                                that delight users and solve real problems.
+                            </p>
+                        </div>
+                        <div className="flex flex-col sm:flex-row gap-4 mt-6">
+                            <Link to="work" smooth={true} duration={500}>
                                 <button
-                                    className="bg-teal-600 text-white px-6 py-2 rounded-full font-semibold shadow-md transition-all duration-300 hover:bg-teal-700 hover:scale-105 hover:shadow-lg"
+                                    className="bg-white text-[#2c3e50] w-full sm:w-auto px-6 py-3 rounded-full font-semibold shadow-lg transition-all duration-300 hover:bg-gray-100 hover:scale-105 hover:shadow-xl dark:bg-teal-600 dark:text-white dark:hover:bg-teal-700"
                                     role="button"
                                 >
-                                    <span>View My Work</span>
+                                    View My Work
                                 </button>
-                            </NavLink>
-                        </div>
-                        <div>
-                            <Link
-                                to="contact"
-                                smooth={true}
-                                duration={500}
-                            >
+                            </Link>
+                            <Link to="contact" smooth={true} duration={500}>
                                 <button
-                                    className="bg-transparent border border-teal-600 text-teal-600 px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:bg-teal-600 hover:text-white hover:scale-105 hover:shadow-lg"
+                                    className="bg-transparent border-2 border-white text-white w-full sm:w-auto px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-white hover:text-[#2c3e50] dark:border-teal-400 dark:text-teal-400 dark:hover:bg-teal-400 dark:hover:text-white hover:scale-105 hover:shadow-lg"
                                     role="button"
                                 >
                                     Get In Touch
@@ -72,52 +57,51 @@ const Home = () => {
                         </div>
                     </div>
 
-                    {/* <AwesomeButton>
-                        <Link
-                            to="contact"
-                            type="primary"
-                            smooth={true}
-                            size="small"
-                            duration={500}
-                            className="border cursor-pointer border-teal-400 px-6 py-3 rounded-lg shadow-md  hover:text-black transition"
-                        >
-                           
-                        </Link>
-                    </AwesomeButton> */}
+                    {/* Right Image */}
+                    <div className="md:w-1/2 order-1 md:order-2 flex justify-center" data-aos="fade-left">
+                        <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden group cursor-pointer">
+                            {/* Main Image Container with 3D Effects */}
+                            <div className="w-full h-full rounded-full overflow-hidden transform transition-all duration-700 group-hover:scale-105 group-hover:-translate-y-2 group-hover:shadow-2xl">
+                                <img
+                                    src={profileImage}
+                                    alt="Profile"
+                                    className="w-full h-full object-cover transform transition-all duration-700 group-hover:scale-110"
+                                />
+                            </div>
 
+                            {/* Animated Border */}
+                            <div className="absolute inset-0 rounded-full border-4 border-white/40 dark:border-gray-600/30 transform transition-all duration-700 group-hover:border-teal-400/80 group-hover:scale-105 group-hover:shadow-lg"></div>
+
+                            {/* Floating Elements for 3D Effect */}
+                            <div className="absolute -inset-2 rounded-full bg-gradient-to-r from-teal-400/20 to-purple-500/20 transform rotate-0 group-hover:rotate-6 transition-all duration-700 opacity-0 group-hover:opacity-100 -z-10"></div>
+                            <div className="absolute -inset-3 rounded-full bg-gradient-to-r from-teal-400/10 to-purple-500/10 transform -rotate-3 group-hover:-rotate-6 transition-all duration-700 opacity-0 group-hover:opacity-100 -z-20"></div>
+
+                            {/* Shine Effect on Hover */}
+                            <div className="absolute inset-0 rounded-full overflow-hidden">
+                                <div className="absolute -inset-full bg-gradient-to-r from-transparent via-white/40 to-transparent transform rotate-12 group-hover:translate-x-full transition-all duration-1000 group-hover:duration-3000 opacity-0 group-hover:opacity-100"></div>
+                            </div>
+
+                            {/* Floating Dots Decoration */}
+                            <div className="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-teal-400 opacity-0 group-hover:opacity-100 transition-all duration-700 group-hover:animate-pulse"></div>
+                            <div className="absolute -bottom-3 -left-3 w-6 h-6 rounded-full bg-purple-500 opacity-0 group-hover:opacity-100 transition-all duration-1000 group-hover:animate-bounce"></div>
+                            <div className="absolute top-1/4 -left-4 w-3 h-3 rounded-full bg-amber-400 opacity-0 group-hover:opacity-100 transition-all duration-1200"></div>
+
+                            {/* Subtle Shadow for Depth */}
+                            <div className="absolute -bottom-4 inset-x-4 h-4 bg-gradient-to-t from-gray-400/40 to-transparent dark:from-black/40 rounded-full blur-md group-hover:-bottom-5 group-hover:blur-lg transition-all duration-700"></div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Scroll indicator */}
+                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                    <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+                        <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
+                    </div>
                 </div>
             </section>
-
-            {/* About Section */}
-            <section id="about" className="p-5 py-16">
-                <div className="container mx-auto text-center">
-                    <h3 className="text-3xl font-bold mb-8">About Me</h3>
-                    <p className="text-lg leading-relaxed max-w-3xl mx-auto">
-                        I'm a self-driven Frontend Developer with a strong passion for
-                        crafting beautiful, user-friendly web applications. I have
-                        experience in working with modern technologies like React, Tailwind
-                        CSS, and more. My focus is always on delivering clean, scalable
-                        code and a seamless user experience.
-                    </p>
-                </div>
-            </section>
-
-            <section>
-                <Swiper></Swiper>
-            </section>
-
-            {/* Projects Section */}
-
-            {/* Contact Section */}
-            <h2 className="text-4xl font-bold text-teal-400 text-center mt-8 ">Contact Information</h2>
-            <div className='mb-8 mt-8'>
-                <Contact ></Contact>
-            </div>
-            <div className='mb-4'>
-                <ThankYou></ThankYou>
-            </div>
         </div>
     );
 };
 
 export default Home;
+
