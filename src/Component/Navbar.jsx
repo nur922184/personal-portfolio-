@@ -27,11 +27,11 @@ const Navber = () => {
   }, [theme]);
 
   return (
-    <nav className={`bg-opacity-25 md:fixed w-full z-50 bg-gradient-to-r from-[#E8CBC0] via-[#536976] to-[#636FA4] p-4 ${theme === 'dark' ? 'dark' : ''}`}>
+    <nav className={`bg-opacity-25 md:fixed w-full z-50 bg-gradient-to-br from-[#2c3e50] via-[#4ca1af] to-[#c4e0e5]  dark:from-[#0f172a] dark:via-[#1e3a8a] dark:to-[#0f766e] p-4 ${theme === 'dark' ? 'dark' : ''}`}>
       <div className="container mx-auto flex items-center justify-between">
         {/* Left: Logo */}
         <div className="text-blue-950 dark:text-white text-sm font-bold cursor-pointer">
-          Moni<span className='text-teal-600 dark:text-teal-400'>Ruzz</span>aman
+          Moni<span className='text-teal-100 dark:text-teal-400'>Ruzz</span>aman
         </div>
 
         {/* Center: Links */}
@@ -117,7 +117,7 @@ const Navber = () => {
         </ul>
 
         {/* Right: Resume + Theme Button */}
-        <div className="text-teal-500 dark:text-teal-400 font-medium flex items-center">
+        <div className="text-blue-900 dark:text-teal-400 font-medium flex items-center">
           <Link
             to="resume"
             smooth={true}

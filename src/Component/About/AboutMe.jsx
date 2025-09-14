@@ -24,7 +24,7 @@ import {
   SiRedux,
   SiNextdotjs,
 } from "react-icons/si";
-import profileImage from "../../assets/mt.png";
+import profileImage from "../../assets/blog_img/mtonoy.jpg";
 import "../About/AboutMe.css";
 
 const skills = [
@@ -104,8 +104,7 @@ const AboutMe = () => {
   return (
     <section
       id="about"
-      className="py-16 px-4 bg-gradient-to-br from-[#2c3e50] via-[#4ca1af] to-[#c4e0e5] 
-      dark:from-[#0f172a] dark:via-[#1e3a8a] dark:to-[#0f766e] min-h-screen flex items-center relative overflow-hidden"
+      className="py-16 px-4 bg-gradient-to-br from-[#2c3e50] via-[#4ca1af] to-[#c4e0e5]  dark:from-[#0f172a] dark:via-[#1e3a8a] dark:to-[#0f766e] min-h-screen flex items-center relative overflow-hidden"
     >
       {/* Animated background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
@@ -181,7 +180,7 @@ const AboutMe = () => {
                 I am a <span className="text-teal-300">Computer Specialist</span>
               </h3>
 
-              <div className="text-lg text-gray-100 mb-4 leading-relaxed min-h-[120px]">
+              <div className="text-lg text-gray-100 mb-2 leading-relaxed min-h-[120px]">
                 <TypeAnimation
                   sequence={[
                     "I am now working as computer operator in Open IT Institute.",

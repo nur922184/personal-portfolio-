@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-scroll';
 import AOS from "aos";
 import "aos/dist/aos.css";
-import banner from '../assets/fgsdgdfgsgsdfg.gif';
 import profileImage from '../assets/me.jpg'; // You'll need to add your own profile image
 import Animation from '../Component/Animation';
 
@@ -44,6 +43,14 @@ const Home = () => {
                                     role="button"
                                 >
                                     View My Work
+                                </button>
+                            </Link>
+                            <Link to="resume" smooth={true} duration={500}>
+                                <button
+                                    className="bg-white text-[#2c3e50] w-full sm:w-auto px-6 py-3 rounded-full font-semibold shadow-lg transition-all duration-300 hover:bg-gray-100 hover:scale-105 hover:shadow-xl dark:bg-teal-600 dark:text-white dark:hover:bg-teal-700"
+                                    role="button"
+                                >
+                                   Download Resume
                                 </button>
                             </Link>
                             <Link to="contact" smooth={true} duration={500}>

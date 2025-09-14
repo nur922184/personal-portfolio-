@@ -10,7 +10,7 @@ const ContactInfo = () => {
     { icon: <FaFacebook className="text-xl" />, name: "Facebook", url: "https://www.facebook.com/md.moniruzzaman.tonoy", color: "from-blue-600 to-blue-700" },
     { icon: <FaYoutube className="text-xl" />, name: "YouTube", url: "https://www.youtube.com/@moniruzzamam2428", color: "from-red-600 to-red-700" },
     { icon: <FaEnvelope className="text-xl" />, name: "Email", url: "mailto:moniruzzaman2428@gmail.com", color: "from-red-400 to-red-500" },
-    { icon: <FaWhatsapp className="text-xl" />, name: "WhatsApp", url: "https://wa.me/8801618160869", color: "from-green-500 to-green-600" },
+    { icon: <FaWhatsapp className="text-xl" />, name: "WhatsApp", url: "https://wa.me/8801618160869?text=Hello%20Moniruzzaman,%20I%20want%20to%20connect%20with%20you.", color: "from-green-500 to-green-600" },
     { icon: <FaPhone className="text-xl" />, name: "Phone", url: "tel:+8801618160869", color: "from-green-600 to-green-700" },
   ];
 

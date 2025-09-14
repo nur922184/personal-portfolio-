@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { 
-  FaGithub, 
-  FaLinkedin, 
-  FaFacebook, 
-  FaYoutube, 
-  FaEnvelope, 
-  FaPhone, 
+import Me from '../assets/me.jpg'
+import {
+  FaGithub,
+  FaLinkedin,
+  FaFacebook,
+  FaYoutube,
+  FaEnvelope,
+  FaPhone,
   FaWhatsapp,
   FaPaperPlane,
   FaMapMarkerAlt,
@@ -20,7 +21,7 @@ const Contact = () => {
     email: "",
     message: ""
   });
-  
+
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e) => {
@@ -35,7 +36,7 @@ const Contact = () => {
     // এখানে ফর্ম সাবমিশন লজিক যোগ করুন
     console.log(formData);
     setIsSubmitted(true);
-    
+
     // রিসেট ফর্ম
     setTimeout(() => {
       setFormData({ name: "", email: "", message: "" });
@@ -47,7 +48,7 @@ const Contact = () => {
     <section id="contact" className="py-16 px-4 bg-gradient-to-br from-[#2c3e50] via-[#4ca1af] to-[#c4e0e5] dark:from-[#0f172a] dark:via-[#1e3a8a] dark:to-[#0f766e] min-h-screen flex items-center">
       <div className="container mx-auto max-w-4xl">
         {/* Title */}
-        <motion.div 
+        <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -58,20 +59,20 @@ const Contact = () => {
           </h2>
           <div className="w-20 h-1 bg-teal-400 mx-auto"></div>
           <p className="text-gray-200 mt-4 max-w-2xl mx-auto">
-           I look forward to hearing from you. Please fill out the form below or contact me directly.
+            I look forward to hearing from you. Please fill out the form below or contact me directly.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Contact Information */}
-          <motion.div 
+          <motion.div
             className="bg-white/10 dark:bg-gray-900/20 backdrop-blur-md rounded-2xl p-6 border border-white/10 dark:border-gray-700/20 shadow-xl"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
           >
             <h3 className="text-2xl font-semibold text-white mb-6">Get in Touch</h3>
-            
+
             <div className="space-y-4">
               <div className="flex items-start">
                 <div className="bg-teal-400/20 p-3 rounded-full mr-4">
@@ -82,30 +83,48 @@ const Contact = () => {
                   <p className="text-gray-200">Kendua, Netrokona, Bangladesh</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start">
                 <div className="bg-teal-400/20 p-3 rounded-full mr-4">
                   <FaEnvelope className="text-teal-300 text-lg" />
                 </div>
                 <div>
                   <h4 className="text-white font-medium">Email</h4>
-                  <p className="text-gray-200">moniruzzaman2428@gmail.com</p>
+                  <a href="mailto:moniruzzaman2428@gmail.com">moniruzzaman2428@gmail.com</a>
                 </div>
               </div>
-              
+
+              <div className="flex items-start">
+                <div className="bg-teal-400/20 p-3 rounded-full mr-4">
+                  <FaWhatsapp className="text-teal-300 text-lg" />
+                </div>
+                <div>
+                  <h4 className="text-white font-medium">WhatsApp</h4>
+                  <a href="https://wa.me/8801618160869?text=Hello%20Moniruzzaman,%20I%20want%20to%20connect%20with%20you.">+8801618160869</a>
+                  <p className="text-gray-200"></p>
+                </div>
+              </div>
               <div className="flex items-start">
                 <div className="bg-teal-400/20 p-3 rounded-full mr-4">
                   <FaPhone className="text-teal-300 text-lg" />
                 </div>
                 <div>
                   <h4 className="text-white font-medium">Phone</h4>
-                  <p className="text-gray-200">+8801618160869</p>
+                  <a href="tel:+88016181608690">+8801618160869</a>
+                  <p className="text-gray-200"></p>
                 </div>
               </div>
             </div>
-            
+
             {/* Social Links */}
             <div className="mt-8">
+              <div className="flex justify-center mt-6">
+                <img
+                  src={Me} // Replace with actual image URL
+                  alt="Contact us"
+                  className="w-24 h-24 bg-cover rounded-full border-4 border-teal-900"
+                />
+              </div>
               <h4 className="text-white font-medium mb-4">Follow Me</h4>
               <div className="flex space-x-4">
                 <motion.a
@@ -117,7 +136,7 @@ const Contact = () => {
                 >
                   <FaGithub size={18} />
                 </motion.a>
-                
+
                 <motion.a
                   href="https://www.linkedin.com/in/md-moniruzzaman-tonoy-7bb52b285/"
                   target="_blank"
@@ -127,7 +146,7 @@ const Contact = () => {
                 >
                   <FaLinkedin size={18} />
                 </motion.a>
-                
+
                 <motion.a
                   href="https://x.com/moniruzzaman_24"
                   target="_blank"
@@ -137,7 +156,7 @@ const Contact = () => {
                 >
                   <FaTimes size={18} />
                 </motion.a>
-                
+
                 <motion.a
                   href="https://www.facebook.com/md.moniruzzaman.tonoy"
                   target="_blank"
@@ -147,7 +166,7 @@ const Contact = () => {
                 >
                   <FaFacebook size={18} />
                 </motion.a>
-                
+
                 <motion.a
                   href="https://www.youtube.com/@moniruzzamam2428"
                   target="_blank"
@@ -157,9 +176,9 @@ const Contact = () => {
                 >
                   <FaYoutube size={18} />
                 </motion.a>
-                
+
                 <motion.a
-                  href="https://wa.me/8801618160869"
+                  href="https://wa.me/8801618160869?text=Hello%20Moniruzzaman,%20I%20want%20to%20connect%20with%20you."
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -5 }}
@@ -170,18 +189,18 @@ const Contact = () => {
               </div>
             </div>
           </motion.div>
-          
+
           {/* Contact Form */}
-          <motion.div 
+          <motion.div
             className="bg-white/10 dark:bg-gray-900/20 backdrop-blur-md rounded-2xl p-6 border border-white/10 dark:border-gray-700/20 shadow-xl"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
             <h3 className="text-2xl font-semibold text-white mb-6">Send Message</h3>
-            
+
             {isSubmitted ? (
-              <motion.div 
+              <motion.div
                 className="bg-teal-400/20 border border-teal-400/30 text-teal-300 p-4 rounded-lg text-center"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -195,8 +214,8 @@ const Contact = () => {
                   <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                     <FaUser className="text-gray-400" />
                   </div>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
@@ -205,13 +224,13 @@ const Contact = () => {
                     required
                   />
                 </div>
-                
+
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                     <FaEnvelope className="text-gray-400" />
                   </div>
-                  <input 
-                    type="email" 
+                  <input
+                    type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
@@ -220,9 +239,9 @@ const Contact = () => {
                     required
                   />
                 </div>
-                
+
                 <div className="relative">
-                  <textarea 
+                  <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
@@ -232,7 +251,7 @@ const Contact = () => {
                     required
                   ></textarea>
                 </div>
-                
+
                 <motion.button
                   type="submit"
                   whileHover={{ scale: 1.05 }}
