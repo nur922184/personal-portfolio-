@@ -38,71 +38,71 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <div className=''>
-            {/* Quick Links */}
-            <div className="text-center">
-              <h4 className="text-lg font-semibold mb-4 text-teal-400">Quick Links</h4>
-              <ul className="space-y-2">
-                <li><a href="#home" className="text-gray-400 hover:text-teal-400 transition-colors">Home</a></li>
-                <li><a href="#about" className="text-gray-400 hover:text-teal-400 transition-colors">About</a></li>
-                <li><a href="#projects" className="text-gray-400 hover:text-teal-400 transition-colors">Projects</a></li>
-                <li><a href="#contact" className="text-gray-400 hover:text-teal-400 transition-colors">Contact</a></li>
-              </ul>
-            </div>
 
-            {/* Connect With Me */}
-            <div className="text-center md:text-right">
-              <h4 className="text-lg font-semibold mb-4 text-teal-400">Connect With Me</h4>
-              <p className="text-gray-400 mb-4">Let's work together on something amazing!</p>
-              <div className="flex justify-center md:justify-end space-x-4">
-                <a
-                  href="https://github.com/nur922184"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-gray-800 p-2 rounded-full hover:bg-teal-600 transition-colors duration-300"
-                  aria-label="GitHub"
-                >
-                  <FaGithub size={18} />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/md-moniruzzaman-tonoy-7bb52b285/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-gray-800 p-2 rounded-full hover:bg-teal-600 transition-colors duration-300"
-                  aria-label="LinkedIn"
-                >
-                  <FaLinkedin size={18} />
-                </a>
-                <a
-                  href="https://x.com/moniruzzaman_24"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-gray-800 p-2 rounded-full hover:bg-teal-600 transition-colors duration-300"
-                  aria-label="Twitter"
-                >
-                  <FaTwitter size={18} />
-                </a>
-                <a
-                  href="https://www.facebook.com/md.moniruzzaman.tonoy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-gray-800 p-2 rounded-full hover:bg-teal-600 transition-colors duration-300"
-                  aria-label="Facebook"
-                >
-                  <FaFacebook size={18} />
-                </a>
-                <a
-                  href="https://wa.me/8801618160869?text=Hello%20Moniruzzaman,%20I%20want%20to%20connect%20with%20you"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-gray-800 p-2 rounded-full hover:bg-teal-600 transition-colors duration-300"
-                  aria-label="Whatsapp"
-                >
-                  <FaWhatsapp size={18} />
-                </a>
-              </div>
+          {/* Quick Links */}
+          <div className="text-center">
+            <h4 className="text-lg font-semibold mb-4 text-teal-400">Quick Links</h4>
+            <ul className="space-y-2">
+              <li><a href="#home" className="text-gray-400 hover:text-teal-400 transition-colors">Home</a></li>
+              <li><a href="#about" className="text-gray-400 hover:text-teal-400 transition-colors">About</a></li>
+              <li><a href="#projects" className="text-gray-400 hover:text-teal-400 transition-colors">Projects</a></li>
+              <li><a href="#contact" className="text-gray-400 hover:text-teal-400 transition-colors">Contact</a></li>
+            </ul>
+          </div>
+
+          {/* Connect With Me */}
+          <div className="text-center md:text-right">
+            <h4 className="text-lg font-semibold mb-4 text-teal-400">Connect With Me</h4>
+            <p className="text-gray-400 mb-4">Let's work together on something amazing!</p>
+            <div className="flex justify-center md:justify-end space-x-4">
+              <a
+                href="https://github.com/nur922184"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-800 p-2 rounded-full hover:bg-teal-600 transition-colors duration-300"
+                aria-label="GitHub"
+              >
+                <FaGithub size={18} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/md-moniruzzaman-tonoy-7bb52b285/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-800 p-2 rounded-full hover:bg-teal-600 transition-colors duration-300"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedin size={18} />
+              </a>
+              <a
+                href="https://x.com/moniruzzaman_24"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-800 p-2 rounded-full hover:bg-teal-600 transition-colors duration-300"
+                aria-label="Twitter"
+              >
+                <FaTwitter size={18} />
+              </a>
+              <a
+                href="https://www.facebook.com/md.moniruzzaman.tonoy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-800 p-2 rounded-full hover:bg-teal-600 transition-colors duration-300"
+                aria-label="Facebook"
+              >
+                <FaFacebook size={18} />
+              </a>
+              <a
+                href="https://wa.me/8801618160869?text=Hello%20Moniruzzaman,%20I%20want%20to%20connect%20with%20you"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-800 p-2 rounded-full hover:bg-teal-600 transition-colors duration-300"
+                aria-label="Whatsapp"
+              >
+                <FaWhatsapp size={18} />
+              </a>
             </div>
           </div>
+
         </div>
 
         {/* Divider */}
