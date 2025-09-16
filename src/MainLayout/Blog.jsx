@@ -175,7 +175,8 @@ const Blog = () => {
           <li><strong>Modules</strong> - Import and export functionality between files</li>
           <li><strong>Async/Await</strong> - Write asynchronous code that looks synchronous</li>
         </ul>
-        <p>These features have made JavaScript more expressive and powerful, enabling developers to write cleaner and more maintainable code.</p>
+        <p>These features have made JavaScript more expressive and powerful, 
+        enabling developers to write cleaner and more maintainable code.</p>
       `,
       date: "June 10, 2024",
       readTime: "9 min read",
@@ -188,7 +189,6 @@ const Blog = () => {
       }
     }
   ];
-
   const categories = [
     { id: "all", name: "All Posts" },
     { id: "react", name: "React" },
@@ -198,30 +198,25 @@ const Blog = () => {
     { id: "web", name: "Web Development" },
     { id: "database", name: "Database" }
   ];
-
   const filteredPosts = selectedCategory === "all"
     ? blogPosts
     : blogPosts.filter(post => post.category === selectedCategory);
-
   const openModal = (post) => {
     setSelectedPost(post);
     setModalOpen(true);
     document.body.style.overflow = 'hidden';
   };
-
   const closeModal = () => {
     setModalOpen(false);
     document.body.style.overflow = 'unset';
     setTimeout(() => setSelectedPost(null), 300);
   };
-
   const handleLike = (postId) => {
     setLiked(prev => ({
       ...prev,
       [postId]: !prev[postId]
     }));
   };
-
   const handleBookmark = (postId) => {
     setBookmarked(prev => ({
       ...prev,

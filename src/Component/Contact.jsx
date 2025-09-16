@@ -126,7 +126,7 @@ const Contact = () => {
                 />
               </div>
               <h4 className="text-white font-medium mb-4">Follow Me</h4>
-              <div className="flex space-x-4">
+              <div className="flex space-x-2">
                 <motion.a
                   href="https://github.com/nur922184"
                   target="_blank"

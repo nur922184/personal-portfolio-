@@ -116,19 +116,18 @@ const WorkExperience = () => {
 
                     {/* Description */}
                     <p className="text-gray-200 mb-4">
+
                       <TypeAnimation
-                        splitter={(str) => str.split(/(?= )/)} // 'Lorem ipsum dolor' -> ['Lorem', ' ipsum', ' dolor']
                         sequence={[
                           ` ${exp.description}`,
-
-                          15000,
-                          '',
                         ]}
-                        speed={{ type: 'keyStrokeDelayInMs', value: 30 }}
-                        omitDeletionAnimation={true}
-                        style={{ fontSize: '1em', display: 'block', minHeight: '200px' }}
-                        repeat={1}
+                        wrapper="span"
+                        speed={50}
+                        style={{ display: "inline-block" }}
+                        repeat={Infinity}
+                        className="type-animation"
                       />
+
                     </p>
 
                     {/* Technologies */}
