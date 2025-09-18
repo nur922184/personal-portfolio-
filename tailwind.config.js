@@ -10,6 +10,9 @@ export default {
   theme: {
     themes: ["dark", "light", "cupcake"],
     extend: {
+      fontFamily: {
+        merienda: ['Merienda', 'cursive'],
+      },
       keyframes: {
         gradient: {
           '0%, 100%': { backgroundPosition: '0% 50%' },
