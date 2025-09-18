@@ -1,11 +1,31 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-scroll';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import profileImage from '../assets/me.jpg'; // You'll need to add your own profile image
 import Animation from '../Component/Animation';
-
+import '../Animated/TextAnimation.css';
 const Home = () => {
+
+    const textRef = useRef(null);
+    const textRefs = useRef(null);
+
+    useEffect(() => {
+        const textElement = textRefs.current;
+        if (textElement) {
+            // স্ক্রলে আসলে বা অন্য কোনো ট্রিগারে এনিমেশন শুরু করুন
+            textElement.classList.add('animate-text');
+        }
+    }, []);
+    useEffect(() => {
+        const textElement = textRef.current;
+        if (textElement) {
+            // স্ক্রলে আসলে বা অন্য কোনো ট্রিগারে এনিমেশন শুরু করুন
+            textElement.classList.add('animate-text');
+        }
+    }, []);
+
+
     useEffect(() => {
         AOS.init({
             duration: 1000,
@@ -24,11 +44,11 @@ const Home = () => {
                     {/* Left Content */}
                     <div className="md:w-1/2 order-2 md:order-1" data-aos="fade-right">
                         <div className="text-left">
-                            <h4 className="text-3xl md:text-4xl font-bold text-white dark:text-gray-100 mb-4 drop-shadow-md">Hi, I am</h4>
+                            <h4 ref={textRefs} className=" blur-to-clear-text gradient-text text-3xl md:text-4xl font-bold text-white dark:text-gray-100 mb-4 drop-shadow-md">Hello, I am</h4>
                             <div className="text-xl mb-4">
                                 <Animation />
                             </div>
-                            <p className="text-lg md:text-xl text-white dark:text-gray-200 mb-8 drop-shadow-md">
+                            <p ref={textRef} className="blur-to-clear-text text-lg md:text-xl text-white dark:text-gray-200 mb-8 drop-shadow-md">
                                 A Passionate Frontend Developer & UI/UX Enthusiast
                             </p>
                             <p className="text-md text-white/90 dark:text-gray-300 mb-8 drop-shadow-md">
@@ -50,7 +70,7 @@ const Home = () => {
                                     className="bg-white text-[#2c3e50] w-full sm:w-auto px-6 py-3 rounded-full font-semibold shadow-lg transition-all duration-300 hover:bg-gray-100 hover:scale-105 hover:shadow-xl dark:bg-teal-600 dark:text-white dark:hover:bg-teal-700"
                                     role="button"
                                 >
-                                   Download Resume
+                                    Download Resume
                                 </button>
                             </Link>
                             <Link to="contact" smooth={true} duration={500}>

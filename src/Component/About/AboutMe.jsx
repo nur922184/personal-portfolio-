@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import {
@@ -51,6 +51,16 @@ const skills = [
 
 const AboutMe = () => {
   const [isVisible, setIsVisible] = useState(false);
+
+  const textRefs = useRef(null);
+
+    useEffect(() => {
+        const textElement = textRefs.current;
+        if (textElement) {
+            // স্ক্রলে আসলে বা অন্য কোনো ট্রিগারে এনিমেশন শুরু করুন
+            textElement.classList.add('animate-text');
+        }
+    }, []);
 
   useEffect(() => {
     setIsVisible(true);

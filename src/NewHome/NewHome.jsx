@@ -8,12 +8,12 @@ import Works from '../MainLayout/Work';
 import Blog from '../MainLayout/Blog';
 import WorkExperience from '../Component/WorkExperience';
 import Resume from '../MainLayout/Resume';
-
 const NewHome = () => {
     return (
         <div>
 
             <section id="home" name="home" ><Home></Home></section> 
+            {/* <TextAnimation></TextAnimation> */}
             <section id="about" name="about" ><AboutMe></AboutMe></section>
             <WorkExperience></WorkExperience>
             <section id="education" name="education" ><Education></Education></section>
