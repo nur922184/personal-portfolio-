@@ -20,7 +20,7 @@ const LodingAnimation = ({ progress, isFirstLoad }) => {
         
         <div className="loading-content">
           <h2 className="welcome-text">
-            {isFirstLoad ? 'you are welcome' : 'loading..'}
+            {isFirstLoad ? 'Welcome My Portfolio ' : 'loading..'}
             <span className="dots"><span>.</span><span>.</span><span>.</span></span>
           </h2>
           

@@ -5,11 +5,29 @@ import "aos/dist/aos.css";
 import profileImage from '../assets/me.jpg'; // You'll need to add your own profile image
 import Animation from '../Component/Animation';
 import '../Animated/TextAnimation.css';
+import '../Animated/ImageAnimation.css';
 const Home = () => {
 
     const textRef = useRef(null);
     const textRefs = useRef(null);
+    const imageRef = useRef(null);
 
+    useEffect(() => {
+        const imageElement = imageRef.current;
+        if (imageElement) {
+            // স্ক্রলে আসলে বা অন্য কোনো ট্রিগারে এনিমেশন শুরু করুন
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-image');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            observer.observe(imageElement);
+        }
+    }, []);
     useEffect(() => {
         const textElement = textRefs.current;
         if (textElement) {
@@ -88,7 +106,8 @@ const Home = () => {
                     <div className="md:w-1/2 order-1 md:order-2 flex justify-center" data-aos="fade-left">
                         <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden group cursor-pointer">
                             {/* Main Image Container with 3D Effects */}
-                            <div className="w-full h-full rounded-full overflow-hidden transform transition-all duration-700 group-hover:scale-105 group-hover:-translate-y-2 group-hover:shadow-2xl">
+                            {/* className="w-full h-full rounded-full overflow-hidden transform transition-all duration-700 group-hover:scale-105 group-hover:-translate-y-2 group-hover:shadow-2xl */}
+                            <div ref={imageRef} className="blur-to-clear-image gradient-overlay-image" >
                                 <img
                                     src={profileImage}
                                     alt="Profile"
