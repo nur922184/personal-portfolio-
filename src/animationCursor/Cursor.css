@@ -1,0 +1,111 @@
+/* AdvancedCursor.css */
+.advanced-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: #5e81ff;
+  border-radius: 50%;
+  z-index: 9999;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 15px rgba(94, 129, 255, 0.8);
+  mix-blend-mode: difference;
+}
+
+.advanced-cursor-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(94, 129, 255, 0.5);
+  border-radius: 50%;
+  z-index: 9998;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  backdrop-filter: blur(2px);
+}
+
+.cursor-particle {
+  position: fixed;
+  background: rgba(94, 129, 255, 0.7);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9997;
+  transform: translate(-50%, -50%);
+  animation: particle-pulse 2s infinite;
+}
+
+@keyframes particle-pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.2;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+
+/* হোভার ইফেক্ট */
+a, button, [data-cursor-hover] {
+  cursor: none !important;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+a:hover, button:hover, [data-cursor-hover]:hover {
+  transform: translateY(-3px);
+}
+
+/* মোবাইল ডিভাইসে স্টাইল */
+@media (max-width: 768px) {
+  .advanced-cursor,
+  .advanced-cursor-follower,
+  .cursor-particle {
+    display: block !important;
+  }
+  
+  .advanced-cursor {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .advanced-cursor-follower {
+    width: 30px;
+    height: 30px;
+  }
+  
+  /* টাচ ইভেন্টের জন্য */
+  .advanced-cursor {
+    transition: transform 0.1s ease;
+  }
+  
+  body:active .advanced-cursor {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+
+/* স্ক্রলবার স্টাইল */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #5e81ff, #5effc2);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #ff5e7d, #ffcb5e);
+}
