@@ -369,14 +369,14 @@ const Blog = () => {
         <AnimatePresence>
           {modalOpen && selectedPost && (
             <motion.div
-              className="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4"
+              className="fixed inset-0 bg-gradient-to-br from-[#2c3e50] via-[#4ca1af] to-[#c4e0e5] dark:from-[#0f172a] dark:via-[#1e3a8a] dark:to-[#0f766e] backdrop-blur-md z-50 flex items-center justify-center p-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={closeModal}
             >
               <motion.div
-                className="bg-white dark:bg-gray-900 rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto"
+                className="bg-gradient-to-br from-[#2c3e50] via-[#4ca1af] to-[#c4e0e5] dark:from-[#0f172a] dark:via-[#1e3a8a] dark:to-[#0f766e] rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto"
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.9, opacity: 0 }}
@@ -384,7 +384,7 @@ const Blog = () => {
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Modal Header */}
-                <div className="sticky top-0 bg-white dark:bg-gray-900 p-4 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center z-10">
+                <div className="sticky top-0 bg-gradient-to-br from-[#2c3e50] via-[#4ca1af] to-[#c4e0e5] dark:from-[#0f172a] dark:via-[#1e3a8a] dark:to-[#0f766e] p-4 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center z-10">
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
                     {selectedPost.title}
                   </h2>
@@ -455,19 +455,19 @@ const Blog = () => {
                     <div className="flex items-center space-x-2 mt-4 sm:mt-0">
                       <span className="text-gray-500 dark:text-gray-400 text-sm">Share:</span>
                       <button
-                        className="text-blue-600 hover:text-blue-800"
+                        className="text-blue-100 hover:text-blue-900"
                         onClick={() => sharePost("facebook", selectedPost)}
                       >
                         <FaFacebook />
                       </button>
                       <button
-                        className="text-blue-400 hover:text-blue-600"
+                        className="text-blue-100 hover:text-blue-900"
                         onClick={() => sharePost("twitter", selectedPost)}
                       >
                         <FaTwitter />
                       </button>
                       <button
-                        className="text-blue-700 hover:text-blue-900"
+                        className="text-blue-100 hover:text-blue-900"
                         onClick={() => sharePost("linkedin", selectedPost)}
                       >
                         <FaLinkedin />

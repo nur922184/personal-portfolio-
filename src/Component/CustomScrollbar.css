@@ -1,0 +1,135 @@
+/* CustomScrollbar.css */
+.custom-scrollbar-container {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  transition: all 0.3s ease;
+}
+
+.custom-scrollbar-container:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.scroll-content {
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* স্ক্রলবার স্টাইলিং */
+.react-scrollbar-js {
+  border-radius: 12px !important;
+}
+
+.react-scrollbar-js .scroll-bar {
+  background-color: rgba(106, 17, 203, 0.3) !important;
+  border-radius: 4px !important;
+  width: 8px !important;
+  transition: all 0.3s ease !important;
+}
+
+.react-scrollbar-js .scroll-bar:hover {
+  background-color: rgba(106, 17, 203, 0.7) !important;
+  width: 10px !important;
+}
+
+.react-scrollbar-js .scroll-bar:active {
+  background-color: rgba(106, 17, 203, 0.9) !important;
+}
+
+.react-scrollbar-js .scroll-content {
+  padding-right: 15px !important;
+}
+
+/* ডার্ক মোড সাপোর্ট */
+@media (prefers-color-scheme: dark) {
+  .custom-scrollbar-container {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .scroll-content {
+    color: #ecf0f1;
+  }
+}
+
+/* এনিমেশন ক্লাসেস */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* রেস্পন্সিভ ডিজাইন */
+@media (max-width: 768px) {
+  .custom-scrollbar-container {
+    border-radius: 8px;
+  }
+  
+  .scroll-content {
+    padding: 15px;
+  }
+  
+  .react-scrollbar-js .scroll-bar {
+    width: 6px !important;
+  }
+  
+  .react-scrollbar-js .scroll-bar:hover {
+    width: 8px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-content {
+    padding: 12px;
+  }
+}
+
+/* কাস্টম স্ক্রলবার ভেরিয়েন্ট */
+.glass-scrollbar {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.gradient-scrollbar .scroll-bar {
+  background: linear-gradient(to bottom, #6a11cb, #2575fc) !important;
+}
+
+.minimal-scrollbar .scroll-bar {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  width: 4px !important;
+}
+
+.minimal-scrollbar .scroll-bar:hover {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+  width: 6px !important;
+}

@@ -163,7 +163,7 @@ const Navber = () => {
                   duration={500}
                   spy={true}
                   offset={-80}
-                  activeClass="text-teal-400"
+                  activeClass="text-teal-400 border-b-2 border-teal-400"
                   className="cursor-pointer text-white hover:text-teal-400 transition"
                 >
                   <FaHome size={16} />
