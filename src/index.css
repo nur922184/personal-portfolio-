@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Namdhinggo:wght@400;500;600;700;800&display=swap');
+
 body {
-     font-family: "Namdhinggo", serif;
+  font-family: "Namdhinggo", serif;
+/* font-family: "Cormorant Garamond", serif; */
+
 }
 
 
@@ -45,4 +48,3 @@ body {
 .group:hover .group-hover\:animate-pulse-glow {
   animation: pulse-glow 2s ease-in-out infinite;
 }
-

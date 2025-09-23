@@ -54,8 +54,18 @@ const Home = () => {
     return (
         <div>
             {/* Hero Section */}
-            <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#2c3e50] via-[#4ca1af] to-[#c4e0e5] dark:from-[#0f172a] dark:via-[#1e3a8a] dark:to-[#0f766e] p-5 py-20 relative overflow-hidden">
-                {/* Animated background elements */}
+           <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#2c3e50] via-[#4ca1af] to-[#c4e0e5] dark:from-[#0f172a] dark:via-[#1e3a8a] dark:to-[#0f766e] p-5 py-20 relative overflow-hidden">
+    {/* Floating Background Shapes */}
+    <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-10 left-10 w-20 h-20 bg-white/5 rounded-full animate-float-slow"></div>
+        <div className="absolute top-1/4 right-20 w-16 h-16 bg-teal-400/10 rounded-lg animate-float-medium"></div>
+        <div className="absolute bottom-20 left-1/4 w-24 h-24 bg-purple-500/10 rounded-full animate-float-fast"></div>
+        <div className="absolute bottom-1/3 right-10 w-12 h-12 bg-amber-400/10 rounded-lg animate-float-slow"></div>
+        <div className="absolute top-1/2 left-20 w-18 h-18 bg-white/5 rounded-full animate-float-medium"></div>
+    </div>
+
+    {/* Existing background pattern */}
+    <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNykiIHN0cm9rZS13aWR0aD0iMiI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMTUiLz48L2c+PC9zdmc+')] opacity-20 dark:opacity-10"></div>
                 <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNykiIHN0cm9rZS13aWR0aD0iMiI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMTUiLz48L2c+PC9zdmc+')] opacity-20 dark:opacity-10"></div>
 
                 <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-10 relative z-10">

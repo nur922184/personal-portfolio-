@@ -118,3 +118,67 @@
 .profile-img-container:hover .profile-img {
     transform: rotateY(15deg) rotateX(10deg) scale(1.05);
 }
+
+/* Grid Animations */
+@keyframes grid-move {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(10px, 10px) rotate(1deg); }
+    50% { transform: translate(0, 20px) rotate(0deg); }
+    75% { transform: translate(-10px, 10px) rotate(-1deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes grid-glow {
+    0%, 100% { 
+        opacity: 0.3;
+        filter: hue-rotate(0deg);
+    }
+    50% { 
+        opacity: 0.7;
+        filter: hue-rotate(90deg);
+    }
+}
+
+.animate-grid-move {
+    animation: grid-move 15s ease-in-out infinite;
+}
+
+.animate-grid-glow {
+    animation: grid-glow 8s ease-in-out infinite;
+}
+
+/* Pulse Animations */
+@keyframes pulse-slow {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.3; }
+}
+
+@keyframes pulse-medium {
+    0%, 100% { opacity: 0.05; }
+    50% { opacity: 0.15; }
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 6s ease-in-out infinite;
+}
+
+.animate-pulse-medium {
+    animation: pulse-medium 4s ease-in-out infinite;
+}
+
+/* Type Animation Styles */
+.type-animation {
+    min-height: 120px;
+    display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .animate-grid-move {
+        animation-duration: 20s;
+    }
+    
+    .animate-grid-glow {
+        animation-duration: 10s;
+    }
+}
