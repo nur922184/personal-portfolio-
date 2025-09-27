@@ -31,18 +31,41 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // এখানে ফর্ম সাবমিশন লজিক যোগ করুন
-    console.log(formData);
-    setIsSubmitted(true);
+  const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    // রিসেট ফর্ম
-    setTimeout(() => {
-      setFormData({ name: "", email: "", message: "" });
-      setIsSubmitted(false);
-    }, 3000);
-  };
+  // নতুন FormData বানাতে হবে
+  const formDataToSend = new FormData();
+  formDataToSend.append("access_key", "a9b6bb6c-f178-437d-a90a-f26a96a2c11d"); // আপনার Web3Forms access_key
+  formDataToSend.append("name", formData.name);
+  formDataToSend.append("email", formData.email);
+  formDataToSend.append("message", formData.message);
+
+  try {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formDataToSend,
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      setIsSubmitted(true);
+
+      // রিসেট ফর্ম
+      setTimeout(() => {
+        setFormData({ name: "", email: "", message: "" });
+        setIsSubmitted(false);
+      }, 3000);
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
+  } catch (error) {
+    console.error("Error submitting form:", error);
+    alert("Failed to send message. Please try again later.");
+  }
+};
+
 
   return (
     <section id="contact" className="py-16 px-4 bg-gradient-to-br from-[#2c3e50] via-[#4ca1af] to-[#c4e0e5] dark:from-[#0f172a] dark:via-[#1e3a8a] dark:to-[#0f766e] min-h-screen flex items-center">
