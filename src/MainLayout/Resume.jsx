@@ -4,8 +4,8 @@ import { FaDownload, FaEye, FaFilePdf, FaGoogleDrive } from "react-icons/fa";
 import { Link } from "react-scroll";
 
 const Resume = () => {
-  const resumeLink = "https://drive.google.com/file/d/1TY4hrgfVKLmMxo0PsSuiz25kQp7PPyuW/view";
-  const downloadLink = "https://drive.google.com/uc?export=download&id=1TY4hrgfVKLmMxo0PsSuiz25kQp7PPyuW";
+  const resumeLink = "https://drive.google.com/file/d/1hfl9l7i_Z5apg3KA0GW0LPy8XwIXJgjl/view";
+  const downloadLink = "https://drive.google.com/uc?export=download&id=1hfl9l7i_Z5apg3KA0GW0LPy8XwIXJgjl";
 
   const skills = {
     frontend: ["HTML5", "CSS3", "JavaScript (ES6+)", "React.js", "Redux Toolkit", "Next.js", "Tailwind CSS", "Bootstrap"],
