@@ -195,7 +195,7 @@ const WorkExperience = () => {
           <div className="absolute left-4 md:left-1/2 top-0 h-full w-1 bg-teal-400/30 transform -translate-x-1/2"></div>
 
           {/* Experience Items */}
-          <div className="space-y-12">
+          <div className="space-y-10">
             {experiences.map((exp, index) => (
               <motion.div
                 key={exp.id}

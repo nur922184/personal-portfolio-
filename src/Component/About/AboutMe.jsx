@@ -269,7 +269,7 @@ const AboutMe = () => {
           </h3>
 
           <motion.div 
-            className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-9 gap-6"
+            className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-9 gap-3 md:gap-4 lg:gap-6"
             variants={containerVariants}
             initial="hidden"
             animate="visible"

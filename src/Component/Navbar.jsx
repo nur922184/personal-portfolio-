@@ -3,6 +3,7 @@ import { BsMoon, BsSun } from 'react-icons/bs';
 import { FaBook, FaBriefcase, FaDev, FaGraduationCap, FaHome, FaUser } from 'react-icons/fa';
 import { MdContactPhone } from 'react-icons/md';
 import { Link } from 'react-scroll';
+import AdvancedAnimatedName from './AdvancedAnimatedName';
 
 const Navber = () => {
   const [theme, setTheme] = useState(
@@ -31,7 +32,7 @@ const Navber = () => {
       <div className="container mx-auto flex items-center justify-between">
         {/* Left: Logo */}
         <div className="text-blue-950 dark:text-white text-sm font-bold cursor-pointer">
-          Moni<span className='text-teal-100 dark:text-teal-400'>Ruzz</span>aman
+         <AdvancedAnimatedName></AdvancedAnimatedName>
         </div>
 
         {/* Center: Links */}

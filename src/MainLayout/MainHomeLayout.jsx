@@ -5,6 +5,7 @@ import Cursor from '../animationCursor/Cursor';
 import NewHome from '../NewHome/NewHome';
 import LodingAnimation from '../Component/LoadingAnimation/LodingAnimation';
 
+
 const MainHomeLayout = () => {
     const [isLoading, setIsLoading] = useState(true);
   const [progress, setProgress] = useState(0);
@@ -44,7 +45,7 @@ const MainHomeLayout = () => {
                 <LodingAnimation progress={progress} isFirstLoad={isFirstLoad} />
             ) : (
                 <>
-                    <Cursor />
+                    <Cursor /> 
                     <Header />
                     <main>
                         <NewHome />
