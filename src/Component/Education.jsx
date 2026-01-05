@@ -25,7 +25,7 @@ const Education = () => {
 
   return (
     <section id="education" className="py-16 px-4 bg-gradient-to-br from-[#2c3e50] via-[#4ca1af] to-[#c4e0e5] dark:from-[#0f172a] dark:via-[#1e3a8a] dark:to-[#0f766e] min-h-screen flex items-center">
-      <div className="container mx-auto max-w-4xl">
+      <div className="container mx-auto">
         {/* Title */}
         <motion.div 
           className="text-center mb-12"

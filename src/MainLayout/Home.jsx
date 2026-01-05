@@ -2,12 +2,12 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-scroll';
 import AOS from "aos";
 import "aos/dist/aos.css";
-import profileImage from '../assets/me.jpg'; // You'll need to add your own profile image
+import profileImage from '../assets/me.jpg';
 import Animation from '../Component/Animation';
 import '../Animated/TextAnimation.css';
 import '../Animated/ImageAnimation.css';
-const Home = () => {
 
+const Home = () => {
     const textRef = useRef(null);
     const textRefs = useRef(null);
     const imageRef = useRef(null);
@@ -15,7 +15,6 @@ const Home = () => {
     useEffect(() => {
         const imageElement = imageRef.current;
         if (imageElement) {
-            // স্ক্রলে আসলে বা অন্য কোনো ট্রিগারে এনিমেশন শুরু করুন
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -28,51 +27,51 @@ const Home = () => {
             observer.observe(imageElement);
         }
     }, []);
+
     useEffect(() => {
         const textElement = textRefs.current;
         if (textElement) {
-            // স্ক্রলে আসলে বা অন্য কোনো ট্রিগারে এনিমেশন শুরু করুন
-            textElement.classList.add('animate-text');
-        }
-    }, []);
-    useEffect(() => {
-        const textElement = textRef.current;
-        if (textElement) {
-            // স্ক্রলে আসলে বা অন্য কোনো ট্রিগারে এনিমেশন শুরু করুন
             textElement.classList.add('animate-text');
         }
     }, []);
 
+    useEffect(() => {
+        const textElement = textRef.current;
+        if (textElement) {
+            textElement.classList.add('animate-text');
+        }
+    }, []);
 
     useEffect(() => {
         AOS.init({
             duration: 1000,
-            once: true // Animations happen only once when scrolling
+            once: true
         });
     }, []);
 
     return (
         <div>
             {/* Hero Section */}
-           <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#2c3e50] via-[#4ca1af] to-[#c4e0e5] dark:from-[#0f172a] dark:via-[#1e3a8a] dark:to-[#0f766e] p-5 py-20 relative overflow-hidden">
-    {/* Floating Background Shapes */}
-    <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-10 left-10 w-20 h-20 bg-white/5 rounded-full animate-float-slow"></div>
-        <div className="absolute top-1/4 right-20 w-16 h-16 bg-teal-400/10 rounded-lg animate-float-medium"></div>
-        <div className="absolute bottom-20 left-1/4 w-24 h-24 bg-purple-500/10 rounded-full animate-float-fast"></div>
-        <div className="absolute bottom-1/3 right-10 w-12 h-12 bg-amber-400/10 rounded-lg animate-float-slow"></div>
-        <div className="absolute top-1/2 left-20 w-18 h-18 bg-white/5 rounded-full animate-float-medium"></div>
-    </div>
+            <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#2c3e50] via-[#4ca1af] to-[#c4e0e5] dark:from-[#0f172a] dark:via-[#1e3a8a] dark:to-[#0f766e] p-5 py-20 relative overflow-hidden">
+                {/* Floating Background Shapes */}
+                <div className="absolute inset-0 overflow-hidden">
+                    <div className="absolute top-10 left-10 w-20 h-20 bg-white/5 rounded-full animate-float-slow"></div>
+                    <div className="absolute top-1/4 right-20 w-16 h-16 bg-teal-400/10 rounded-lg animate-float-medium"></div>
+                    <div className="absolute bottom-20 left-1/4 w-24 h-24 bg-purple-500/10 rounded-full animate-float-fast"></div>
+                    <div className="absolute bottom-1/3 right-10 w-12 h-12 bg-amber-400/10 rounded-lg animate-float-slow"></div>
+                    <div className="absolute top-1/2 left-20 w-18 h-18 bg-white/5 rounded-full animate-float-medium"></div>
+                </div>
 
-    {/* Existing background pattern */}
-    <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNykiIHN0cm9rZS13aWR0aD0iMiI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMTUiLz48L2c+PC9zdmc+')] opacity-20 dark:opacity-10"></div>
+                {/* Background pattern */}
                 <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNykiIHN0cm9rZS13aWR0aD0iMiI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMTUiLz48L2c+PC9zdmc+')] opacity-20 dark:opacity-10"></div>
 
                 <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-10 relative z-10">
-                    {/* Left Content */}
+                    {/* Left Content - বাম পাশে কন্টেন্ট */}
                     <div className="md:w-1/2 order-2 md:order-1" data-aos="fade-right">
                         <div className="text-left">
-                            <h4 ref={textRefs} className=" blur-to-clear-text gradient-text text-3xl md:text-4xl font-bold text-white dark:text-gray-100 mb-4 drop-shadow-md">Hello, I am</h4>
+                            <h4 ref={textRefs} className="blur-to-clear-text gradient-text text-3xl md:text-4xl font-bold text-white dark:text-gray-100 mb-4 drop-shadow-md">
+                                Hello, I am
+                            </h4>
                             <div className="text-xl mb-4">
                                 <Animation />
                             </div>
@@ -112,38 +111,29 @@ const Home = () => {
                         </div>
                     </div>
 
-                    {/* Right Image */}
+                    {/* Right Image - ডান পাশে ইমেজ */}
                     <div className="md:w-1/2 order-1 md:order-2 flex justify-center" data-aos="fade-left">
-                        <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden group cursor-pointer">
-                            {/* Main Image Container with 3D Effects */}
-                            {/* className="w-full h-full rounded-full overflow-hidden transform transition-all duration-700 group-hover:scale-105 group-hover:-translate-y-2 group-hover:shadow-2xl */}
-                            <div ref={imageRef} className="blur-to-clear-image gradient-overlay-image" >
-                                <img
-                                    src={profileImage}
-                                    alt="Profile"
-                                    className="w-full h-full object-cover transform transition-all duration-700 group-hover:scale-110"
-                                />
+                        <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 flex items-center justify-center">
+                            {/* Rotating Dashed Gradient Border */}
+                            <div className="absolute inset-0 rounded-full p-[3px] bg-gradient-to-r from-purple-500 via-teal-400 to-pink-500 animate-rotate-border">
+                                {/* Inner transparent circle with dashed border and pulse */}
+                                <div className="w-full h-full rounded-full border-[2px] border-dotted border-white/70 animate-pulse-border"></div>
                             </div>
 
-                            {/* Animated Border */}
-                            <div className="absolute inset-0 rounded-full border-4 border-white/40 dark:border-gray-600/30 transform transition-all duration-700 group-hover:border-teal-400/80 group-hover:scale-105 group-hover:shadow-lg"></div>
+                            {/* Profile Image (Fixed, does NOT rotate) */}
+                            <img
+                                src={profileImage}
+                                alt="Profile"
+                                className="relative z-10 w-[98%] h-[98%] object-cover rounded-full border-[2px] border-gray-300 shadow-lg"
+                                ref={imageRef}
+                            />
 
-                            {/* Floating Elements for 3D Effect */}
-                            <div className="absolute -inset-2 rounded-full bg-gradient-to-r from-teal-400/20 to-purple-500/20 transform rotate-0 group-hover:rotate-6 transition-all duration-700 opacity-0 group-hover:opacity-100 -z-10"></div>
-                            <div className="absolute -inset-3 rounded-full bg-gradient-to-r from-teal-400/10 to-purple-500/10 transform -rotate-3 group-hover:-rotate-6 transition-all duration-700 opacity-0 group-hover:opacity-100 -z-20"></div>
-
-                            {/* Shine Effect on Hover */}
-                            <div className="absolute inset-0 rounded-full overflow-hidden">
-                                <div className="absolute -inset-full bg-gradient-to-r from-transparent via-white/40 to-transparent transform rotate-12 group-hover:translate-x-full transition-all duration-1000 group-hover:duration-3000 opacity-0 group-hover:opacity-100"></div>
-                            </div>
-
-                            {/* Floating Dots Decoration */}
-                            <div className="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-teal-400 opacity-0 group-hover:opacity-100 transition-all duration-700 group-hover:animate-pulse"></div>
-                            <div className="absolute -bottom-3 -left-3 w-6 h-6 rounded-full bg-purple-500 opacity-0 group-hover:opacity-100 transition-all duration-1000 group-hover:animate-bounce"></div>
-                            <div className="absolute top-1/4 -left-4 w-3 h-3 rounded-full bg-amber-400 opacity-0 group-hover:opacity-100 transition-all duration-1200"></div>
-
-                            {/* Subtle Shadow for Depth */}
-                            <div className="absolute -bottom-4 inset-x-4 h-4 bg-gradient-to-t from-gray-400/40 to-transparent dark:from-black/40 rounded-full blur-md group-hover:-bottom-5 group-hover:blur-lg transition-all duration-700"></div>
+                            {/* Additional Hover Effects */}
+                            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-teal-400/20 to-purple-500/20 opacity-0 hover:opacity-100 transition-all duration-700 -z-10"></div>
+                            
+                            {/* Floating Dots */}
+                            <div className="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-teal-400 opacity-0 hover:opacity-100 transition-all duration-700 animate-pulse"></div>
+                            <div className="absolute -bottom-3 -left-3 w-6 h-6 rounded-full bg-purple-500 opacity-0 hover:opacity-100 transition-all duration-1000 animate-bounce"></div>
                         </div>
                     </div>
                 </div>
@@ -154,10 +144,55 @@ const Home = () => {
                         <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
                     </div>
                 </div>
+
+                <style jsx>{`
+                    @keyframes rotate-border {
+                        0% {
+                            transform: rotate(0deg) scale(1);
+                        }
+                        50% {
+                            transform: rotate(180deg) scale(1.05);
+                        }
+                        100% {
+                            transform: rotate(360deg) scale(1);
+                        }
+                    }
+
+                    @keyframes pulse-border {
+                        0%, 100% {
+                            transform: scale(1);
+                            opacity: 0.9;
+                        }
+                        50% {
+                            transform: scale(1.07);
+                            opacity: 1;
+                        }
+                    }
+
+                    .animate-rotate-border {
+                        animation: rotate-border 7s linear infinite alternate;
+                    }
+
+                    .animate-pulse-border {
+                        animation: pulse-border 2.5s ease-in-out infinite;
+                    }
+
+                    /* Responsive adjustments */
+                    @media (max-width: 768px) {
+                        .md\\:w-1\\/2 {
+                            width: 100%;
+                        }
+                        .order-1 {
+                            order: 1;
+                        }
+                        .order-2 {
+                            order: 2;
+                        }
+                    }
+                `}</style>
             </section>
         </div>
     );
 };
 
 export default Home;
-

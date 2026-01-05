@@ -18,10 +18,17 @@ export default {
           '0%, 100%': { backgroundPosition: '0% 50%' },
           '50%': { backgroundPosition: '100% 50%' },
         },
-        scrollbar: ['rounded']
+        ping: {
+          '75%, 100%': {
+            transform: 'scale(2)',
+            opacity: '0'
+          }
+        }
       },
       animation: {
         gradient: 'gradient 8s ease infinite',
+        'spin-slow': 'spin 3s linear infinite',
+        'ping-slow': 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
       },
     },
   },
@@ -31,4 +38,3 @@ export default {
     require('tailwind-scrollbar'),
   ],
 }
-
