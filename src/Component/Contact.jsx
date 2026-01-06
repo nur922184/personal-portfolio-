@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   FaGithub, FaLinkedin, FaTwitter, FaEnvelope,
@@ -22,6 +22,9 @@ const Contact = () => {
   const [copied, setCopied] = useState(false);
   const [activeTab, setActiveTab] = useState("contact");
   const [expandedInfo, setExpandedInfo] = useState(false);
+
+  const contactRef = useRef(null);
+  const tabsRef = useRef(null);
 
   const contactInfo = {
     email: "moniruzzaman2428@gmail.com",
@@ -86,7 +89,7 @@ const Contact = () => {
   };
 
   const handleQuickContact = (type) => {
-    switch(type) {
+    switch (type) {
       case 'email':
         window.open(`mailto:${contactInfo.email}?subject=Let's Connect!&body=Hello Moniruzzaman,`);
         break;
@@ -97,22 +100,44 @@ const Contact = () => {
         window.open(`tel:${contactInfo.phone}`);
         break;
       case 'calendar':
-        // Google Calendar link
         window.open('https://calendar.google.com/calendar/u/0/r/eventedit');
         break;
     }
   };
 
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+    setTimeout(() => {
+      if (tabsRef.current) {
+        tabsRef.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+          inline: 'nearest'
+        });
+      }
+    }, 100);
+  };
+
+  useEffect(() => {
+    if (tabsRef.current) {
+      tabsRef.current.focus();
+    }
+  }, [activeTab]);
+
   return (
-    <section id="contact" className="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-teal-900/30 overflow-hidden">
+    <section
+      id="contact"
+      ref={contactRef}
+      className="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-teal-900/30 overflow-hidden"
+    >
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 -right-20 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 -left-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/5 rounded-full blur-3xl"></div>
-        
+
         {/* Floating Elements */}
-        {[...Array(15)].map((_, i) => (
+        {[...Array(10)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute w-2 h-2 bg-teal-400/30 rounded-full"
@@ -133,48 +158,364 @@ const Contact = () => {
         ))}
       </div>
 
-      <div className="relative container mx-auto px-4 py-16 z-10">
+      <div className="relative container mx-auto px-3 sm:px-4 py-8 md:py-16 z-10">
         {/* Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-16"
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="inline-flex items-center justify-center mb-4">
-            <div className="w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center">
-              <FaPaperPlane className="w-6 h-6 text-teal-400" />
+          <div className="inline-flex items-center justify-center mb-3 md:mb-4">
+            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-teal-500/20 flex items-center justify-center">
+              <FaPaperPlane className="w-5 h-5 md:w-6 md:h-6 text-teal-400" />
             </div>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-teal-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-6 bg-gradient-to-r from-teal-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
             Let's Connect
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-gray-300 max-w-2xl mx-auto px-2">
             Have a project in mind? Let's collaborate and create something amazing together!
           </p>
         </motion.div>
 
-        {/* Tabs */}
-        <div className="flex justify-center mb-12">
-          <div className="inline-flex bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-1">
-            {["contact", "social", "quick"].map(tab => (
+        {/* Mobile Layout - Single Column */}
+        <div className="lg:hidden space-y-6">
+          {/* Contact Information Card - Always Visible */}
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4">
+            <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <div className="w-2 h-6 bg-teal-500 rounded-full"></div>
+              Contact Information
+            </h3>
+
+            <div className="space-y-3">
+              {[
+                { icon: <FaEnvelope />, label: "Email", value: contactInfo.email, color: "text-red-400" },
+                { icon: <FaPhone />, label: "Phone", value: contactInfo.phone, color: "text-green-400" },
+                { icon: <FaMapMarkerAlt />, label: "Location", value: contactInfo.location, color: "text-blue-400" }
+              ].map((item, index) => (
+                <div key={index} className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10 hover:border-teal-500/30 transition-all duration-300">
+                  <div className={`p-2 rounded-lg bg-gradient-to-br from-gray-800 to-gray-900 ${item.color}`}>
+                    {item.icon}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-xs text-gray-400 truncate">{item.label}</div>
+                    <div className="text-white font-medium text-sm truncate">{item.value}</div>
+                  </div>
+                  <button
+                    onClick={() => copyToClipboard(item.value)}
+                    className="p-2 rounded-lg bg-white/5 text-gray-400 hover:text-teal-400 transition-colors flex-shrink-0"
+                    title="Copy to clipboard"
+                  >
+                    {copied ? <FaCheck className="text-green-400 w-3 h-3" /> : <FaCopy className="w-3 h-3" />}
+                  </button>
+                </div>
+              ))}
+            </div>
+
+            {/* Expandable Additional Info */}
+            <div className="mt-4">
               <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`px-6 py-3 rounded-xl font-medium transition-all ${activeTab === tab
-                  ? 'bg-gradient-to-r from-teal-500 to-emerald-500 text-white'
-                  : 'text-gray-300 hover:text-white'
-                  }`}
+                onClick={() => setExpandedInfo(!expandedInfo)}
+                className="w-full flex items-center justify-between p-3 bg-white/5 rounded-lg border border-white/10 hover:border-teal-500/30 transition-all text-sm"
               >
-                {tab === "contact" && "Send Message"}
-                {tab === "social" && "Social Links"}
-                {tab === "quick" && "Quick Contact"}
+                <span className="text-gray-300">More Information</span>
+                {expandedInfo ? <FaChevronUp className="w-3 h-3" /> : <FaChevronDown className="w-3 h-3" />}
               </button>
-            ))}
+
+              <AnimatePresence>
+                {expandedInfo && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="pt-3 space-y-3">
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className="text-center p-2 bg-white/5 rounded-lg">
+                          <div className="text-teal-400 font-bold text-sm">24h</div>
+                          <div className="text-xs text-gray-400">Response Time</div>
+                        </div>
+                        <div className="text-center p-2 bg-white/5 rounded-lg">
+                          <div className="text-teal-400 font-bold text-sm">100%</div>
+                          <div className="text-xs text-gray-400">Response Rate</div>
+                        </div>
+                      </div>
+                      <div className="text-center">
+                        <button
+                          onClick={() => handleQuickContact('whatsapp')}
+                          className="px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-lg text-sm font-medium w-full"
+                        >
+                          <FaWhatsapp className="inline mr-2" />
+                          WhatsApp Me
+                        </button>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </div>
+
+          {/* Tabs Section - Below Contact Info on Mobile */}
+          <div
+            ref={tabsRef}
+            tabIndex={-1}
+            className="sticky top-4 z-20 bg-gray-900/80 backdrop-blur-sm border border-white/10 rounded-xl p-1"
+          >
+            <div className="flex justify-between">
+              {["contact", "social", "quick"].map(tab => (
+                <button
+                  key={tab}
+                  onClick={() => handleTabClick(tab)}
+                  className={`flex-1 px-2 py-3 rounded-lg font-medium transition-all text-xs sm:text-sm ${activeTab === tab
+                    ? 'bg-gradient-to-r from-teal-500 to-emerald-500 text-white'
+                    : 'text-gray-300 hover:text-white'
+                    }`}
+                >
+                  {tab === "contact" && "Send Message"}
+                  {tab === "social" && "Social Links"}
+                  {tab === "quick" && "Quick Contact"}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Dynamic Content based on Active Tab */}
+          <div className="space-y-6">
+            {/* Contact Form */}
+            {activeTab === "contact" && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4"
+              >
+                <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                  <FaPaperPlane className="text-teal-400" />
+                  Send a Message
+                </h3>
+
+                <AnimatePresence mode="wait">
+                  {isSubmitted ? (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.9 }}
+                      className="bg-gradient-to-r from-teal-500/20 to-emerald-500/20 border border-teal-500/30 rounded-xl p-6 text-center"
+                    >
+                      <div className="w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center mx-auto mb-3">
+                        <FaCheck className="w-6 h-6 text-teal-400" />
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-2">Message Sent!</h4>
+                      <p className="text-gray-300 text-sm">
+                        Thank you for reaching out. I'll respond within 24 hours.
+                      </p>
+                    </motion.div>
+                  ) : (
+                    <motion.form
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      onSubmit={handleSubmit}
+                      className="space-y-4"
+                    >
+                      <div>
+                        <label className="block text-gray-400 mb-1 text-sm">Full Name *</label>
+                        <input
+                          type="text"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          required
+                          placeholder="John Doe"
+                          className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500/50 focus:border-teal-500/30 text-sm"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-gray-400 mb-1 text-sm">Email Address *</label>
+                        <input
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          required
+                          placeholder="john@example.com"
+                          className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500/50 focus:border-teal-500/30 text-sm"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-gray-400 mb-1 text-sm">Subject *</label>
+                        <input
+                          type="text"
+                          name="subject"
+                          value={formData.subject}
+                          onChange={handleChange}
+                          required
+                          placeholder="Project Inquiry"
+                          className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500/50 focus:border-teal-500/30 text-sm"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-gray-400 mb-1 text-sm">Message *</label>
+                        <textarea
+                          name="message"
+                          rows="3"
+                          value={formData.message}
+                          onChange={handleChange}
+                          required
+                          placeholder="Tell me about your project..."
+                          className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500/50 focus:border-teal-500/30 resize-none text-sm"
+                        />
+                      </div>
+
+                      <motion.button
+                        type="submit"
+                        disabled={loading}
+                        whileTap={{ scale: 0.98 }}
+                        className={`w-full flex items-center justify-center gap-2 py-3 rounded-lg font-semibold transition-all text-sm ${loading
+                          ? 'bg-teal-400/50 cursor-not-allowed'
+                          : 'bg-gradient-to-r from-teal-500 to-emerald-500'
+                          }`}
+                      >
+                        {loading ? (
+                          <>
+                            <FaSpinner className="animate-spin w-4 h-4" />
+                            Sending...
+                          </>
+                        ) : (
+                          <>
+                            <FaPaperPlane className="w-4 h-4" />
+                            Send Message
+                          </>
+                        )}
+                      </motion.button>
+                    </motion.form>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            )}
+
+            {/* Social Links */}
+            {activeTab === "social" && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4"
+              >
+                <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                  <FaShareAlt className="text-teal-400" />
+                  Social Links
+                </h3>
+                <div className="grid grid-cols-3 gap-3">
+                  {socialLinks.slice(0, 6).map((social, index) => (
+                    <a
+                      key={index}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`group relative overflow-hidden rounded-lg p-3 text-center ${social.color} bg-gradient-to-br`}
+                    >
+                      <div className="relative z-10">
+                        <div className="text-lg mb-1">{social.icon}</div>
+                        <div className="text-white font-semibold text-xs truncate">{social.platform}</div>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+
+            {/* Quick Contact */}
+            {activeTab === "quick" && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4"
+              >
+                <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                  <FaPaperPlane className="text-teal-400" />
+                  Quick Actions
+                </h3>
+                <div className="grid grid-cols-2 gap-3">
+                  {[
+                    { icon: <FaEnvelope />, label: "Email", action: () => handleQuickContact('email'), color: "from-red-500 to-red-600" },
+                    { icon: <FaWhatsapp />, label: "WhatsApp", action: () => handleQuickContact('whatsapp'), color: "from-green-500 to-green-600" },
+                    { icon: <FaPhone />, label: "Call", action: () => handleQuickContact('call'), color: "from-blue-500 to-blue-600" },
+                    { icon: <FaCalendar />, label: "Schedule", action: () => handleQuickContact('calendar'), color: "from-purple-500 to-purple-600" }
+                  ].map((item, index) => (
+                    <button
+                      key={index}
+                      onClick={item.action}
+                      className={`group relative overflow-hidden rounded-lg p-4 text-center ${item.color} bg-gradient-to-br`}
+                    >
+                      <div className="relative z-10">
+                        <div className="text-xl mb-2 text-white">{item.icon}</div>
+                        <div className="text-white font-semibold text-sm">{item.label}</div>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+
+            {/* Location Card */}
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4">
+              <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                <FaMapMarkerAlt className="text-teal-400" />
+                Location
+              </h3>
+              <div className="relative h-40 rounded-lg overflow-hidden border border-white/10">
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
+                  <div className="text-center">
+                    <FaMapMarkerAlt className="w-8 h-8 text-teal-400 mx-auto mb-2" />
+                    <p className="text-white font-semibold text-sm">Kendua, Netrokona</p>
+                    <p className="text-gray-300 text-xs">Bangladesh</p>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-3 text-center">
+                <p className="text-gray-400 text-xs">Available for remote work worldwide</p>
+                <button
+                  onClick={() => window.open('https://maps.google.com/?q=Kendua+Netrokona+Bangladesh', '_blank')}
+                  className="mt-2 px-4 py-2 bg-gradient-to-r from-teal-500/20 to-teal-600/20 border border-teal-500/30 rounded-lg text-teal-300 text-xs font-medium w-full"
+                >
+                  Open in Google Maps
+                </button>
+              </div>
+            </div>
+
+            {/* QR Code Card */}
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4">
+              <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                <FaQrcode className="text-teal-400" />
+                QR Code
+              </h3>
+              <div className="text-center">
+                <div className="w-32 h-32 mx-auto bg-gradient-to-br from-teal-500/20 to-purple-500/20 rounded-xl flex items-center justify-center mb-3">
+                  <div className="w-28 h-28 bg-white rounded-lg flex items-center justify-center">
+                    <div className="text-center">
+                      <FaQrcode className="w-12 h-12 text-gray-800 mx-auto mb-1" />
+                      <div className="text-xs text-gray-600">Scan to save</div>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-gray-400 text-xs px-2">
+                  Scan QR code to save contact info
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        {/* Desktop Layout - Two Columns */}
+        <div className="hidden lg:grid lg:grid-cols-2 gap-8">
           {/* Left Side - Contact Info */}
           <motion.div
             className="space-y-8"
@@ -216,7 +557,6 @@ const Contact = () => {
                 ))}
               </div>
 
-              {/* Expandable Additional Info */}
               <div className="mt-8">
                 <button
                   onClick={() => setExpandedInfo(!expandedInfo)}
@@ -225,7 +565,7 @@ const Contact = () => {
                   <span className="text-gray-300">Additional Information</span>
                   {expandedInfo ? <FaChevronUp /> : <FaChevronDown />}
                 </button>
-                
+
                 <AnimatePresence>
                   {expandedInfo && (
                     <motion.div
@@ -264,7 +604,6 @@ const Contact = () => {
               <div className="text-center">
                 <div className="w-48 h-48 mx-auto bg-gradient-to-br from-teal-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center mb-4">
                   <div className="w-40 h-40 bg-white rounded-xl flex items-center justify-center">
-                    {/* Placeholder for actual QR code */}
                     <div className="text-center">
                       <FaQrcode className="w-20 h-20 text-gray-800 mx-auto mb-2" />
                       <div className="text-xs text-gray-600">Scan to save contact</div>
@@ -285,6 +624,30 @@ const Contact = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
           >
+            {/* Desktop Tabs */}
+            <div
+              ref={tabsRef}
+              tabIndex={-1}
+              className="flex justify-center mb-4"
+            >
+              <div className="inline-flex bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-1 w-full max-w-md">
+                {["contact", "social", "quick"].map(tab => (
+                  <button
+                    key={tab}
+                    onClick={() => handleTabClick(tab)}
+                    className={`flex-1 px-6 py-3 rounded-xl font-medium transition-all ${activeTab === tab
+                      ? 'bg-gradient-to-r from-teal-500 to-emerald-500 text-white'
+                      : 'text-gray-300 hover:text-white'
+                      }`}
+                  >
+                    {tab === "contact" && "Send Message"}
+                    {tab === "social" && "Social Links"}
+                    {tab === "quick" && "Quick Contact"}
+                  </button>
+                ))}
+              </div>
+            </div>
+
             {/* Contact Form */}
             {activeTab === "contact" && (
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8">
@@ -481,8 +844,7 @@ const Contact = () => {
                 <FaMapMarkerAlt className="text-teal-400" />
                 Location
               </h3>
-              <div className="relative h-64 rounded-xl overflow-hidden">
-                {/* Map Placeholder */}
+              <div className="relative h-64 rounded-xl overflow-hidden border border-white/10">
                 <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
                   <div className="text-center">
                     <FaMapMarkerAlt className="w-12 h-12 text-teal-400 mx-auto mb-4" />
@@ -500,31 +862,31 @@ const Contact = () => {
 
         {/* Footer Note */}
         <motion.div
-          className="mt-16 text-center"
+          className="mt-8 md:mt-16 text-center px-2"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
         >
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-teal-500/20 mb-6">
-            <FaClock className="w-6 h-6 text-teal-400" />
+          <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-teal-500/20 mb-4 md:mb-6">
+            <FaClock className="w-5 h-5 md:w-6 md:h-6 text-teal-400" />
           </div>
-          <h3 className="text-2xl font-bold text-white mb-4">Response Time</h3>
-          <p className="text-gray-300 max-w-2xl mx-auto">
-            I strive to respond to all inquiries within 24 hours. For urgent matters, 
+          <h3 className="text-lg md:text-2xl font-bold text-white mb-3 md:mb-4">Response Time</h3>
+          <p className="text-gray-300 max-w-2xl mx-auto text-sm md:text-base">
+            I strive to respond to all inquiries within 24 hours. For urgent matters,
             please use WhatsApp or give me a call directly.
           </p>
-          <div className="flex justify-center gap-6 mt-8">
+          <div className="flex justify-center gap-4 md:gap-6 mt-6 md:mt-8">
             <div className="text-center">
-              <div className="text-3xl font-bold text-teal-400">24h</div>
-              <div className="text-gray-400">Max Response Time</div>
+              <div className="text-xl md:text-3xl font-bold text-teal-400">24h</div>
+              <div className="text-gray-400 text-xs md:text-sm">Max Response Time</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-teal-400">100%</div>
-              <div className="text-gray-400">Response Rate</div>
+              <div className="text-xl md:text-3xl font-bold text-teal-400">100%</div>
+              <div className="text-gray-400 text-xs md:text-sm">Response Rate</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-teal-400">7/7</div>
-              <div className="text-gray-400">Days Available</div>
+              <div className="text-xl md:text-3xl font-bold text-teal-400">7/7</div>
+              <div className="text-gray-400 text-xs md:text-sm">Days Available</div>
             </div>
           </div>
         </motion.div>

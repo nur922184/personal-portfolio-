@@ -653,25 +653,7 @@ const Blog = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
         >
-          <div className="max-w-2xl mx-auto text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-teal-500 to-emerald-500 mb-6">
-              <FaRocket className="w-8 h-8 text-white" />
-            </div>
-            <h3 className="text-2xl font-bold text-white mb-3">Stay Updated</h3>
-            <p className="text-gray-300 mb-6">
-              Get the latest articles and tutorials delivered directly to your inbox
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="flex-1 px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500/50"
-              />
-              <button className="px-6 py-3 bg-gradient-to-r from-teal-500 to-emerald-500 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-teal-500/25 transition-all">
-                Subscribe
-              </button>
-            </div>
-          </div>
+  
         </motion.div>
       </div>
 

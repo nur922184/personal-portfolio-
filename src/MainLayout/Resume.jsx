@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  FaDownload, FaEye, FaFilePdf, FaGoogleDrive, 
+import {
+  FaDownload, FaEye, FaFilePdf, FaGoogleDrive,
   FaBriefcase, FaGraduationCap, FaCode, FaUser,
   FaCalendar, FaMapMarkerAlt, FaGlobe, FaStar,
   FaChevronRight, FaExternalLinkAlt, FaCopy,
@@ -9,7 +9,7 @@ import {
   FaTools, FaLanguage, FaCertificate
 } from "react-icons/fa";
 import { Link } from "react-scroll";
-import { 
+import {
   SiReact, SiNodedotjs, SiMongodb, SiTailwindcss,
   SiFirebase, SiExpress, SiNextdotjs, SiRedux,
   SiTypescript, SiJavascript, SiHtml5, SiCss3,
@@ -20,6 +20,8 @@ import {
 const Resume = () => {
   const [activeTab, setActiveTab] = useState("overview");
   const [copied, setCopied] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const contentRef = useRef(null);
 
   const resumeLink = "https://drive.google.com/file/d/1hfl9l7i_Z5apg3KA0GW0LPy8XwIXJgjl/view";
   const downloadLink = "https://drive.google.com/uc?export=download&id=1hfl9l7i_Z5apg3KA0GW0LPy8XwIXJgjl";
@@ -61,7 +63,7 @@ const Resume = () => {
       { name: "Illustrator", icon: <SiAdobeillustrator />, level: 65, color: "from-orange-400 to-yellow-400" }
     ],
     soft: [
-      "Problem Solving", "Team Collaboration", "Communication", 
+      "Problem Solving", "Team Collaboration", "Communication",
       "Time Management", "Adaptability", "Leadership",
       "Critical Thinking", "Creativity"
     ]
@@ -152,6 +154,31 @@ const Resume = () => {
     { id: "education", label: "Education", icon: <FaGraduationCap /> }
   ];
 
+  const handleTabClick = (tabId) => {
+    setActiveTab(tabId);
+    // Scroll to content area on mobile
+    if (isMobile && contentRef.current) {
+      setTimeout(() => {
+        contentRef.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+          inline: 'nearest'
+        });
+      }, 100);
+    }
+  };
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <section id="resume" className="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-teal-900/30 overflow-hidden">
       {/* Animated Background */}
@@ -161,30 +188,30 @@ const Resume = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/5 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="relative container mx-auto px-4 py-16 z-10">
+      <div className="relative container mx-auto px-4 py-8 md:py-16 z-10">
         {/* Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-16"
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           <div className="inline-flex items-center justify-center mb-4">
-            <div className="w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center">
-              <FaFilePdf className="w-6 h-6 text-teal-400" />
+            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-teal-500/20 flex items-center justify-center">
+              <FaFilePdf className="w-5 h-5 md:w-6 md:h-6 text-teal-400" />
             </div>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-teal-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+          <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-teal-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
             My Resume
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-base md:text-xl text-gray-300 max-w-3xl mx-auto px-2">
             Comprehensive overview of my skills, experience, and qualifications. Download the complete document for detailed information.
           </p>
         </motion.div>
 
         {/* Resume Actions */}
         <motion.div
-          className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+          className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-8 md:mb-12 px-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
@@ -193,18 +220,18 @@ const Resume = () => {
             href={resumeLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-teal-500 to-emerald-500 text-white font-semibold rounded-2xl hover:shadow-lg hover:shadow-teal-500/25 transition-all"
+            className="group flex items-center justify-center gap-2 md:gap-3 px-4 md:px-8 py-3 md:py-4 bg-gradient-to-r from-teal-500 to-emerald-500 text-white font-semibold rounded-xl md:rounded-2xl hover:shadow-lg hover:shadow-teal-500/25 transition-all text-sm md:text-base"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <FaEye />
             View Resume
-            <FaExternalLinkAlt className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+            <FaExternalLinkAlt className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform" />
           </motion.a>
 
           <motion.a
             href={downloadLink}
-            className="group flex items-center justify-center gap-3 px-8 py-4 bg-white/5 backdrop-blur-sm text-white border border-white/10 font-semibold rounded-2xl hover:border-teal-500/30 hover:bg-teal-500/10 transition-all"
+            className="group flex items-center justify-center gap-2 md:gap-3 px-4 md:px-8 py-3 md:py-4 bg-white/5 backdrop-blur-sm text-white border border-white/10 font-semibold rounded-xl md:rounded-2xl hover:border-teal-500/30 hover:bg-teal-500/10 transition-all text-sm md:text-base"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -214,36 +241,336 @@ const Resume = () => {
 
           <motion.button
             onClick={copyToClipboard}
-            className="group flex items-center justify-center gap-3 px-8 py-4 bg-white/5 backdrop-blur-sm text-white border border-white/10 font-semibold rounded-2xl hover:border-teal-500/30 hover:bg-teal-500/10 transition-all"
+            className="group flex items-center justify-center gap-2 md:gap-3 px-4 md:px-8 py-3 md:py-4 bg-white/5 backdrop-blur-sm text-white border border-white/10 font-semibold rounded-xl md:rounded-2xl hover:border-teal-500/30 hover:bg-teal-500/10 transition-all text-sm md:text-base"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            {copied ? <FaCheck className="text-green-400" /> : <FaCopy />}
+            {copied ? <FaCheck className="text-green-400 w-4 h-4" /> : <FaCopy />}
             {copied ? "Copied!" : "Copy Link"}
           </motion.button>
         </motion.div>
 
-        {/* Tabs Navigation */}
-        <div className="flex justify-center mb-12">
-          <div className="inline-flex bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-1">
-            {tabs.map(tab => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center gap-3 px-6 py-3 rounded-xl font-medium transition-all ${activeTab === tab.id
-                  ? 'bg-gradient-to-r from-teal-500 to-emerald-500 text-white'
-                  : 'text-gray-300 hover:text-white'
-                  }`}
-              >
-                {tab.icon}
-                {tab.label}
-              </button>
-            ))}
+        {/* Mobile Layout - Single Column */}
+        <div className="lg:hidden">
+          {/* Tabs Navigation - Mobile */}
+          <div className="sticky top-4 z-20 mb-6">
+            <div className="flex bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-1">
+              {tabs.map(tab => (
+                <button
+                  key={tab.id}
+                  onClick={() => handleTabClick(tab.id)}
+                  className={`flex-1 flex flex-col items-center justify-center gap-1 p-3 rounded-lg transition-all ${activeTab === tab.id
+                    ? 'bg-gradient-to-r from-teal-500 to-emerald-500 text-white'
+                    : 'text-gray-300 hover:text-white'
+                    }`}
+                >
+                  <span className="text-lg">{tab.icon}</span>
+                  <span className="text-xs font-medium">
+                    {tab.id === "overview" ? "Overview" :
+                     tab.id === "experience" ? "Experience" :
+                     tab.id === "skills" ? "Skills" : "Education"}
+                  </span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Main Content Area - Mobile */}
+          <div ref={contentRef} className="space-y-6">
+            {/* Mobile: Always show Quick Info and Languages on top */}
+            <div className="space-y-6">
+              {/* Quick Info Card */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 md:p-6">
+                <h3 className="text-lg md:text-xl font-bold text-white mb-4 flex items-center gap-3">
+                  <FaUser className="text-teal-400" />
+                  Quick Info
+                </h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="flex items-center gap-3">
+                    <FaCalendar className="text-gray-400 w-4 h-4" />
+                    <div>
+                      <div className="text-xs text-gray-400">Experience</div>
+                      <div className="text-white font-medium text-sm">3+ Years</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <FaMapMarkerAlt className="text-gray-400 w-4 h-4" />
+                    <div>
+                      <div className="text-xs text-gray-400">Location</div>
+                      <div className="text-white font-medium text-sm">Netrokona, BD</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <FaGlobe className="text-gray-400 w-4 h-4" />
+                    <div>
+                      <div className="text-xs text-gray-400">Availability</div>
+                      <div className="text-white font-medium text-sm">Immediate</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <FaBriefcase className="text-gray-400 w-4 h-4" />
+                    <div>
+                      <div className="text-xs text-gray-400">Employment</div>
+                      <div className="text-white font-medium text-sm">Open to Work</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Languages - Mobile */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 md:p-6">
+                <h3 className="text-lg md:text-xl font-bold text-white mb-4 flex items-center gap-3">
+                  <FaLanguage className="text-teal-400" />
+                  Languages
+                </h3>
+                <div className="space-y-3">
+                  {languages.map((lang, index) => (
+                    <div key={index}>
+                      <div className="flex justify-between mb-1">
+                        <span className="text-white font-medium text-sm">{lang.language}</span>
+                        <span className="text-gray-400 text-xs">{lang.level}</span>
+                      </div>
+                      <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
+                        <motion.div
+                          className="h-full bg-gradient-to-r from-teal-500 to-emerald-500"
+                          initial={{ width: 0 }}
+                          animate={{ width: `${lang.proficiency}%` }}
+                          transition={{ duration: 1, delay: index * 0.2 }}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Dynamic Content based on Active Tab */}
+            <AnimatePresence mode="wait">
+              {/* Overview Tab - Mobile */}
+              {activeTab === "overview" && (
+                <motion.div
+                  key="overview-mobile"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 md:p-6"
+                >
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-4">Professional Summary</h3>
+                  <p className="text-gray-300 text-sm leading-relaxed mb-6">
+                    {professionalSummary}
+                  </p>
+
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="bg-gradient-to-br from-teal-500/10 to-blue-500/10 rounded-xl p-4">
+                      <div className="text-xl font-bold text-white mb-1">50+</div>
+                      <div className="text-gray-300 text-xs">Projects</div>
+                    </div>
+                    <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-xl p-4">
+                      <div className="text-xl font-bold text-white mb-1">100%</div>
+                      <div className="text-gray-300 text-xs">Satisfaction</div>
+                    </div>
+                    <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-xl p-4">
+                      <div className="text-xl font-bold text-white mb-1">3+</div>
+                      <div className="text-gray-300 text-xs">Years Exp</div>
+                    </div>
+                    <div className="bg-gradient-to-br from-orange-500/10 to-yellow-500/10 rounded-xl p-4">
+                      <div className="text-xl font-bold text-white mb-1">24/7</div>
+                      <div className="text-gray-300 text-xs">Available</div>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+
+              {/* Experience Tab - Mobile */}
+              {activeTab === "experience" && (
+                <motion.div
+                  key="experience-mobile"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 md:p-6"
+                >
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-4">Work Experience</h3>
+                  <div className="space-y-6">
+                    {experiences.map((exp, index) => (
+                      <div key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4">
+                        <div className="mb-3">
+                          <h4 className="text-base font-bold text-white mb-1">{exp.role}</h4>
+                          <div className="flex items-center gap-2 text-teal-400 text-sm">
+                            <FaBriefcase className="w-3 h-3" />
+                            <span>{exp.company}</span>
+                          </div>
+                        </div>
+                        
+                        <div className="flex items-center gap-2 text-gray-400 text-xs mb-3">
+                          <FaCalendar className="w-3 h-3" />
+                          <span>{exp.period}</span>
+                          <span className="mx-1">•</span>
+                          <FaMapMarkerAlt className="w-3 h-3" />
+                          <span>{exp.location}</span>
+                        </div>
+
+                        <ul className="space-y-2 mb-4">
+                          {exp.details.map((detail, idx) => (
+                            <li key={idx} className="flex items-start gap-2 text-gray-300 text-sm">
+                              <FaChevronRight className="w-2 h-2 text-teal-400 mt-1.5 flex-shrink-0" />
+                              <span>{detail}</span>
+                            </li>
+                          ))}
+                        </ul>
+
+                        <div className="flex flex-wrap gap-2">
+                          {exp.technologies.map((tech, idx) => (
+                            <span key={idx} className="px-2 py-1 bg-teal-500/10 text-teal-300 rounded-full text-xs">
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+
+              {/* Skills Tab - Mobile */}
+              {activeTab === "skills" && (
+                <motion.div
+                  key="skills-mobile"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 md:p-6"
+                >
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-4">Technical Skills</h3>
+
+                  <div className="space-y-6">
+                    {/* Frontend Skills - Mobile */}
+                    <div>
+                      <h4 className="text-base font-semibold text-white mb-3">Frontend</h4>
+                      <div className="grid grid-cols-2 gap-3">
+                        {skills.frontend.map((skill, index) => (
+                          <div key={index} className={`relative overflow-hidden rounded-xl p-3 bg-gradient-to-br ${skill.color}`}>
+                            <div className="relative z-10">
+                              <div className="flex items-center justify-between mb-2">
+                                <div className="text-lg">{skill.icon}</div>
+                                <span className="text-white text-sm">{skill.level}%</span>
+                              </div>
+                              <div className="text-white font-semibold text-sm mb-2">{skill.name}</div>
+                              <div className="w-full h-1.5 bg-black/20 rounded-full overflow-hidden">
+                                <motion.div
+                                  className="h-full bg-white"
+                                  initial={{ width: 0 }}
+                                  animate={{ width: `${skill.level}%` }}
+                                  transition={{ duration: 1, delay: index * 0.1 }}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Backend Skills - Mobile */}
+                    <div>
+                      <h4 className="text-base font-semibold text-white mb-3">Backend</h4>
+                      <div className="grid grid-cols-2 gap-3">
+                        {skills.backend.map((skill, index) => (
+                          <div key={index} className={`relative overflow-hidden rounded-xl p-3 bg-gradient-to-br ${skill.color}`}>
+                            <div className="relative z-10">
+                              <div className="flex items-center justify-between mb-2">
+                                <div className="text-lg">{skill.icon}</div>
+                                <span className="text-white text-sm">{skill.level}%</span>
+                              </div>
+                              <div className="text-white font-semibold text-sm mb-2">{skill.name}</div>
+                              <div className="w-full h-1.5 bg-black/20 rounded-full overflow-hidden">
+                                <motion.div
+                                  className="h-full bg-white"
+                                  initial={{ width: 0 }}
+                                  animate={{ width: `${skill.level}%` }}
+                                  transition={{ duration: 1, delay: index * 0.1 }}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Soft Skills - Mobile */}
+                    <div>
+                      <h4 className="text-base font-semibold text-white mb-3">Soft Skills</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {skills.soft.map((skill, index) => (
+                          <span key={index} className="px-3 py-1.5 bg-white/5 backdrop-blur-sm text-white rounded-lg border border-white/10 text-sm">
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+
+              {/* Education Tab - Mobile */}
+              {activeTab === "education" && (
+                <motion.div
+                  key="education-mobile"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 md:p-6"
+                >
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-4">Education</h3>
+                  <div className="space-y-4">
+                    {education.map((edu, index) => (
+                      <div key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4">
+                        <div className="mb-3">
+                          <h4 className="text-base font-bold text-white mb-1">{edu.degree}</h4>
+                          <div className="flex items-center gap-2 text-teal-400 text-sm mb-2">
+                            <FaGraduationCap className="w-3 h-3" />
+                            <span>{edu.institution}</span>
+                          </div>
+                        </div>
+                        
+                        <div className="flex items-center justify-between">
+                          <div className="text-gray-300 text-sm">{edu.description}</div>
+                          <span className="px-2 py-1 bg-teal-500/10 text-teal-300 rounded-full text-xs whitespace-nowrap">
+                            {edu.grade}
+                          </span>
+                        </div>
+                        
+                        <div className="flex items-center gap-2 text-gray-400 text-xs mt-3">
+                          <FaCalendar className="w-3 h-3" />
+                          <span>{edu.period}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            {/* Certificates - Mobile (Always at bottom) */}
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 md:p-6">
+              <h3 className="text-lg md:text-xl font-bold text-white mb-4 flex items-center gap-3">
+                <FaCertificate className="text-teal-400" />
+                Certifications
+              </h3>
+              <div className="grid grid-cols-2 gap-3">
+                {certificates.map((cert, index) => (
+                  <div key={index} className="bg-white/5 rounded-lg p-3">
+                    <div className="text-white font-medium text-sm mb-1">{cert.name}</div>
+                    <div className="text-gray-400 text-xs mb-2">{cert.issuer}</div>
+                    <div className="text-teal-400 text-xs">{cert.year}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Main Content */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-12">
+        {/* Desktop Layout - Two Columns */}
+        <div className="hidden lg:grid lg:grid-cols-3 gap-8 mb-12">
           {/* Left Sidebar */}
           <div className="lg:col-span-1 space-y-8">
             {/* Quick Info Card */}
@@ -332,11 +659,30 @@ const Resume = () => {
 
           {/* Main Content Area */}
           <div className="lg:col-span-2">
+            {/* Desktop Tabs */}
+            <div className="flex justify-center mb-8">
+              <div className="inline-flex bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-1 w-full max-w-2xl">
+                {tabs.map(tab => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`flex items-center gap-3 px-6 py-3 rounded-xl font-medium transition-all flex-1 justify-center ${activeTab === tab.id
+                      ? 'bg-gradient-to-r from-teal-500 to-emerald-500 text-white'
+                      : 'text-gray-300 hover:text-white'
+                      }`}
+                  >
+                    {tab.icon}
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
             <AnimatePresence mode="wait">
-              {/* Overview Tab */}
+              {/* Overview Tab - Desktop */}
               {activeTab === "overview" && (
                 <motion.div
-                  key="overview"
+                  key="overview-desktop"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
@@ -368,10 +714,10 @@ const Resume = () => {
                 </motion.div>
               )}
 
-              {/* Experience Tab */}
+              {/* Experience Tab - Desktop */}
               {activeTab === "experience" && (
                 <motion.div
-                  key="experience"
+                  key="experience-desktop"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
@@ -396,7 +742,7 @@ const Resume = () => {
                               <span>{exp.period}</span>
                             </div>
                           </div>
-                          
+
                           <div className="mb-4">
                             <div className="flex items-center gap-2 text-gray-400 mb-2">
                               <FaMapMarkerAlt className="w-4 h-4" />
@@ -427,10 +773,10 @@ const Resume = () => {
                 </motion.div>
               )}
 
-              {/* Skills Tab */}
+              {/* Skills Tab - Desktop */}
               {activeTab === "skills" && (
                 <motion.div
-                  key="skills"
+                  key="skills-desktop"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
@@ -523,10 +869,10 @@ const Resume = () => {
                 </motion.div>
               )}
 
-              {/* Education Tab */}
+              {/* Education Tab - Desktop */}
               {activeTab === "education" && (
                 <motion.div
-                  key="education"
+                  key="education-desktop"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
@@ -550,7 +896,7 @@ const Resume = () => {
                             <div className="flex items-center gap-2 text-teal-400 mt-1">
                               <FaGraduationCap className="w-4 h-4" />
                               <span>{edu.institution}</span>
-                            </div>
+                          </div>
                           </div>
                           <div className="flex items-center gap-2 text-gray-400 mt-2 md:mt-0">
                             <FaCalendar className="w-4 h-4" />
@@ -574,25 +920,25 @@ const Resume = () => {
 
         {/* Call to Action */}
         <motion.div
-          className="text-center mt-16"
+          className="text-center mt-8 md:mt-16 px-2"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
         >
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-teal-500 to-emerald-500 mb-6">
-            <FaBriefcase className="w-8 h-8 text-white" />
+          <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-r from-teal-500 to-emerald-500 mb-4 md:mb-6">
+            <FaBriefcase className="w-6 h-6 md:w-8 md:h-8 text-white" />
           </div>
-          <h3 className="text-2xl font-bold text-white mb-4">Ready to Work Together?</h3>
-          <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-            I'm currently available for freelance projects and full-time opportunities. 
+          <h3 className="text-lg md:text-2xl font-bold text-white mb-3 md:mb-4">Ready to Work Together?</h3>
+          <p className="text-gray-300 text-sm md:text-base mb-6 max-w-2xl mx-auto">
+            I'm currently available for freelance projects and full-time opportunities.
             Let's discuss how we can create something amazing.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
             <Link to="contact" smooth={true} duration={800}>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-teal-500 to-emerald-500 text-white font-semibold rounded-2xl hover:shadow-lg hover:shadow-teal-500/25 transition-all"
+                className="px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-teal-500 to-emerald-500 text-white font-semibold rounded-xl md:rounded-2xl hover:shadow-lg hover:shadow-teal-500/25 transition-all text-sm md:text-base"
               >
                 Contact Me
               </motion.button>
@@ -601,7 +947,7 @@ const Resume = () => {
               href={downloadLink}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-white/5 backdrop-blur-sm text-white border border-white/10 font-semibold rounded-2xl hover:border-teal-500/30 hover:bg-teal-500/10 transition-all"
+              className="px-6 md:px-8 py-3 md:py-4 bg-white/5 backdrop-blur-sm text-white border border-white/10 font-semibold rounded-xl md:rounded-2xl hover:border-teal-500/30 hover:bg-teal-500/10 transition-all text-sm md:text-base"
             >
               Download Full Resume
             </motion.a>

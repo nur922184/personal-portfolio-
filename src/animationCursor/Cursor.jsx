@@ -1,4 +1,3 @@
-
 import "./Cursor.css";
 import React, { useEffect, useRef } from "react";
 
@@ -6,8 +5,21 @@ const Cursor = () => {
   const cursorRef = useRef(null);
   const followerRef = useRef(null);
   const particlesRef = useRef([]);
+  const isDesktopRef = useRef(false);
 
   useEffect(() => {
+    // ডেস্কটপ ডিভাইস চেক করুন
+    const checkIfDesktop = () => {
+      return window.innerWidth > 768 && !window.matchMedia('(hover: none)').matches;
+    };
+
+    isDesktopRef.current = checkIfDesktop();
+
+    if (!isDesktopRef.current) {
+      // মোবাইল/ট্যাবলেট ডিভাইসে কার্সার দেখাবো না
+      return;
+    }
+
     const cursor = cursorRef.current;
     const follower = followerRef.current;
     
@@ -49,6 +61,9 @@ const Cursor = () => {
     
     // অ্যানিমেশন লুপ
     const animate = () => {
+      // শুধুমাত্র ডেস্কটপে অ্যানিমেশন চলবে
+      if (!isDesktopRef.current) return;
+      
       // ফলোয়ার কার্সার মুভমেন্ট
       followerX += (mouseX - followerX) * 0.15;
       followerY += (mouseY - followerY) * 0.15;
@@ -79,17 +94,21 @@ const Cursor = () => {
     
     // ক্লিক ইফেক্ট
     const handleMouseDown = () => {
+      if (!isDesktopRef.current) return;
       scale = 0.8;
       if (cursor) cursor.style.backgroundColor = '#ff5e7d';
     };
     
     const handleMouseUp = () => {
+      if (!isDesktopRef.current) return;
       scale = 1;
       if (cursor) cursor.style.backgroundColor = '#5e81ff';
     };
     
     // হোভার ইফেক্ট
     const handleMouseOver = (e) => {
+      if (!isDesktopRef.current) return;
+      
       if (e.target.matches('a, button, [data-cursor-hover]')) {
         scale = 1.5;
         opacity = 0.7;
@@ -104,25 +123,42 @@ const Cursor = () => {
     };
     
     const handleMouseOut = (e) => {
+      if (!isDesktopRef.current) return;
+      
       if (e.target.matches('a, button, [data-cursor-hover], [data-cursor-special]')) {
         scale = 1;
         opacity = 1;
         if (cursor) cursor.style.backgroundColor = '#5e81ff';
       }
     };
+
+    // রিসাইজ ইভেন্ট
+    const handleResize = () => {
+      const wasDesktop = isDesktopRef.current;
+      isDesktopRef.current = checkIfDesktop();
+      
+      if (wasDesktop && !isDesktopRef.current) {
+        // ডেস্কটপ থেকে মোবাইলে স্যুইচ হলে ক্লিনআপ
+        cleanup();
+      } else if (!wasDesktop && isDesktopRef.current) {
+        // মোবাইল থেকে ডেস্কটপে স্যুইচ হলে পুনরায় শুরু
+        initCursor();
+      }
+    };
     
     // ইভেন্ট লিসেনার যোগ করা
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('mousedown', handleMouseDown);
-    window.addEventListener('mouseup', handleMouseUp);
-    document.addEventListener('mouseover', handleMouseOver);
-    document.addEventListener('mouseout', handleMouseOut);
+    const initCursor = () => {
+      window.addEventListener('mousemove', handleMouseMove);
+      window.addEventListener('mousedown', handleMouseDown);
+      window.addEventListener('mouseup', handleMouseUp);
+      document.addEventListener('mouseover', handleMouseOver);
+      document.addEventListener('mouseout', handleMouseOut);
+      
+      // অ্যানিমেশন শুরু
+      animate();
+    };
     
-    // অ্যানিমেশন শুরু
-    animate();
-    
-    // ক্লিনআপ
-    return () => {
+    const cleanup = () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mousedown', handleMouseDown);
       window.removeEventListener('mouseup', handleMouseUp);
@@ -130,14 +166,42 @@ const Cursor = () => {
       document.removeEventListener('mouseout', handleMouseOut);
       document.body.style.cursor = 'auto';
       
+      // কার্সার এলিমেন্ট লুকানো
+      if (cursor) cursor.style.display = 'none';
+      if (follower) follower.style.display = 'none';
+      
       // পার্টিকেল সরানো
       particlesRef.current.forEach(particle => {
-        if (particle.element.parentNode) {
+        if (particle.element && particle.element.parentNode) {
           particle.element.parentNode.removeChild(particle.element);
         }
       });
+      particlesRef.current = [];
+    };
+    
+    // রিসাইজ ইভেন্ট লিসেনার যোগ
+    window.addEventListener('resize', handleResize);
+    
+    // কার্সার ইনিশিয়ালাইজ
+    if (isDesktopRef.current) {
+      initCursor();
+    }
+    
+    // ক্লিনআপ
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      cleanup();
     };
   }, []);
+
+  // শুধুমাত্র ডেস্কটপে কার্সার রেন্ডার করা
+  const isDesktop = typeof window !== 'undefined' ? 
+    window.innerWidth > 768 && !window.matchMedia('(hover: none)').matches : 
+    false;
+
+  if (!isDesktop) {
+    return null;
+  }
 
   return (
     <>
