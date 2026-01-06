@@ -15,9 +15,9 @@ const NewHome = () => {
                 <section id="home" name="home" ><Home></Home></section>
                 {/* <TextAnimation></TextAnimation> */}
                 <section id="about" name="about" ><AboutMe></AboutMe></section>
-                <WorkExperience></WorkExperience>
-                <section id="education" name="education" ><Education></Education></section>
-                <section id="contact" name="contact"><ContactInfo></ContactInfo></section>
+                {/* <WorkExperience></WorkExperience> */}
+                {/* <section id="education" name="education" ><Education></Education></section> */}
+                {/* <section id="contact" name="contact"><ContactInfo></ContactInfo></section> */}
                 <section id="contact" name="contact" ><Contact></Contact></section>
                 <section id="work" name="work" ><Works></Works></section>
                 <section id="blog" name="blog" ><Blog></Blog></section>
