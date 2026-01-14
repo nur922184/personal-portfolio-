@@ -8,6 +8,7 @@ import Works from '../MainLayout/Work';
 import Blog from '../MainLayout/Blog';
 import WorkExperience from '../Component/WorkExperience';
 import Resume from '../MainLayout/Resume';
+import AnimatedMarqueeSlider from '../Component/AnimatedMarqueeSlider';
 const NewHome = () => {
     return (
         <div>
@@ -16,6 +17,7 @@ const NewHome = () => {
                 {/* <TextAnimation></TextAnimation> */}
                 <section id="about" name="about" ><AboutMe></AboutMe></section>
                 {/* <WorkExperience></WorkExperience> */}
+                <AnimatedMarqueeSlider></AnimatedMarqueeSlider>
                 {/* <section id="education" name="education" ><Education></Education></section> */}
                 {/* <section id="contact" name="contact"><ContactInfo></ContactInfo></section> */}
                 <section id="contact" name="contact" ><Contact></Contact></section>

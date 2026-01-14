@@ -40,7 +40,7 @@ const MainHomeLayout = () => {
   }, [isFirstLoad]);
 
     return (
-        <div className='bg-violet-300 top-7 dark:bg-gray-900 text-black dark:text-white transition-colors duration-300 min-h-screen'>
+        <div className=' transition-colors duration-300 min-h-screen'>
             {isLoading ? (
                 <LodingAnimation progress={progress} isFirstLoad={isFirstLoad} />
             ) : (
